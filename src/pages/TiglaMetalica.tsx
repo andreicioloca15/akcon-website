@@ -1,55 +1,15 @@
 import ServicePage from './ServicePage';
+import serviceData from '../content/service-pages/tigla-metalica.json';
 
 export default function TiglaMetalica() {
   return (
     <ServicePage
-      slug="tigla-metalica"
-      title="Țiglă Metalică"
-      description="Sisteme moderne de țiglă metalică cu raport calitate-preț excelent. Branduri premium Bilka, Lindab, Wetterbest cu garanție până la 50 ani. Greutate redusă, montaj rapid, varietate cromatică mare. Soluția ideală pentru acoperișuri moderne și eficiente."
-      metaTitle="Țiglă Metalică Alba Iulia | Bilka, Lindab, Wetterbest | Garanție 50 Ani"
-      metaDescription="Montaj țiglă metalică premium Alba Iulia. Bilka, Lindab, Wetterbest. Garanție 50 ani producător. Montaj rapid, costuri optime. ☎ 0XXX-XXX-XXX"
-      keywords={['țiglă metalică Alba Iulia', 'Bilka Alba', 'Lindab Alba', 'acoperiș metal', 'tablă fălțuită']}
-      heroTitle="Țiglă Metalică Premium - Modern, Rapid, Eficient"
-      heroSubtitle="Sisteme moderne Bilka, Lindab, Wetterbest cu garanție 50 ani. Montaj rapid, greutate redusă, peste 100 culori disponibile."
-      benefits={[
-        'Garanție producător până la 50 ani',
-        'Greutate redusă - potrivită pentru structuri existente',
-        'Montaj rapid - economie timp și bani',
-        'Peste 100 culori și finisaje disponibile',
-        'Raport calitate-preț excelent',
-        'Rezistență perfectă la coroziune',
-        'Întreținere minimă necesară',
-        'Protecție UV și antiacustică'
-      ]}
-      processSteps={[
-        { title: 'Alegere Sistem', description: 'Consultanță modele Bilka/Lindab/Wetterbest' },
-        { title: 'Măsurători Precise', description: 'Calcul exact materiale necesare' },
-        { title: 'Preparare Suport', description: 'Contrapantă, membrane, ventilație' },
-        { title: 'Montaj Rapid', description: 'Instalare profesională, finisaje' }
-      ]}
-      faq={[
-        {
-          question: 'Care e diferența între Bilka, Lindab și Wetterbest?',
-          answer: 'Toate sunt branduri premium. Bilka - excelent raport calitate-preț, gama largă culori. Lindab - cel mai durabil, sisteme complete integrate. Wetterbest - design modern, tehnologie germană. Recomandăm în funcție de buget și preferințe.'
-        },
-        {
-          question: 'Cât costă țigla metalică?',
-          answer: 'Prețul complet variază între 50-70 EUR/mp în funcție de brand și grosime. Include materiale premium, manoperă certificată, accesorii complete. E cu 30-40% mai ieftină decât ceramica, cu performanță excelentă.'
-        }
-      ]}
+      {...serviceData}
+      keywords={serviceData.keywords.split(', ')}
       caseStudy={{
-        title: 'Casă Modernă Blaj - Sistem Bilka Grande Culoare Antracit',
-        clientName: 'Andrei Popa',
-        clientLocation: 'Blaj',
-        projectDate: 'Octombrie 2024',
-        duration: 2,
-        area: 180,
-        materials: 'Țiglă metalică Bilka Grande Antracit, Izolație Isover 15cm, Sistem Lindab',
-        problemDescription: 'Casa nouă modernă necesita acoperiș în stil contemporan, cu montaj rapid înainte de iarnă și buget controlat.',
-        solutionDescription: 'Bilka Grande în antracit mat - aspect premium modern. Montaj complet în doar 2 săptămâni. Sistem integrat cu jgheaburi Lindab.',
-        resultsDescription: 'Casa arată impresionant - design modern minimalist. Montaj finalizat cu 1 săptămână înaintea termenului. Zero probleme după prima iarnă.',
-        testimonial: 'Rapiditate incredibilă și calitate impecabilă. Akcon a dovedit că poți avea premium fără să aștepți luni. Acoperișul arată fantastic și performează perfect!',
-        investmentValue: '12.600 EUR'
+        ...serviceData.caseStudy,
+        duration: parseInt(serviceData.caseStudy.duration),
+        area: parseInt(serviceData.caseStudy.area)
       }}
     />
   );

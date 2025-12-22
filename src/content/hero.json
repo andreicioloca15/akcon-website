@@ -1,0 +1,30 @@
+{
+  "mainHeadline": "Acoperișuri Excepționale pentru Case Excepționale",
+  "subtitle": "Singurul specialist în acoperișuri premium din județul Alba. Garanție 15 ani manoperă.",
+  "primaryButtonText": "Solicită Ofertă Gratuită",
+  "secondaryButtonText": "Sună Acum",
+  "badges": [
+    {
+      "text": "ani experiență",
+      "usesCompanyData": true,
+      "companyField": "yearsExperience",
+      "order": 1
+    },
+    {
+      "text": "proiecte finalizate",
+      "usesCompanyData": true,
+      "companyField": "projectsCompleted",
+      "order": 2
+    },
+    {
+      "text": "Garanție 15 ani",
+      "usesCompanyData": false,
+      "order": 3
+    },
+    {
+      "text": "Echipă certificată",
+      "usesCompanyData": false,
+      "order": 4
+    }
+  ]
+}

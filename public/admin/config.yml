@@ -90,6 +90,74 @@ collections:
               - { label: "Nume Brand", name: "name", widget: "string" }
               - { label: "Ordine", name: "order", widget: "number", default: 1 }
 
+      - name: "hero"
+        label: "Hero Homepage (Prima Secțiune)"
+        file: "src/content/hero.json"
+        fields:
+          - { label: "Titlu Principal", name: "mainHeadline", widget: "string", default: "Acoperișuri Excepționale pentru Case Excepționale", hint: "Textul mare de pe hero" }
+          - { label: "Subtitlu", name: "subtitle", widget: "text", default: "Singurul specialist în acoperișuri premium din județul Alba. Garanție 15 ani manoperă." }
+          - { label: "Text Buton Principal", name: "primaryButtonText", widget: "string", default: "Solicită Ofertă Gratuită" }
+          - { label: "Text Buton Secundar", name: "secondaryButtonText", widget: "string", default: "Sună Acum" }
+          - label: "Badge-uri (Statistici jos)"
+            name: "badges"
+            widget: "list"
+            fields:
+              - { label: "Text Badge", name: "text", widget: "string", hint: "Ex: 'ani experiență' sau 'Garanție 15 ani'" }
+              - { label: "Folosește Date Companie?", name: "usesCompanyData", widget: "boolean", default: false, hint: "Bifează dacă vrei să afișezi un număr din Informații Companie" }
+              - { label: "Câmp Companie", name: "companyField", widget: "select", required: false, options: ["yearsExperience", "projectsCompleted", "satisfiedClients"], hint: "Alege câmpul din care să ia numărul" }
+              - { label: "Ordine", name: "order", widget: "number", default: 1 }
+
+  - name: "service-pages"
+    label: "📄 Pagini Servicii (Detalii Complete)"
+    folder: "src/content/service-pages"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Slug URL", name: "slug", widget: "string", required: true, hint: "Ex: montaj-acoperisuri-noi" }
+      - { label: "Titlu Serviciu", name: "title", widget: "string", required: true }
+      - { label: "Descriere Scurtă", name: "description", widget: "text", required: true }
+      - { label: "Meta Title (SEO)", name: "metaTitle", widget: "string", required: true }
+      - { label: "Meta Description (SEO)", name: "metaDescription", widget: "text", required: true }
+      - { label: "Keywords (SEO)", name: "keywords", widget: "string", required: true, hint: "Separate prin virgulă: keyword1, keyword2, keyword3" }
+      - { label: "Titlu Hero", name: "heroTitle", widget: "string", required: true }
+      - { label: "Subtitlu Hero", name: "heroSubtitle", widget: "text", required: true }
+      - { label: "Imagine Hero", name: "heroImage", widget: "image", required: false, hint: "1920x800px recomandat. Lasă gol pentru gradient default." }
+      - label: "Beneficii (Listă)"
+        name: "benefits"
+        widget: "list"
+        field: { label: "Beneficiu", name: "benefit", widget: "string" }
+      - label: "Pași Proces"
+        name: "processSteps"
+        widget: "list"
+        fields:
+          - { label: "Titlu Pas", name: "title", widget: "string" }
+          - { label: "Descriere", name: "description", widget: "text" }
+      - label: "FAQ (Întrebări Frecvente)"
+        name: "faq"
+        widget: "list"
+        fields:
+          - { label: "Întrebare", name: "question", widget: "string" }
+          - { label: "Răspuns", name: "answer", widget: "text" }
+      - label: "Studiu de Caz"
+        name: "caseStudy"
+        widget: "object"
+        fields:
+          - { label: "Titlu Proiect", name: "title", widget: "string" }
+          - { label: "Nume Client", name: "clientName", widget: "string" }
+          - { label: "Locație Client", name: "clientLocation", widget: "string" }
+          - { label: "Profesie Client", name: "clientProfession", widget: "string", required: false }
+          - { label: "Dată Proiect", name: "projectDate", widget: "string", hint: "Ex: Septembrie 2024" }
+          - { label: "Durată", name: "duration", widget: "string", hint: "Ex: 4 săptămâni" }
+          - { label: "Suprafață", name: "area", widget: "string", hint: "Ex: 280 mp" }
+          - { label: "Materiale Folosite", name: "materials", widget: "text" }
+          - { label: "Descriere Problemă", name: "problemDescription", widget: "text" }
+          - { label: "Descriere Soluție", name: "solutionDescription", widget: "text" }
+          - { label: "Descriere Rezultate", name: "resultsDescription", widget: "text" }
+          - { label: "Testimonial Client", name: "testimonial", widget: "text" }
+          - { label: "Valoare Investiție", name: "investmentValue", widget: "string", hint: "Ex: 35.000 EUR" }
+
   - name: "services"
     label: "🛠️ Servicii"
     folder: "src/content/services"

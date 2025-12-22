@@ -1,63 +1,15 @@
 import ServicePage from './ServicePage';
+import serviceData from '../content/service-pages/reparatii-acoperisuri.json';
 
 export default function ReparatiiAcoperisuri() {
   return (
     <ServicePage
-      slug="reparatii-acoperisuri"
-      title="Reparații Acoperișuri"
-      description="Intervenții rapide pentru infiltrații, țiglă deteriorată, probleme structurale. Disponibili pentru urgențe 24/7. Diagnosticare gratuită, soluții garantate, prețuri transparente. Reparăm toate tipurile de acoperișuri în județul Alba."
-      metaTitle="Reparații Acoperișuri Alba Iulia | Intervenții Rapide | Urgențe 24/7"
-      metaDescription="Reparații profesionale acoperișuri Alba Iulia. Infiltrații, țiglă deteriorată, urgențe. Intervenție rapidă, garanție lucrări. ☎ 0XXX-XXX-XXX"
-      keywords={['reparații acoperiș Alba Iulia', 'infiltrații acoperiș Alba', 'reparații urgente acoperiș', 'scurgeri acoperiș', 'țiglă deteriorată']}
-      heroTitle="Reparații Rapide Acoperișuri - Rezolvăm Problema, Nu O Amânăm"
-      heroSubtitle="Infiltrații? Țiglă deteriorată? Probleme structurale? Intervenim rapid, identificăm cauza, oferim soluții durabile. Disponibili pentru urgențe."
-      benefits={[
-        'Intervenție rapidă - în maxim 48 ore',
-        'Disponibili pentru urgențe 24/7',
-        'Diagnosticare gratuită a problemei',
-        'Soluții durabile, nu reparații temporare',
-        'Prețuri transparente - fără costuri ascunse',
-        'Garanție pentru toate reparațiile',
-        'Reparăm toate tipurile de acoperișuri',
-        'Experiență 15+ ani în reparații complexe'
-      ]}
-      processSteps={[
-        { title: 'Apel Urgent', description: 'Programare rapidă, în maxim 24-48 ore' },
-        { title: 'Diagnosticare', description: 'Inspecție detaliată, identificare cauză' },
-        { title: 'Ofertă Clară', description: 'Explicație problemă, soluție, preț fix' },
-        { title: 'Reparație Rapidă', description: 'Intervenție profesională, materiale calitate' }
-      ]}
-      faq={[
-        {
-          question: 'Cât de repede puteți interveni pentru o urgență?',
-          answer: 'Pentru urgențe reale (infiltrații active, pericol iminent) intervenim în maxim 24 ore. Pentru reparații programate, în maxim 48 ore. Suntem disponibili telefonic 24/7 pentru evaluare.'
-        },
-        {
-          question: 'Cât costă o reparație de acoperiș?',
-          answer: 'Depinde de problemă: înlocuire țiglă localizată 200-500 EUR, reparație infiltrație 300-800 EUR, consolidare structură locală 500-1500 EUR. Oferim diagnostic gratuit și preț fix înainte de intervenție.'
-        },
-        {
-          question: 'Oferiți garanție pentru reparații?',
-          answer: 'Da, toate reparațiile vin cu garanție 2-5 ani în funcție de tipul intervenției. Nu facem reparații temporare - doar soluții durabile care rezolvă problema definitiv.'
-        },
-        {
-          question: 'Ce zone acoperiți pentru reparații urgente?',
-          answer: 'Tot județul Alba: Alba Iulia, Aiud, Blaj, Sebeș, Cugir, Ocna Mureș, Teiuș și toate localitățile din jur. Pentru urgențe majore, ne deplasăm oriunde în județ în maxim 4 ore.'
-        }
-      ]}
+      {...serviceData}
+      keywords={serviceData.keywords.split(', ')}
       caseStudy={{
-        title: 'Infiltrație Masivă Casă Cugir - Salvare de Urgență',
-        clientName: 'Ion Vasile',
-        clientLocation: 'Cugir',
-        projectDate: 'Martie 2024',
-        duration: 1,
-        area: 45,
-        materials: 'Înlocuire 45mp țiglă deteriorată, Reparație jgheaburi, Etanșare racorduri, Membrane noi',
-        problemDescription: 'Apel de urgență duminică seara: infiltrații masive în 3 camere după ploaia torențială. Apa curgea pe pereți, riscând deteriorarea mobilierului și instalației electrice. Proprietarul era în panică - casa are 60 ani, acoperiș original niciodată renovat serios.',
-        solutionDescription: 'Am intervenit luni dimineață la prima oră. Inspecție detaliat a identificat: țiglă deteriorată pe 45mp, jgheaburi înfundate și sparte, racorduri etanșare compromise. Am realizat reparație completă în regim de urgență: înlocuire țiglă degradată, reparație/înlocuire jgheaburi, etanșare completă racorduri, verificare structură. Am lucrat 2 zile intensive.',
-        resultsDescription: 'Infiltrațiile au dispărut complet. La următoarea ploaie torențială (2 săptămâni mai târziu) - zero probleme. Proprietarul a putut repara pagubele interioare (zugrăveli) știind că acoperișul e acum sigur. După 6 luni - nicio problemă nouă.',
-        testimonial: 'Akcon m-a salvat! Au venit imediat, au identificat toate problemele și le-au rezolvat definitiv. Prețul a fost corect, iar rezultatul perfect. Acum pot dormi liniștit știind că acoperișul e în regulă. Mulțumesc!',
-        investmentValue: '2.400 EUR'
+        ...serviceData.caseStudy,
+        duration: parseInt(serviceData.caseStudy.duration),
+        area: parseInt(serviceData.caseStudy.area)
       }}
     />
   );
