@@ -36,7 +36,7 @@ export function useScrollAnimation(options = {}) {
 export function useAnimatedCounter(end: number, duration = 2000, start = 0) {
   const [count, setCount] = useState(start);
   const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef<HTMLElement>(null);
+  const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
