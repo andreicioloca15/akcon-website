@@ -2,6 +2,20 @@ import { useState } from 'react';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import companyData from '../content/company.json';
+import montajAcoperisuri from '../content/services/montaj-acoperisuri.json';
+import renovareAcoperisuri from '../content/services/renovare-acoperisuri.json';
+import reparatiiAcoperisuri from '../content/services/reparatii-acoperisuri.json';
+import tiglaCeramica from '../content/services/tigla-ceramica.json';
+import tiglaMetalica from '../content/services/tigla-metalica.json';
+import mansardari from '../content/services/mansardari.json';
+
+interface Service {
+  title: string;
+  description: string;
+  icon: string;
+  link?: string;
+  order: number;
+}
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,14 +34,22 @@ export default function Header() {
     }
   };
 
-  const services = [
-    { name: 'Montaj Acoperișuri Noi', path: '/servicii/montaj-acoperisuri-noi' },
-    { name: 'Renovare Acoperișuri', path: '/servicii/renovare-acoperisuri' },
-    { name: 'Țiglă Ceramică', path: '/servicii/tigla-ceramica' },
-    { name: 'Țiglă Metalică', path: '/servicii/tigla-metalica' },
-    { name: 'Mansardări', path: '/servicii/mansardari' },
-    { name: 'Reparații Acoperișuri', path: '/servicii/reparatii-acoperisuri' }
+  const servicesData: Service[] = [
+    montajAcoperisuri,
+    renovareAcoperisuri,
+    reparatiiAcoperisuri,
+    tiglaCeramica,
+    tiglaMetalica,
+    mansardari
   ];
+
+  const services = servicesData
+    .sort((a, b) => a.order - b.order)
+    .filter(s => s.link)
+    .map(s => ({
+      name: s.title,
+      path: s.link || '#'
+    }));
 
   return (
     <header className="fixed top-0 w-full bg-white shadow-md z-50">
