@@ -1,0 +1,60 @@
+import ServicePage from './ServicePage';
+
+export default function Mansardari() {
+  return (
+    <ServicePage
+      slug="mansardari"
+      title="Mansardări Complete"
+      description="Transformăm podul în spațiu locuibil premium. Servicii complete: proiectare, autorizații, execuție, finisaje. Creștem suprafața utilă cu 40-60%, valoarea proprietății cu 30-40%. Izolație premium, ferestre Velux, instalații complete."
+      metaTitle="Mansardare Alba Iulia 2025 | Proiectare + Execuție | Akcon Premium"
+      metaDescription="Mansardări complete Alba Iulia. Proiectare, autorizații, execuție premium. Ferestre Velux, izolație maximă. Garanție 15 ani. ☎ 0XXX-XXX-XXX"
+      keywords={['mansardare Alba Iulia', 'amenajare pod Alba', 'mansardare casă', 'extindere mansardă', 'proiect mansardare']}
+      heroTitle="Mansardări Complete - Creăm Spațiu Unde Nu Exista"
+      heroSubtitle="Transformăm podul neutilizat în camere premium. Proiectare, autorizații, execuție completă. Creștem valoarea casei tale cu 30-40%."
+      benefits={[
+        'Creștere suprafață locuibilă cu 40-60%',
+        'Creștere valoare proprietate cu 30-40%',
+        'Servicii complete: proiectare + autorizații + execuție',
+        'Ferestre premium Velux pentru lumină naturală',
+        'Izolație termică maximă - confort 12 luni/an',
+        'Instalații complete (electricitate, încălzire, ventilație)',
+        'ROI excelent - mai ieftin decât cumpărare spațiu nou',
+        'Garanție 15 ani pentru toate lucrările'
+      ]}
+      processSteps={[
+        { title: 'Evaluare & Proiect', description: 'Măsurători, concept arhitectural, calcule structurale' },
+        { title: 'Autorizații', description: 'Documentație completă, aprobare primărie' },
+        { title: 'Consolidare Structură', description: 'Întăriri necesare, șarpantă nouă' },
+        { title: 'Execuție & Finisaje', description: 'Acoperiș, ferestre, izolație, instalații, finisaje' }
+      ]}
+      faq={[
+        {
+          question: 'Orice pod poate fi mansardat?',
+          answer: 'Majoritatea podurilor pot fi mansardate, dar evaluăm fiecare caz individual. Condițiile: înălțime minimă 1.80m, structură solidă, posibilitate autorizare. Oferim evaluare gratuită și soluții personalizate.'
+        },
+        {
+          question: 'Cât costă o mansardare completă?',
+          answer: 'Între 400-700 EUR/mp util creat, în funcție de complexitate și finisaje. Include: structură, acoperiș, ferestre Velux, izolație premium, instalații, rigips, finisaje. ROI excelent - recuperezi investiția în 3-5 ani prin creșterea valorii.'
+        },
+        {
+          question: 'Cât durează o mansardare?',
+          answer: 'Pentru 40-60 mp util: 6-10 săptămâni. Include toate etapele: demontare parțială acoperiș existent, consolidări, ridicare, închidere, instalații, finisaje. Lucrăm etapizat pentru confort minim afectat.'
+        }
+      ]}
+      caseStudy={{
+        title: 'Casă Anul 2000 Alba Iulia - Mansardare cu 2 Dormitoare și Baie',
+        clientName: 'Familia Gheorghe',
+        clientLocation: 'Alba Iulia, Cartier Ampoi',
+        projectDate: 'Mai-Iulie 2024',
+        duration: 8,
+        area: 65,
+        materials: 'Structură nouă lemn tratat, Țiglă metalică Lindab, 6 ferestre Velux, Izolație Rockwool 20cm, Instalații complete',
+        problemDescription: 'Familia cu 3 copii avea nevoie urgentă de mai mult spațiu dar mutarea nu era opțiune. Podul era neutilizat - 65mp potențial. Bugetul era limitat, iar timpul critic (copiii aveau nevoie de camere separate până în septembrie).',
+        solutionDescription: 'Am proiectat 2 dormitoare spațioase și baie completă. Consolidare structură existentă, ridicare acoperiș pe o latură, 6 ferestre Velux pentru lumină maximă. Izolație premium Rockwool 20cm pentru confort vară-iarnă. Instalații complete integrate cu sistemul existent. Am lucrat accelerat fără a compromite calitatea.',
+        resultsDescription: 'Mansarda a fost finalizată în 8 săptămâni, chiar la timp pentru an școlar. 65mp noi adăugați = creștere 60% suprafață locuibilă. Copiii și-au primit camerele dorite. Casa evaluată acum cu 45.000 EUR mai mult (investiție: 32.000 EUR). Familia a evitat stresul și costurile unei mutări.',
+        testimonial: 'Akcon a făcut posibil imposibilul! Au transformat podul în 2 camere superbe și baie modernă în doar 2 luni. Am câștigat spațiu, confort și valoare. Copiii sunt încântați de camerele lor noi. Cea mai bună decizie pentru familia noastră!',
+        investmentValue: '32.000 EUR (490 EUR/mp util)'
+      }}
+    />
+  );
+}

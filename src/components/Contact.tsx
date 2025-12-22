@@ -1,0 +1,225 @@
+import { useState, FormEvent } from 'react';
+import { Phone, Mail, MapPin, Clock, ShieldCheck, Star } from 'lucide-react';
+import companyData from '../content/company.json';
+
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    city: '',
+    service: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    alert('Vă mulțumim pentru cerere! Vă vom contacta în curând.');
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  return (
+    <section className="py-20 bg-white" id="contact">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="font-montserrat text-h2-mobile md:text-h2-tablet lg:text-h2-desktop font-bold text-gray-700 mb-4">
+            Solicită Ofertă Gratuită
+          </h2>
+          <p className="font-open-sans text-base md:text-lg text-gray-600 leading-body max-w-2xl mx-auto">
+            Completează formularul și te contactăm în maxim 24 ore pentru consultație gratuită
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="bg-gray-50 p-8 rounded-lg">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="block font-open-sans text-gray-700 font-semibold mb-2">
+                  Nume Complet *
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent font-open-sans text-base transition-all duration-300"
+                  placeholder="ex: Ion Popescu"
+                  autoComplete="name"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block font-open-sans text-gray-700 font-semibold mb-2">
+                  Număr de Telefon *
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent font-open-sans text-base transition-all duration-300"
+                  placeholder="ex: 0749 616 796"
+                  autoComplete="tel"
+                  inputMode="tel"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block font-open-sans text-gray-700 font-semibold mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent font-open-sans text-base transition-all duration-300"
+                  placeholder="ex: ion.popescu@email.com"
+                  autoComplete="email"
+                  inputMode="email"
+                />
+              </div>
+
+              <div>
+                <label className="block font-open-sans text-gray-700 font-semibold mb-2">
+                  Localitate *
+                </label>
+                <input
+                  type="text"
+                  name="city"
+                  value={formData.city}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent font-open-sans transition-all duration-300"
+                  placeholder="ex: Alba Iulia"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block font-open-sans text-gray-700 font-semibold mb-2">
+                  Tip Serviciu *
+                </label>
+                <select
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent font-open-sans transition-all duration-300"
+                  required
+                >
+                  <option value="">Selectează serviciul</option>
+                  <option value="acoperis-nou">Acoperiș Nou</option>
+                  <option value="renovare">Renovare Acoperiș</option>
+                  <option value="reparatii">Reparații Urgente</option>
+                  <option value="mansardare">Mansardare</option>
+                  <option value="consultatie">Doar Consultație</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block font-open-sans text-gray-700 font-semibold mb-2">
+                  Mesaj (opțional)
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent font-open-sans transition-all duration-300"
+                  rows={4}
+                  placeholder="Detalii despre proiect..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-gold text-white px-8 py-4 rounded-lg font-montserrat text-lg font-semibold hover:bg-gold-hover transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold"
+              >
+                Trimite Cererea
+              </button>
+
+              <p className="text-sm text-gray-600 text-center font-open-sans leading-body">
+                Răspundem în maxim 24 ore • Consultația este 100% gratuită
+              </p>
+            </form>
+          </div>
+
+          <div>
+            <div className="bg-navy text-white p-8 rounded-lg mb-8">
+              <h3 className="font-montserrat text-h3-mobile md:text-h3-tablet font-semibold mb-6">
+                Informații de Contact
+              </h3>
+
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <Phone className="w-6 h-6 text-gold mr-4 flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-montserrat font-semibold mb-1">Telefon</div>
+                    <a href={`tel:+40${companyData.phone.replace(/\s/g, '')}`} className="font-open-sans leading-body hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
+                      {companyData.phone}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <Mail className="w-6 h-6 text-gold mr-4 flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-montserrat font-semibold mb-1">Email</div>
+                    <a href={`mailto:${companyData.email}`} className="font-open-sans leading-body hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
+                      {companyData.email}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <MapPin className="w-6 h-6 text-gold mr-4 flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-montserrat font-semibold mb-1">Adresă</div>
+                    <p className="font-open-sans leading-body">
+                      Strada Primăverii 42<br />
+                      Teiuș 515900<br />
+                      Județul Alba, România
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <Clock className="w-6 h-6 text-gold mr-4 flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-montserrat font-semibold mb-1">Program</div>
+                    <p className="font-open-sans leading-body">
+                      Luni - Vineri: 08:00 - 18:00<br />
+                      Sâmbătă: 09:00 - 14:00<br />
+                      Duminică: Închis
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
+                <ShieldCheck className="w-8 h-8 text-gold mx-auto mb-2" />
+                <div className="font-montserrat font-semibold text-gray-700 text-sm">
+                  Licențiat & Asigurat
+                </div>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
+                <Star className="w-8 h-8 text-gold mx-auto mb-2" />
+                <div className="font-montserrat font-semibold text-gray-700 text-sm">
+                  Garanție 15 Ani
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

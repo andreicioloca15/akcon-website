@@ -1,0 +1,100 @@
+import ServicePage from './ServicePage';
+
+export default function MontajAcoperisuri() {
+  return (
+    <ServicePage
+      slug="montaj-acoperisuri-noi"
+      title="Montaj Acoperișuri Noi"
+      description="Construim acoperișuri premium de la zero, cu garanție extinsă de 15 ani manoperă și materiale de top. Fiecare proiect este supervizat de ingineri certificați și executat de echipa noastră proprie, fără subcontractare. Oferim soluții complete pentru case noi, vile și construcții rezidențiale în județul Alba."
+      metaTitle="Montaj Acoperișuri Noi Alba Iulia 2025 | Garanție 15 Ani | Akcon"
+      metaDescription="Montaj acoperișuri noi în Alba Iulia. Echipă certificată, materiale premium (Lindab, Velux, Bilka). Garanție 15 ani manoperă. ☎ 0XXX-XXX-XXX. Consultație și ofertă gratuită!"
+      keywords={[
+        'montaj acoperiș nou Alba Iulia',
+        'constructor acoperișuri Alba',
+        'acoperiș casă nouă Alba Iulia',
+        'montaj țiglă Alba',
+        'acoperișuri premium Alba Iulia',
+        'firmă acoperișuri Alba Iulia'
+      ]}
+      heroTitle="Montaj Acoperișuri Noi Premium în Alba Iulia"
+      heroSubtitle="Construim acoperișuri excepționale pentru case excepționale. Garanție 15 ani manoperă, echipă certificată, materiale premium. De la proiectare la finalizare, totul este realizat cu atenție la detalii."
+      benefits={[
+        'Garanție extinsă de 15 ani pentru manoperă - cea mai mare din județul Alba',
+        'Materiale premium cu garanție producător 30-50 ani (Lindab, Velux, Bilka, Fakro)',
+        'Echipă proprie certificată - nu subcontractăm niciodată',
+        'Proiectare tehnică gratuită și consultanță de specialitate',
+        'Izolație termică premium - economii de până la 40% la încălzire',
+        'Sisteme complete de evacuare ape pluviale',
+        'Respectăm termenele stabilite - penalizări dacă întârziem',
+        'Suport post-finalizare și inspecții periodice gratuite'
+      ]}
+      processSteps={[
+        {
+          title: 'Consultație & Măsurători',
+          description: 'Vizită la fața locului, evaluare tehnică, recomandări materiale'
+        },
+        {
+          title: 'Proiectare Tehnică',
+          description: 'Calcule structurale, planuri detaliate, autorizații necesare'
+        },
+        {
+          title: 'Preparare Șantier',
+          description: 'Organizare logistică, comandă materiale, pregătire echipă'
+        },
+        {
+          title: 'Execuție Structură',
+          description: 'Montaj șarpantă, contrapanta, pare-vapori, izolație'
+        },
+        {
+          title: 'Montaj Învelitoare',
+          description: 'Instalare țiglă/tablă, jgheaburi, burlane, finisaje'
+        },
+        {
+          title: 'Verificare & Predare',
+          description: 'Inspecție calitate, test etanșeitate, documentație garanție'
+        }
+      ]}
+      faq={[
+        {
+          question: 'Cât durează montajul unui acoperiș nou?',
+          answer: 'Pentru o casă standard de 100-150 mp, durata este de 3-4 săptămâni. Proiectele mai complexe (vile, mansardări) pot dura 5-8 săptămâni. Oferim un program detaliat încă din faza de ofertare.'
+        },
+        {
+          question: 'Ce materiale recomandați pentru acoperișuri noi?',
+          answer: 'Depinde de buget și preferințe estetice. Pentru case premium recomandăm țiglă ceramică Tondach (durabilitate 100+ ani). Pentru raport calitate-preț excelent, țiglă metalică Bilka sau Lindab (garanție 50 ani). Oferim consultanță detaliată pentru fiecare situație.'
+        },
+        {
+          question: 'Includeți și izolația termică?',
+          answer: 'Da, oferim pachete complete care includ izolație termică premium (vată minerală sau polistiren expandat), folie pare-vapori, ventilație corespunzătoare. Respectăm toate normele tehnice pentru economii maxime de energie.'
+        },
+        {
+          question: 'Ce garanție oferă Akcon?',
+          answer: 'Oferim 15 ani garanție pentru manoperă - cea mai extinsă din județul Alba. Materialele vin cu garanție producător de 30-50 ani. În caz de orice problemă în perioada de garanție, intervenim gratuit în maxim 48 ore.'
+        },
+        {
+          question: 'Cât costă un acoperiș nou în Alba Iulia?',
+          answer: 'Prețul variază între 50-120 EUR/mp în funcție de materiale și complexitate. Țigla metalică: 50-70 EUR/mp. Țigla ceramică: 80-120 EUR/mp. Prețurile includ materiale, manoperă, transport. Oferim oferte personalizate gratuite.'
+        },
+        {
+          question: 'Lucrați și în alte localități din Alba?',
+          answer: 'Da, acoperim tot județul Alba: Alba Iulia, Aiud, Blaj, Sebeș, Cugir, Ocna Mureș, Teiuș, Abrud, Zlatna, Câmpeni și toate comunele limitrofe. Suntem singura firmă premium cu sediu local în județ.'
+        }
+      ]}
+      caseStudy={{
+        title: 'Casă Nouă Cartier Cetate - De la Fundație la Acoperiș Complet',
+        clientName: 'Familia Popescu',
+        clientLocation: 'Alba Iulia',
+        clientProfession: 'Medic și Avocat',
+        projectDate: 'Septembrie 2024',
+        duration: 4,
+        area: 280,
+        materials: 'Țiglă ceramică Tondach Figaro Deluxe, Șarpantă lemn tratat clasa A, Izolație Rockwool 20cm, Folie Tyvek, Jgheaburi Lindab',
+        problemDescription: 'Familia Popescu construia casa visurilor lor în Alba Iulia și căuta un partener de încredere pentru acoperișul premium. Cerințele erau clare: durabilitate excepțională, izolație termică maximă (pentru o casă pasivă), estetică perfectă și garanție pe termen lung. Bugetul alocat era de 35.000 EUR, iar termenul limită era strâns - înainte de iarnă.',
+        solutionDescription: 'Am propus o soluție premium cu țiglă ceramică Tondach Figaro Deluxe (garanție 100+ ani) și izolație dublă Rockwool de 20cm pentru performanță termică maximă. Șarpanta a fost realizată din lemn tratat clasa A, cu calcule structurale certificate. Am instalat un sistem complet de ventilație și evacuare ape pluviale Lindab. Echipa noastră de 6 specialiști a lucrat simultan pentru a respecta termenul limită.',
+        resultsDescription: 'Proiectul a fost finalizat în 4 săptămâni, exact la termen. Acoperișul nu doar arată spectaculos, dar și performează excepțional: proprietarii au raportat reduceri de 45% la costuri cu încălzirea comparativ cu planul inițial. Casa a primit certificare energetică A+ datorită izolației premium. Familia Popescu este atât de mulțumită încât ne-a recomandat deja la 3 vecini din cartier.',
+        testimonial: 'Akcon a transformat viziunea noastră în realitate. De la consultația inițială până la ultima țiglă montată, totul a fost impecabil. Garanția de 15 ani ne oferă liniște deplină, iar calitatea se vede în fiecare detaliu. Casa noastră este acum o bijuterie arhitecturală, iar acoperișul rezistă perfect la toate condițiile meteo. Cel mai bun investiție pe care am făcut-o!',
+        investmentValue: '35.000 EUR'
+      }}
+    />
+  );
+}

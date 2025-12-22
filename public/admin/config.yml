@@ -1,0 +1,67 @@
+backend:
+  name: test-repo
+
+locale: ro
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "settings"
+    label: "Setări Companie"
+    files:
+      - name: "company"
+        label: "Informații Companie"
+        file: "src/content/company.json"
+        fields:
+          - { label: "Nume Companie", name: "name", widget: "string", default: "Akcon" }
+          - { label: "Telefon", name: "phone", widget: "string", required: true }
+          - { label: "Email", name: "email", widget: "string", required: true }
+          - { label: "Adresă", name: "address", widget: "string", required: true }
+          - { label: "Oraș", name: "city", widget: "string", default: "București" }
+          - { label: "Ani Experiență", name: "yearsExperience", widget: "number", required: true, min: 0 }
+          - { label: "Proiecte Finalizate", name: "projectsCompleted", widget: "number", required: true, min: 0 }
+          - { label: "Clienți Mulțumiți", name: "satisfiedClients", widget: "number", required: true, min: 0 }
+          - { label: "WhatsApp (număr cu prefix)", name: "whatsapp", widget: "string", default: "40749616796" }
+
+  - name: "testimonials"
+    label: "Testimoniale"
+    folder: "src/content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nume Client", name: "name", widget: "string", required: true }
+      - { label: "Oraș", name: "city", widget: "string", required: true }
+      - { label: "Rating (1-5)", name: "rating", widget: "number", required: true, min: 1, max: 5, default: 5 }
+      - { label: "Testimonial", name: "quote", widget: "text", required: true }
+      - { label: "Dată", name: "date", widget: "datetime", required: true }
+      - { label: "Ordine Afișare", name: "order", widget: "number", default: 0 }
+
+  - name: "portfolio"
+    label: "Portofoliu Proiecte"
+    folder: "src/content/portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titlu Proiect", name: "title", widget: "string", required: true }
+      - { label: "Locație", name: "location", widget: "string", required: true }
+      - { label: "Tip Lucrare", name: "type", widget: "string", required: true }
+      - { label: "Suprafață (mp)", name: "area", widget: "string", required: true }
+      - { label: "Durată", name: "duration", widget: "string", required: true }
+      - { label: "Imagine", name: "image", widget: "image", required: true }
+      - { label: "Descriere", name: "description", widget: "text", required: true }
+      - { label: "Citat Client", name: "clientQuote", widget: "text", required: false }
+      - { label: "Nume Client", name: "clientName", widget: "string", required: false }
+      - { label: "Ordine Afișare", name: "order", widget: "number", default: 0 }
+
+  - name: "services"
+    label: "Servicii"
+    folder: "src/content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titlu Serviciu", name: "title", widget: "string", required: true }
+      - { label: "Descriere", name: "description", widget: "text", required: true }
+      - { label: "Nume Icon (Lucide)", name: "icon", widget: "string", required: true, hint: "Ex: Wrench, Shield, Home, etc." }
+      - { label: "Link Pagină", name: "link", widget: "string", required: false }
+      - { label: "Ordine Afișare", name: "order", widget: "number", default: 0 }
