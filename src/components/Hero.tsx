@@ -1,4 +1,5 @@
 import { Phone, CheckCircle, ChevronDown } from 'lucide-react';
+import companyData from '../content/company.json';
 
 export default function Hero() {
   const scrollToContact = () => {
@@ -31,22 +32,22 @@ export default function Hero() {
             Solicită Ofertă Gratuită
           </button>
           <a
-            href="tel:+40749616796"
+            href={`tel:+40${companyData.phone.replace(/\s/g, '')}`}
             className="bg-white text-navy px-8 py-4 rounded-lg font-montserrat text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-navy"
           >
             <Phone className="w-5 h-5 mr-2" />
-            Sună Acum: 0749 616 796
+            Sună Acum: {companyData.phone}
           </a>
         </div>
 
         <div className="flex flex-wrap justify-center gap-8 text-base">
           <div className="flex items-center">
             <CheckCircle className="w-6 h-6 text-gold mr-3 flex-shrink-0" />
-            <span className="font-open-sans">15+ ani experiență</span>
+            <span className="font-open-sans">{companyData.yearsExperience}+ ani experiență</span>
           </div>
           <div className="flex items-center">
             <CheckCircle className="w-6 h-6 text-gold mr-3 flex-shrink-0" />
-            <span className="font-open-sans">500+ proiecte finalizate</span>
+            <span className="font-open-sans">{companyData.projectsCompleted}+ proiecte finalizate</span>
           </div>
           <div className="flex items-center">
             <CheckCircle className="w-6 h-6 text-gold mr-3 flex-shrink-0" />

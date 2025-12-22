@@ -18,8 +18,12 @@ collections:
           - { label: "Nume Companie", name: "name", widget: "string", default: "Akcon" }
           - { label: "Telefon", name: "phone", widget: "string", required: true }
           - { label: "Email", name: "email", widget: "string", required: true }
-          - { label: "Adresă", name: "address", widget: "string", required: true }
+          - { label: "Adresă Scurtă (pentru general)", name: "address", widget: "string", required: true, hint: "Ex: Alba Iulia, județul Alba" }
           - { label: "Oraș", name: "city", widget: "string", default: "București" }
+          - { label: "Strada și Număr", name: "streetAddress", widget: "string", required: true, hint: "Ex: Strada Primăverii 42" }
+          - { label: "Localitate", name: "cityAddress", widget: "string", required: true, hint: "Ex: Teiuș" }
+          - { label: "Cod Poștal", name: "postalCode", widget: "string", required: true, hint: "Ex: 515900" }
+          - { label: "Județ", name: "county", widget: "string", required: true, hint: "Ex: Alba" }
           - { label: "Ani Experiență", name: "yearsExperience", widget: "number", required: true, min: 0 }
           - { label: "Proiecte Finalizate", name: "projectsCompleted", widget: "number", required: true, min: 0 }
           - { label: "Clienți Mulțumiți", name: "satisfiedClients", widget: "number", required: true, min: 0 }

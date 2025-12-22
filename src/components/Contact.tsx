@@ -182,9 +182,9 @@ export default function Contact() {
                   <div>
                     <div className="font-montserrat font-semibold mb-1">Adresă</div>
                     <p className="font-open-sans leading-body">
-                      Strada Primăverii 42<br />
-                      Teiuș 515900<br />
-                      Județul Alba, România
+                      {companyData.streetAddress}<br />
+                      {companyData.cityAddress} {companyData.postalCode}<br />
+                      Județul {companyData.county}, România
                     </p>
                   </div>
                 </div>

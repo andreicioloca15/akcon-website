@@ -112,8 +112,8 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-gold mr-2 flex-shrink-0 mt-0.5" />
                 <span className="leading-body">
-                  Strada Primăverii 42<br />
-                  Teiuș 515900, Alba
+                  {companyData.streetAddress}<br />
+                  {companyData.cityAddress} {companyData.postalCode}, {companyData.county}
                 </span>
               </li>
               <li className="flex items-center">
