@@ -1,15 +1,15 @@
 {
+  "yearsExperience": 15,
+  "cityAddress": "Teiuș",
+  "county": "Alba",
+  "city": "Teiuș",
   "name": "Akcon",
   "phone": "0749 616 796",
-  "email": "contact@akcon.ro",
-  "address": "Alba Iulia, județul Alba",
-  "city": "București",
   "streetAddress": "Strada Primăverii 42",
-  "cityAddress": "Teiuș",
+  "projectsCompleted": 100,
+  "whatsapp": "40749616796",
+  "address": "Alba Iulia, județul Alba",
+  "satisfiedClients": 88,
   "postalCode": "515900",
-  "county": "Alba",
-  "yearsExperience": 15,
-  "projectsCompleted": 500,
-  "satisfiedClients": 100,
-  "whatsapp": "40749616796"
+  "email": "contact@akcon.ro"
 }
