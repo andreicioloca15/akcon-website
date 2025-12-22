@@ -39,7 +39,6 @@ interface ServicePageProps {
 }
 
 export default function ServicePage({
-  slug,
   title,
   description,
   metaTitle,

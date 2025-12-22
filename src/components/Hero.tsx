@@ -1,6 +1,7 @@
 import { Phone, CheckCircle, ChevronDown } from 'lucide-react';
 import companyData from '../content/company.json';
 import heroData from '../content/hero.json';
+import HeroVideoBackground from './HeroVideoBackground';
 
 export default function Hero() {
   const scrollToContact = () => {
@@ -14,12 +15,9 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen flex items-center justify-center">
-      <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-gradient-to-br from-navy via-navy-light to-gray-600"></div>
-        <div className="absolute inset-0 bg-navy opacity-60"></div>
-      </div>
+      <HeroVideoBackground />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 text-center text-white">
+      <div className="relative z-30 max-w-5xl mx-auto px-4 text-center text-white">
         <h1 className="font-montserrat text-h1-mobile md:text-h1-tablet lg:text-h1-desktop mb-8">
           {heroData.mainHeadline}
         </h1>
@@ -58,7 +56,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce z-30">
         <ChevronDown className="w-8 h-8 text-white opacity-75" />
       </div>
     </section>
