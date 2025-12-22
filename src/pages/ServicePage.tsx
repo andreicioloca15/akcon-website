@@ -75,12 +75,6 @@ export default function ServicePage({
       <Breadcrumbs items={[{ label: 'Servicii', path: '/#servicii' }, { label: title }]} />
 
       <section className="relative py-20 bg-gradient-to-br from-navy via-navy-light to-navy text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
-        </div>
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">

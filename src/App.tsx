@@ -39,6 +39,7 @@ function App() {
         <main className="pt-20">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/servicii/montaj-acoperisuri" element={<MontajAcoperisuri />} />
             <Route path="/servicii/montaj-acoperisuri-noi" element={<MontajAcoperisuri />} />
             <Route path="/servicii/renovare-acoperisuri" element={<RenovareAcoperisuri />} />
             <Route path="/servicii/tigla-ceramica" element={<TiglaCeramica />} />
