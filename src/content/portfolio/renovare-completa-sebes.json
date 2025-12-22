@@ -8,5 +8,10 @@
   "description": "Renovare completă a acoperișului existent cu înlocuire structură și montaj țiglă metalică Bilka premium.",
   "clientQuote": "Echipă profesionistă, lucrare impecabilă",
   "clientName": "Familie Sebeș",
-  "order": 2
+  "order": 2,
+  "featured": true,
+  "beforeAfter": {
+    "before": "/images/uploads/sebes-before.jpg",
+    "after": "/images/uploads/sebes-after.jpg"
+  }
 }

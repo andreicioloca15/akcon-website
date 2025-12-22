@@ -8,5 +8,6 @@
   "description": "Construcție acoperiș nou pentru casă rezidențială cu sistem Lindab premium.",
   "clientQuote": "Profesionalism desăvârșit",
   "clientName": "Familie Ocna Mureș",
-  "order": 6
+  "order": 6,
+  "featured": true
 }

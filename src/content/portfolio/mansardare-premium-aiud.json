@@ -8,5 +8,6 @@
   "description": "Transformare pod în spațiu locuibil cu sistem complet de mansardare, tablă fălțuită Lindab și ferestre Velux.",
   "clientQuote": "Transformare completă, calitate excepțională",
   "clientName": "Familie Aiud",
-  "order": 3
+  "order": 3,
+  "featured": true
 }

@@ -16,6 +16,11 @@ interface PortfolioProject {
   clientQuote: string;
   clientName: string;
   order: number;
+  featured?: boolean;
+  beforeAfter?: {
+    before: string;
+    after: string;
+  };
 }
 
 export default function Portfolio() {
@@ -38,7 +43,9 @@ export default function Portfolio() {
   ];
 
   const projects = portfolioData
+    .filter(p => p.featured !== false)
     .sort((a, b) => a.order - b.order)
+    .slice(0, 6)
     .map((p, index) => ({
       title: p.title,
       details: `${p.type} • ${p.area} • ${p.duration}`,

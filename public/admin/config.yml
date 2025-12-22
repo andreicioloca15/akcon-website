@@ -27,6 +27,8 @@ collections:
           - { label: "Ani Experiență", name: "yearsExperience", widget: "number", required: true, min: 0 }
           - { label: "Proiecte Finalizate", name: "projectsCompleted", widget: "number", required: true, min: 0 }
           - { label: "Clienți Mulțumiți", name: "satisfiedClients", widget: "number", required: true, min: 0 }
+          - { label: "Ani Garanție", name: "warrantyYears", widget: "number", required: true, min: 0, default: 15, hint: "Garanție manoperă (ani)" }
+          - { label: "Program de Lucru", name: "workingHours", widget: "text", required: true, hint: "Ex: Luni - Vineri: 08:00 - 17:00" }
           - { label: "WhatsApp (număr cu prefix)", name: "whatsapp", widget: "string", default: "40749616796", hint: "Format: 40749616796" }
 
       - name: "process"
@@ -106,6 +108,14 @@ collections:
               - { label: "Folosește Date Companie?", name: "usesCompanyData", widget: "boolean", default: false, hint: "Bifează dacă vrei să afișezi un număr din Informații Companie" }
               - { label: "Câmp Companie", name: "companyField", widget: "select", required: false, options: ["yearsExperience", "projectsCompleted", "satisfiedClients"], hint: "Alege câmpul din care să ia numărul" }
               - { label: "Ordine", name: "order", widget: "number", default: 1 }
+
+      - name: "about"
+        label: "Despre Noi"
+        file: "src/content/about.json"
+        fields:
+          - { label: "Titlu Secțiune", name: "title", widget: "string", default: "Despre AKCON - Experți în Acoperișuri" }
+          - { label: "Descriere (Markdown)", name: "description", widget: "markdown", hint: "Poți folosi formatare: ## pentru titluri, **bold**, liste, etc." }
+          - { label: "Imagine", name: "image", widget: "image", required: false, hint: "Imagine reprezentativă pentru secțiunea Despre Noi" }
 
   - name: "service-pages"
     label: "📄 Pagini Servicii (Detalii Complete)"
@@ -189,6 +199,14 @@ collections:
       - { label: "Descriere Scurtă", name: "description", widget: "text", required: true, hint: "1-2 propoziții" }
       - { label: "Citat Client", name: "clientQuote", widget: "text", required: false, hint: "Apare la hover (opțional)" }
       - { label: "Nume Client", name: "clientName", widget: "string", required: false, hint: "Ex: Familie Popescu" }
+      - { label: "Afișat pe Homepage", name: "featured", widget: "boolean", default: false, hint: "Bifează pentru a afișa pe homepage" }
+      - label: "Înainte/După (opțional)"
+        name: "beforeAfter"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Imagine Înainte", name: "before", widget: "image", required: false }
+          - { label: "Imagine După", name: "after", widget: "image", required: false }
       - { label: "Ordine Afișare", name: "order", widget: "number", default: 0, hint: "Număr mai mic = apare mai devreme" }
 
   - name: "testimonials"
@@ -201,10 +219,13 @@ collections:
     fields:
       - { label: "Nume Client", name: "name", widget: "string", required: true, hint: "Ex: Maria Georgescu" }
       - { label: "Oraș", name: "city", widget: "string", required: true, hint: "Ex: Alba Iulia" }
+      - { label: "Profesie", name: "profession", widget: "string", required: false, hint: "Ex: Medic, Antreprenor, Profesor (opțional)" }
       - { label: "Rating (1-5)", name: "rating", widget: "number", required: true, min: 1, max: 5, default: 5, hint: "Număr de stele" }
       - { label: "Testimonial", name: "quote", widget: "text", required: true, hint: "2-4 propoziții" }
+      - { label: "Avatar (poză client)", name: "avatar", widget: "image", required: false, hint: "Poză profil client (opțional)" }
       - { label: "Dată", name: "date", widget: "datetime", required: true }
-      - { label: "Ordine Afișare", name: "order", widget: "number", default: 0, hint: "Primele 3 apar pe homepage" }
+      - { label: "Afișat pe Homepage", name: "featured", widget: "boolean", default: true, hint: "Bifează pentru a afișa pe homepage" }
+      - { label: "Ordine Afișare", name: "order", widget: "number", default: 0, hint: "Primele 3 featured apar pe homepage" }
 
   - name: "case-studies"
     label: "📋 Studii de Caz Detaliate"
@@ -219,6 +240,13 @@ collections:
       - { label: "Locație Completă", name: "location", widget: "string", required: true, hint: "Ex: Strada Mihai Eminescu 42, Alba Iulia" }
       - { label: "Imagine Principală", name: "heroImage", widget: "image", required: true }
       - { label: "Galerie Imagini", name: "gallery", widget: "list", required: false, field: { label: "Imagine", name: "image", widget: "image" } }
+      - label: "Înainte/După (opțional)"
+        name: "beforeAfter"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Imagine Înainte", name: "before", widget: "image", required: false, hint: "Poză înainte de renovare" }
+          - { label: "Imagine După", name: "after", widget: "image", required: false, hint: "Poză după finalizare" }
       - { label: "Descriere Proiect", name: "description", widget: "markdown", required: true }
       - { label: "Provocări", name: "challenges", widget: "text", required: false }
       - { label: "Soluții", name: "solutions", widget: "text", required: false }

@@ -1,8 +1,11 @@
 {
   "name": "Andrei Dumitrescu",
-  "city": "Antreprenor, Aiud",
+  "city": "Aiud",
+  "profession": "Antreprenor",
   "rating": 5,
   "quote": "Cea mai bună decizie pentru casa noastră nouă din Aiud. Akcon ne-a oferit consultanță excelentă în alegerea materialelor și execuția a fost la standarde foarte înalte. Recomand cu încredere!",
   "date": "2024-11-10T10:00:00.000Z",
-  "order": 3
+  "order": 3,
+  "avatar": "/images/uploads/testimonial-andrei-dumitrescu.jpg",
+  "featured": true
 }

@@ -8,5 +8,10 @@
   "description": "Proiect complet de acoperiș premium pentru o vilă luxoasă în Alba Iulia. Montaj țiglă ceramică Tondach cu sistem de izolație termică avansată.",
   "clientQuote": "Rezultat extraordinar, depășit toate așteptările",
   "clientName": "Familie Alba Iulia",
-  "order": 1
+  "order": 1,
+  "featured": true,
+  "beforeAfter": {
+    "before": "/images/uploads/vila-alba-iulia-before.jpg",
+    "after": "/images/uploads/vila-alba-iulia-after.jpg"
+  }
 }
