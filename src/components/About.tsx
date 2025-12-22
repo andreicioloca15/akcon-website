@@ -1,14 +1,8 @@
-import { useAnimatedCounter } from '../hooks/useScrollAnimation';
 import { Target, Eye, Shield, Users, Award, TrendingUp, CheckCircle, Building2 } from 'lucide-react';
 import ProjectCarousel from './ProjectCarousel';
 import companyData from '../content/company.json';
 
 export default function About() {
-  const { count: yearsCount, elementRef: yearsRef } = useAnimatedCounter(companyData.yearsExperience);
-  const { count: projectsCount, elementRef: projectsRef } = useAnimatedCounter(companyData.projectsCompleted);
-  const { count: warrantyCount, elementRef: warrantyRef } = useAnimatedCounter(15);
-  const { count: satisfactionCount, elementRef: satisfactionRef } = useAnimatedCounter(companyData.satisfiedClients);
-
   const values = [
     {
       icon: Shield,
@@ -60,49 +54,6 @@ export default function About() {
                 alt="AKCON - Experți în Acoperișuri"
                 className="rounded-lg shadow-2xl w-full h-auto object-cover relative z-10 hover:shadow-gold/50 transition-shadow duration-300"
               />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-gradient-to-br from-gold via-gold-hover to-gold text-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="fade-in-up hover-lift">
-              <div className="text-6xl mb-4 floating">📅</div>
-              <div ref={yearsRef} className="font-montserrat text-5xl md:text-6xl font-bold mb-2 text-glow-white">
-                {yearsCount}+
-              </div>
-              <div className="font-open-sans text-base md:text-lg opacity-95">
-                Ani Experiență
-              </div>
-            </div>
-            <div className="fade-in-up delay-100 hover-lift">
-              <div className="text-6xl mb-4 floating" style={{ animationDelay: '0.2s' }}>🏆</div>
-              <div ref={projectsRef} className="font-montserrat text-5xl md:text-6xl font-bold mb-2 text-glow-white">
-                {projectsCount}+
-              </div>
-              <div className="font-open-sans text-base md:text-lg opacity-95">
-                Proiecte Finalizate
-              </div>
-            </div>
-            <div className="fade-in-up delay-200 hover-lift">
-              <div className="text-6xl mb-4 floating" style={{ animationDelay: '0.4s' }}>✓</div>
-              <div ref={warrantyRef} className="font-montserrat text-5xl md:text-6xl font-bold mb-2 text-glow-white">
-                {warrantyCount}
-              </div>
-              <div className="font-open-sans text-base md:text-lg opacity-95">
-                Ani Garanție
-              </div>
-            </div>
-            <div className="fade-in-up delay-300 hover-lift">
-              <div className="text-6xl mb-4 floating" style={{ animationDelay: '0.6s' }}>😊</div>
-              <div ref={satisfactionRef} className="font-montserrat text-5xl md:text-6xl font-bold mb-2 text-glow-white">
-                {satisfactionCount}%
-              </div>
-              <div className="font-open-sans text-base md:text-lg opacity-95">
-                Satisfacție Clienți
-              </div>
             </div>
           </div>
         </div>

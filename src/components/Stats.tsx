@@ -71,12 +71,6 @@ export default function Stats() {
 
   return (
     <section className="py-20 bg-gradient-to-br from-gold via-gold-hover to-gold text-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-          backgroundSize: '40px 40px'
-        }}></div>
-      </div>
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
           {stats.map((stat, index) => (
