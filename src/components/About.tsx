@@ -35,12 +35,6 @@ export default function About() {
   return (
     <div id="despre">
       <section className="relative py-20 bg-gradient-to-br from-navy via-navy-light to-navy text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
-        </div>
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           <div className="absolute top-20 left-10 w-64 h-64 bg-gold/20 rounded-full blur-3xl floating"></div>
           <div className="absolute bottom-20 right-10 w-80 h-80 bg-white/10 rounded-full blur-3xl floating" style={{ animationDelay: '1s' }}></div>
@@ -72,12 +66,6 @@ export default function About() {
       </section>
 
       <section className="py-16 bg-gradient-to-br from-gold via-gold-hover to-gold text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
-        </div>
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="fade-in-up hover-lift">
@@ -201,12 +189,6 @@ export default function About() {
       </section>
 
       <section className="py-20 bg-gradient-to-br from-navy via-navy-light to-navy text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
-        </div>
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="text-center mb-12 fade-in-up">
             <h2 className="font-montserrat text-4xl md:text-5xl font-bold mb-6 text-glow-white">
