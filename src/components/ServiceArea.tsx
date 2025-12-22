@@ -18,13 +18,29 @@ export default function ServiceArea() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="rounded-lg overflow-hidden shadow-lg bg-gradient-to-br from-navy via-navy-light to-gray-600 p-12 flex items-center justify-center min-h-[400px] hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
-            <div className="text-center text-white">
-              <MapPin className="w-24 h-24 mx-auto mb-4 text-gold" />
-              <p className="font-montserrat text-2xl font-semibold">{serviceAreaData.mapTitle}</p>
-              <p className="font-open-sans text-lg mt-2 opacity-90 leading-body">{serviceAreaData.mapSubtitle}</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <div className="rounded-lg overflow-hidden shadow-lg min-h-[400px] lg:min-h-[500px] hover:shadow-card-hover transition-all duration-300">
+              <iframe
+                src="https://maps.google.com/maps?q=Teius,Alba,Romania&t=&z=11&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="500"
+                className="w-full h-full min-h-[400px] lg:min-h-[500px]"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                title="Locația AKCON - Județul Alba"
+              />
             </div>
+            <a
+              href="https://maps.google.com/?q=Teius,Alba,Romania"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center mt-4 text-navy hover:text-gold transition-colors duration-300 font-open-sans text-sm font-medium"
+            >
+              <MapPin className="w-4 h-4 mr-2" />
+              Deschide în Google Maps
+            </a>
           </div>
 
           <div>
