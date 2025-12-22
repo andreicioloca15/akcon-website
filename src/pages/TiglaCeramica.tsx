@@ -2,14 +2,26 @@ import ServicePage from './ServicePage';
 import serviceData from '../content/service-pages/tigla-ceramica.json';
 
 export default function TiglaCeramica() {
+  const keywords = typeof serviceData.keywords === 'string'
+    ? serviceData.keywords.split(', ')
+    : serviceData.keywords;
+
+  const duration = typeof serviceData.caseStudy.duration === 'string'
+    ? parseInt(serviceData.caseStudy.duration.match(/\d+/)?.[0] || '0')
+    : serviceData.caseStudy.duration;
+
+  const area = typeof serviceData.caseStudy.area === 'string'
+    ? parseInt(serviceData.caseStudy.area.match(/\d+/)?.[0] || '0')
+    : serviceData.caseStudy.area;
+
   return (
     <ServicePage
       {...serviceData}
-      keywords={serviceData.keywords.split(', ')}
+      keywords={keywords}
       caseStudy={{
         ...serviceData.caseStudy,
-        duration: parseInt(serviceData.caseStudy.duration),
-        area: parseInt(serviceData.caseStudy.area)
+        duration,
+        area
       }}
     />
   );

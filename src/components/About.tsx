@@ -59,11 +59,11 @@ export default function About() {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-white" id="despre">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="font-montserrat text-h2-mobile md:text-h2-tablet lg:text-h2-desktop font-bold text-gray-700 mb-6">
+          <div className="fade-in-left">
+            <h2 className="font-montserrat text-h2-mobile md:text-h2-tablet lg:text-h2-desktop font-bold text-gray-700 mb-6 hover:text-gold transition-colors duration-300">
               {aboutData.title}
             </h2>
             <div className="prose prose-lg max-w-none">
@@ -71,11 +71,12 @@ export default function About() {
             </div>
           </div>
           {aboutData.image && (
-            <div className="relative">
+            <div className="relative fade-in-right">
+              <div className="absolute inset-0 bg-gold/20 rounded-lg transform translate-x-4 translate-y-4 -z-10"></div>
               <img
                 src={aboutData.image}
-                alt="Despre AKCON"
-                className="rounded-lg shadow-lg w-full h-auto object-cover"
+                alt="Despre AKCON - Experți în Acoperișuri"
+                className="rounded-lg shadow-2xl w-full h-auto object-cover hover:shadow-gold/50 transition-shadow duration-300 relative z-10"
               />
             </div>
           )}
