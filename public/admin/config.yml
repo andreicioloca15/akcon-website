@@ -9,16 +9,16 @@ public_folder: "/images/uploads"
 
 collections:
   - name: "settings"
-    label: "Setări Companie"
+    label: "⚙️ Setări Website"
     files:
       - name: "company"
         label: "Informații Companie"
         file: "src/content/company.json"
         fields:
           - { label: "Nume Companie", name: "name", widget: "string", default: "Akcon" }
-          - { label: "Telefon", name: "phone", widget: "string", required: true }
+          - { label: "Telefon", name: "phone", widget: "string", required: true, hint: "Ex: 0749 616 796" }
           - { label: "Email", name: "email", widget: "string", required: true }
-          - { label: "Adresă Scurtă (pentru general)", name: "address", widget: "string", required: true, hint: "Ex: Alba Iulia, județul Alba" }
+          - { label: "Adresă Scurtă", name: "address", widget: "string", required: true, hint: "Ex: Alba Iulia, județul Alba" }
           - { label: "Oraș", name: "city", widget: "string", default: "București" }
           - { label: "Strada și Număr", name: "streetAddress", widget: "string", required: true, hint: "Ex: Strada Primăverii 42" }
           - { label: "Localitate", name: "cityAddress", widget: "string", required: true, hint: "Ex: Teiuș" }
@@ -27,46 +27,144 @@ collections:
           - { label: "Ani Experiență", name: "yearsExperience", widget: "number", required: true, min: 0 }
           - { label: "Proiecte Finalizate", name: "projectsCompleted", widget: "number", required: true, min: 0 }
           - { label: "Clienți Mulțumiți", name: "satisfiedClients", widget: "number", required: true, min: 0 }
-          - { label: "WhatsApp (număr cu prefix)", name: "whatsapp", widget: "string", default: "40749616796" }
+          - { label: "WhatsApp (număr cu prefix)", name: "whatsapp", widget: "string", default: "40749616796", hint: "Format: 40749616796" }
 
-  - name: "testimonials"
-    label: "Testimoniale"
-    folder: "src/content/testimonials"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Nume Client", name: "name", widget: "string", required: true }
-      - { label: "Oraș", name: "city", widget: "string", required: true }
-      - { label: "Rating (1-5)", name: "rating", widget: "number", required: true, min: 1, max: 5, default: 5 }
-      - { label: "Testimonial", name: "quote", widget: "text", required: true }
-      - { label: "Dată", name: "date", widget: "datetime", required: true }
-      - { label: "Ordine Afișare", name: "order", widget: "number", default: 0 }
+      - name: "process"
+        label: "Proces de Lucru (Cum Lucrăm)"
+        file: "src/content/process-steps.json"
+        fields:
+          - { label: "Titlu Secțiune", name: "title", widget: "string", default: "Cum Lucrăm" }
+          - { label: "Subtitlu", name: "subtitle", widget: "text" }
+          - label: "Pași"
+            name: "steps"
+            widget: "list"
+            fields:
+              - { label: "Număr Pas", name: "number", widget: "number", min: 1, max: 10 }
+              - { label: "Titlu", name: "title", widget: "string" }
+              - { label: "Descriere", name: "description", widget: "text" }
+              - { label: "Ordine", name: "order", widget: "number", default: 1 }
 
-  - name: "portfolio"
-    label: "Portofoliu Proiecte"
-    folder: "src/content/portfolio"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Titlu Proiect", name: "title", widget: "string", required: true }
-      - { label: "Locație", name: "location", widget: "string", required: true }
-      - { label: "Tip Lucrare", name: "type", widget: "string", required: true }
-      - { label: "Suprafață (mp)", name: "area", widget: "string", required: true }
-      - { label: "Durată", name: "duration", widget: "string", required: true }
-      - { label: "Imagine", name: "image", widget: "image", required: true }
-      - { label: "Descriere", name: "description", widget: "text", required: true }
-      - { label: "Citat Client", name: "clientQuote", widget: "text", required: false }
-      - { label: "Nume Client", name: "clientName", widget: "string", required: false }
-      - { label: "Ordine Afișare", name: "order", widget: "number", default: 0 }
+      - name: "why-choose-us"
+        label: "De Ce Să Ne Alegeți"
+        file: "src/content/why-choose-us.json"
+        fields:
+          - { label: "Titlu Secțiune", name: "title", widget: "string", default: "De Ce Clienții Aleg Akcon" }
+          - { label: "Subtitlu", name: "subtitle", widget: "text" }
+          - label: "Piloni (Motive)"
+            name: "pillars"
+            widget: "list"
+            fields:
+              - { label: "Tip", name: "type", widget: "select", options: ["icon", "number"] }
+              - { label: "Icon (Lucide)", name: "icon", widget: "string", required: false, hint: "Ex: Users, ShieldCheck, MapPin. Lasă gol dacă folosești număr." }
+              - { label: "Număr", name: "number", widget: "string", required: false, hint: "Ex: 15. Lasă gol dacă folosești icon." }
+              - { label: "Titlu", name: "title", widget: "string" }
+              - { label: "Descriere", name: "description", widget: "text" }
+              - { label: "Ordine", name: "order", widget: "number", default: 1 }
+
+      - name: "service-area"
+        label: "Zone Deservite"
+        file: "src/content/service-area.json"
+        fields:
+          - { label: "Titlu Secțiune", name: "title", widget: "string", default: "Zone Deservite în Județul Alba" }
+          - { label: "Subtitlu", name: "subtitle", widget: "text" }
+          - { label: "Titlu Hartă", name: "mapTitle", widget: "string", default: "Județul Alba" }
+          - { label: "Subtitlu Hartă", name: "mapSubtitle", widget: "string", default: "Zonă de Servicii Premium" }
+          - { label: "Titlu Listă", name: "listTitle", widget: "string", default: "Localități Principale Deservite:" }
+          - { label: "Notă Footer", name: "footerNote", widget: "string", default: "...și peste 50 de alte localități din județul Alba" }
+          - label: "Localități"
+            name: "localities"
+            widget: "list"
+            fields:
+              - { label: "Nume Localitate", name: "name", widget: "string" }
+              - { label: "Ordine", name: "order", widget: "number", default: 1 }
+
+      - name: "brand-partners"
+        label: "Parteneri / Branduri"
+        file: "src/content/brand-partners.json"
+        fields:
+          - { label: "Titlu Secțiune", name: "title", widget: "string", default: "Parteneri Oficiali ai Celor Mai Bune Branduri din Industrie" }
+          - label: "Branduri"
+            name: "brands"
+            widget: "list"
+            fields:
+              - { label: "Nume Brand", name: "name", widget: "string" }
+              - { label: "Ordine", name: "order", widget: "number", default: 1 }
 
   - name: "services"
-    label: "Servicii"
+    label: "🛠️ Servicii"
     folder: "src/content/services"
     create: true
     slug: "{{slug}}"
+    extension: "json"
+    format: "json"
     fields:
-      - { label: "Titlu Serviciu", name: "title", widget: "string", required: true }
-      - { label: "Descriere", name: "description", widget: "text", required: true }
-      - { label: "Nume Icon (Lucide)", name: "icon", widget: "string", required: true, hint: "Ex: Wrench, Shield, Home, etc." }
-      - { label: "Link Pagină", name: "link", widget: "string", required: false }
+      - { label: "Titlu Serviciu", name: "title", widget: "string", required: true, hint: "Ex: Montaj Acoperișuri Noi" }
+      - { label: "Descriere Scurtă", name: "description", widget: "text", required: true, hint: "2-3 propoziții pentru cardul de pe homepage" }
+      - { label: "Icon (Lucide)", name: "icon", widget: "string", required: true, hint: "DOAR numele: Home, Wrench, Shield, etc. Vezi: lucide.dev/icons" }
+      - { label: "Link Pagină", name: "link", widget: "string", required: false, hint: "Ex: /servicii/montaj-acoperisuri (lasă gol dacă nu există pagină)" }
+      - { label: "Ordine Afișare", name: "order", widget: "number", default: 0, hint: "Număr mai mic = apare mai devreme (1, 2, 3...)" }
+
+  - name: "portfolio"
+    label: "📸 Portofoliu Proiecte"
+    folder: "src/content/portfolio"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Titlu Proiect", name: "title", widget: "string", required: true, hint: "Ex: Vilă Premium Alba Iulia" }
+      - { label: "Locație", name: "location", widget: "string", required: true, hint: "Oraș/localitate (Ex: Alba Iulia)" }
+      - { label: "Tip Lucrare", name: "type", widget: "string", required: true, hint: "Ex: Țiglă ceramică Tondach" }
+      - { label: "Suprafață (mp)", name: "area", widget: "string", required: true, hint: "Ex: 280 mp" }
+      - { label: "Durată", name: "duration", widget: "string", required: true, hint: "Ex: 4 săptămâni" }
+      - { label: "Imagine", name: "image", widget: "image", required: true, hint: "800x600px minim" }
+      - { label: "Descriere Scurtă", name: "description", widget: "text", required: true, hint: "1-2 propoziții" }
+      - { label: "Citat Client", name: "clientQuote", widget: "text", required: false, hint: "Apare la hover (opțional)" }
+      - { label: "Nume Client", name: "clientName", widget: "string", required: false, hint: "Ex: Familie Popescu" }
+      - { label: "Ordine Afișare", name: "order", widget: "number", default: 0, hint: "Număr mai mic = apare mai devreme" }
+
+  - name: "testimonials"
+    label: "💬 Testimoniale Clienți"
+    folder: "src/content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Nume Client", name: "name", widget: "string", required: true, hint: "Ex: Maria Georgescu" }
+      - { label: "Oraș", name: "city", widget: "string", required: true, hint: "Ex: Alba Iulia" }
+      - { label: "Rating (1-5)", name: "rating", widget: "number", required: true, min: 1, max: 5, default: 5, hint: "Număr de stele" }
+      - { label: "Testimonial", name: "quote", widget: "text", required: true, hint: "2-4 propoziții" }
+      - { label: "Dată", name: "date", widget: "datetime", required: true }
+      - { label: "Ordine Afișare", name: "order", widget: "number", default: 0, hint: "Primele 3 apar pe homepage" }
+
+  - name: "case-studies"
+    label: "📋 Studii de Caz Detaliate"
+    folder: "src/content/case-studies"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Titlu Proiect", name: "title", widget: "string", required: true }
+      - { label: "Subtitlu", name: "subtitle", widget: "string", required: false }
+      - { label: "Locație Completă", name: "location", widget: "string", required: true, hint: "Ex: Strada Mihai Eminescu 42, Alba Iulia" }
+      - { label: "Imagine Principală", name: "heroImage", widget: "image", required: true }
+      - { label: "Galerie Imagini", name: "gallery", widget: "list", required: false, field: { label: "Imagine", name: "image", widget: "image" } }
+      - { label: "Descriere Proiect", name: "description", widget: "markdown", required: true }
+      - { label: "Provocări", name: "challenges", widget: "text", required: false }
+      - { label: "Soluții", name: "solutions", widget: "text", required: false }
+      - { label: "Rezultate", name: "results", widget: "text", required: false }
+      - label: "Detalii Tehnice"
+        name: "technicalDetails"
+        widget: "object"
+        fields:
+          - { label: "Tip Acoperiș", name: "roofType", widget: "string" }
+          - { label: "Material Folosit", name: "material", widget: "string" }
+          - { label: "Suprafață (mp)", name: "area", widget: "string" }
+          - { label: "Durată Execuție", name: "duration", widget: "string" }
+          - { label: "An Finalizare", name: "year", widget: "string" }
+      - { label: "Testimonial Client", name: "clientQuote", widget: "text", required: false }
+      - { label: "Nume Client", name: "clientName", widget: "string", required: false }
+      - { label: "Data Publicării", name: "publishedDate", widget: "datetime", required: true }
       - { label: "Ordine Afișare", name: "order", widget: "number", default: 0 }

@@ -1,0 +1,38 @@
+{
+  "title": "De Ce Clienții Aleg Akcon",
+  "subtitle": "Patru motive pentru care suntem alegerea clară pentru acoperișuri premium în Alba Iulia",
+  "pillars": [
+    {
+      "type": "number",
+      "number": "15",
+      "icon": null,
+      "title": "Garanție 15 Ani Manoperă",
+      "description": "Cea mai extinsă garanție din regiunea Alba. Materiale premium cu garanție producător 30-50 ani.",
+      "order": 1
+    },
+    {
+      "type": "icon",
+      "number": null,
+      "icon": "Users",
+      "title": "Echipă Proprie Certificată",
+      "description": "Nu subcontractăm. Fiecare proiect supervizat personal. Muncitori calificați cu certificări internaționale.",
+      "order": 2
+    },
+    {
+      "type": "icon",
+      "number": null,
+      "icon": "ShieldCheck",
+      "title": "Materiale Premium Verificate",
+      "description": "Folosim doar branduri cu garanție 30-50 ani: Lindab, Velux, Bilka, Fakro, Wetterbest. Nu facem compromisuri.",
+      "order": 3
+    },
+    {
+      "type": "icon",
+      "number": null,
+      "icon": "MapPin",
+      "title": "Local în Județul Alba",
+      "description": "Suntem aici, nu la sute de kilometri distanță. Intervenții rapide. Relație pe termen lung cu clienții noștri.",
+      "order": 4
+    }
+  ]
+}

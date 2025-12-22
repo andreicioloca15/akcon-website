@@ -1,0 +1,20 @@
+{
+  "title": "Zone Deservite în Județul Alba",
+  "subtitle": "Suntem singurul specialist premium cu sediu în județul Alba - intervenții rapide în toată regiunea",
+  "mapTitle": "Județul Alba",
+  "mapSubtitle": "Zonă de Servicii Premium",
+  "listTitle": "Localități Principale Deservite:",
+  "footerNote": "...și peste 50 de alte localități din județul Alba",
+  "localities": [
+    { "name": "Alba Iulia", "order": 1 },
+    { "name": "Aiud", "order": 2 },
+    { "name": "Blaj", "order": 3 },
+    { "name": "Sebeș", "order": 4 },
+    { "name": "Cugir", "order": 5 },
+    { "name": "Ocna Mureș", "order": 6 },
+    { "name": "Teiuș", "order": 7 },
+    { "name": "Abrud", "order": 8 },
+    { "name": "Zlatna", "order": 9 },
+    { "name": "Câmpeni", "order": 10 }
+  ]
+}
