@@ -25,10 +25,10 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-20 bg-white" id="contact">
+    <section className="py-20 bg-gradient-to-b from-white to-gray-50" id="contact">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="font-montserrat text-h2-mobile md:text-h2-tablet lg:text-h2-desktop font-bold text-gray-700 mb-4">
+        <div className="text-center mb-16 fade-in-up">
+          <h2 className="font-montserrat text-h2-mobile md:text-h2-tablet lg:text-h2-desktop font-bold text-gray-700 mb-4 hover:text-gold transition-colors duration-300">
             Solicită Ofertă Gratuită
           </h2>
           <p className="font-open-sans text-base md:text-lg text-gray-600 leading-body max-w-2xl mx-auto">
@@ -37,7 +37,7 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-gray-50 p-8 rounded-lg">
+          <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-100 fade-in-left">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block font-open-sans text-gray-700 font-semibold mb-2">
@@ -48,7 +48,7 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent font-open-sans text-base transition-all duration-300"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold font-open-sans text-base transition-all duration-300 hover:border-gold/50"
                   placeholder="ex: Ion Popescu"
                   autoComplete="name"
                   required
@@ -139,9 +139,10 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-gold text-white px-8 py-4 rounded-lg font-montserrat text-lg font-semibold hover:bg-gold-hover transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold"
+                className="w-full bg-gold text-white px-8 py-4 rounded-lg font-montserrat text-lg font-semibold hover:bg-gold-hover transition-all duration-300 hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold relative overflow-hidden group"
               >
-                Trimite Cererea
+                <span className="relative z-10">Trimite Cererea</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-gold-hover to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
 
               <p className="text-sm text-gray-600 text-center font-open-sans leading-body">
@@ -150,13 +151,14 @@ export default function Contact() {
             </form>
           </div>
 
-          <div>
-            <div className="bg-navy text-white p-8 rounded-lg mb-8">
-              <h3 className="font-montserrat text-h3-mobile md:text-h3-tablet font-semibold mb-6">
+          <div className="fade-in-right">
+            <div className="bg-gradient-to-br from-navy to-navy-light text-white p-8 rounded-lg mb-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full blur-3xl"></div>
+              <h3 className="font-montserrat text-h3-mobile md:text-h3-tablet font-semibold mb-6 relative z-10">
                 Informații de Contact
               </h3>
 
-              <div className="space-y-6">
+              <div className="space-y-6 relative z-10">
                 <div className="flex items-start">
                   <Phone className="w-6 h-6 text-gold mr-4 flex-shrink-0 mt-1" />
                   <div>
@@ -204,14 +206,14 @@ export default function Contact() {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
-                <ShieldCheck className="w-8 h-8 text-gold mx-auto mb-2" />
+              <div className="bg-white p-4 rounded-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 group">
+                <ShieldCheck className="w-8 h-8 text-gold mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
                 <div className="font-montserrat font-semibold text-gray-700 text-sm">
                   Licențiat & Asigurat
                 </div>
               </div>
-              <div className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
-                <Star className="w-8 h-8 text-gold mx-auto mb-2" />
+              <div className="bg-white p-4 rounded-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 group">
+                <Star className="w-8 h-8 text-gold mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
                 <div className="font-montserrat font-semibold text-gray-700 text-sm">
                   Garanție 15 Ani
                 </div>
