@@ -1,8 +1,18 @@
 import { Target, Eye, Shield, Users, Award, TrendingUp, CheckCircle, Building2 } from 'lucide-react';
 import ProjectCarousel from './ProjectCarousel';
 import companyData from '../content/company.json';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function About() {
+  const heroLeftRef = useScrollAnimation<HTMLDivElement>({ distance: 60 });
+  const heroRightRef = useScrollAnimation<HTMLDivElement>({ distance: 60, delay: 200 });
+  const missionRef = useScrollAnimation<HTMLDivElement>({ distance: 50 });
+  const visionRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 200 });
+  const valuesHeadingRef = useScrollAnimation<HTMLDivElement>({ distance: 40 });
+  const projectsHeadingRef = useScrollAnimation<HTMLDivElement>({ distance: 40 });
+  const projectsCarouselRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 200 });
+  const chooseUsHeadingRef = useScrollAnimation<HTMLDivElement>({ distance: 40 });
+
   const values = [
     {
       icon: Shield,
@@ -36,7 +46,7 @@ export default function About() {
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="fade-in-left">
+            <div ref={heroLeftRef}>
               <h2 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-glow-white">
                 Despre AKCON
               </h2>
@@ -47,7 +57,7 @@ export default function About() {
                 Am finalizat peste {companyData.projectsCompleted} de proiecte de succes, de la case particulare la construcții comerciale complexe. Satisfacția clienților noștri este cea mai bună dovadă a calității serviciilor noastre.
               </p>
             </div>
-            <div className="relative fade-in-right">
+            <div ref={heroRightRef} className="relative">
               <div className="absolute inset-0 bg-gold/20 rounded-lg transform translate-x-6 translate-y-6 -z-10"></div>
               <img
                 src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1200"
@@ -62,7 +72,7 @@ export default function About() {
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-gold hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in-left relative overflow-hidden group">
+            <div ref={missionRef} className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-gold hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-all duration-500"></div>
               <Target className="w-16 h-16 text-gold mb-6 relative z-10" />
               <h3 className="font-montserrat text-2xl md:text-3xl font-bold text-gray-700 mb-4 relative z-10">
@@ -73,7 +83,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-navy hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in-right relative overflow-hidden group">
+            <div ref={visionRef} className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-navy hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-32 h-32 bg-navy/5 rounded-full blur-3xl group-hover:bg-navy/10 transition-all duration-500"></div>
               <Eye className="w-16 h-16 text-navy mb-6 relative z-10" />
               <h3 className="font-montserrat text-2xl md:text-3xl font-bold text-gray-700 mb-4 relative z-10">
@@ -89,7 +99,7 @@ export default function About() {
 
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16 fade-in-up">
+          <div ref={valuesHeadingRef} className="text-center mb-16">
             <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-gray-700 mb-6">
               Valorile Noastre
             </h2>
@@ -101,12 +111,14 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => {
               const Icon = value.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-3 hover:border-gold transition-all duration-300 border-2 border-transparent group fade-in-up"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
+              const ValueCard = () => {
+                const cardRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: index * 100 });
+                return (
+                  <div
+                    key={index}
+                    ref={cardRef}
+                    className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-3 hover:border-gold transition-all duration-300 border-2 border-transparent group"
+                  >
                   <div className="w-20 h-20 bg-gradient-to-br from-gold to-gold-hover rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
                     <Icon className="w-10 h-10 text-white" />
                   </div>
@@ -117,7 +129,9 @@ export default function About() {
                     {value.description}
                   </p>
                 </div>
-              );
+                );
+              };
+              return <ValueCard key={index} />;
             })}
           </div>
         </div>
@@ -125,7 +139,7 @@ export default function About() {
 
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16 fade-in-up">
+          <div ref={projectsHeadingRef} className="text-center mb-16">
             <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-gray-700 mb-6">
               Proiectele Noastre
             </h2>
@@ -133,7 +147,7 @@ export default function About() {
               Transformări de care suntem mândri - acoperișuri premium realizate în județul Alba
             </p>
           </div>
-          <div className="fade-in-up delay-200">
+          <div ref={projectsCarouselRef}>
             <ProjectCarousel />
           </div>
         </div>
@@ -141,7 +155,7 @@ export default function About() {
 
       <section className="py-20 bg-gradient-to-br from-navy via-navy-light to-navy text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="text-center mb-12 fade-in-up">
+          <div ref={chooseUsHeadingRef} className="text-center mb-12">
             <h2 className="font-montserrat text-4xl md:text-5xl font-bold mb-6 text-glow-white">
               De Ce Clienții Ne Aleg
             </h2>
@@ -184,12 +198,13 @@ export default function About() {
               }
             ].map((item, index) => {
               const Icon = item.icon;
-              return (
-                <div
-                  key={index}
-                  className="glass-effect p-6 rounded-lg hover:bg-white/20 transition-all duration-300 fade-in-up hover-lift"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
+              const ChooseUsCard = () => {
+                const cardRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: index * 100 });
+                return (
+                  <div
+                    ref={cardRef}
+                    className="glass-effect p-6 rounded-lg hover:bg-white/20 transition-all duration-300 hover-lift"
+                  >
                   <Icon className="w-12 h-12 text-gold mb-4" />
                   <h3 className="font-montserrat text-xl font-bold mb-3">
                     {item.title}
@@ -198,7 +213,9 @@ export default function About() {
                     {item.description}
                   </p>
                 </div>
-              );
+                );
+              };
+              return <ChooseUsCard key={index} />;
             })}
           </div>
         </div>

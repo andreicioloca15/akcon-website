@@ -1,4 +1,5 @@
 import { Calendar, MapPin, Clock, TrendingUp, Star } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface CaseStudyProps {
   title: string;
@@ -34,10 +35,18 @@ export default function CaseStudy({
   testimonial,
   investmentValue
 }: CaseStudyProps) {
+  const headerRef = useScrollAnimation<HTMLDivElement>({ distance: 40 });
+  const problemRef = useScrollAnimation<HTMLDivElement>({ distance: 50 });
+  const imagesRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 100 });
+  const solutionRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 200 });
+  const resultsRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 300 });
+  const sidebarRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 100 });
+  const testimonialRef = useScrollAnimation<HTMLDivElement>({ distance: 40 });
+
   return (
     <div className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="mb-8 md:mb-12">
+        <div ref={headerRef} className="mb-8 md:mb-12">
           <h2 className="font-montserrat text-h2-mobile md:text-h2-tablet lg:text-h2-desktop font-bold text-gray-700 mb-4">
             {title}
           </h2>
@@ -63,7 +72,7 @@ export default function CaseStudy({
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
           <div className="lg:col-span-2 space-y-8">
-            <div className="bg-[#fef3e7] border-l-4 border-gold p-6 rounded-r-lg hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
+            <div ref={problemRef} className="bg-[#fef3e7] border-l-4 border-gold p-6 rounded-r-lg hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
               <h3 className="font-montserrat text-h3-mobile md:text-h3-tablet font-semibold text-gray-700 mb-3 flex items-center">
                 <span className="w-8 h-8 bg-gold text-white rounded-full flex items-center justify-center mr-3 text-sm">1</span>
                 Situația Inițială: Provocarea
@@ -73,7 +82,7 @@ export default function CaseStudy({
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div ref={imagesRef} className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-gradient-to-br from-[#e53e3e] to-[#c53030] h-64 rounded-lg flex items-center justify-center text-white hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
                 <div className="text-center">
                   <p className="font-montserrat text-lg font-semibold mb-2">ÎNAINTE</p>
@@ -88,7 +97,7 @@ export default function CaseStudy({
               </div>
             </div>
 
-            <div className="bg-[#e6f7ff] border-l-4 border-navy p-6 rounded-r-lg hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
+            <div ref={solutionRef} className="bg-[#e6f7ff] border-l-4 border-navy p-6 rounded-r-lg hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
               <h3 className="font-montserrat text-h3-mobile md:text-h3-tablet font-semibold text-gray-700 mb-3 flex items-center">
                 <span className="w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center mr-3 text-sm">2</span>
                 Soluția Noastră: Ce Am Implementat
@@ -106,7 +115,7 @@ export default function CaseStudy({
               </div>
             </div>
 
-            <div className="bg-[#e6f9f0] border-l-4 border-[#38a169] p-6 rounded-r-lg hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
+            <div ref={resultsRef} className="bg-[#e6f9f0] border-l-4 border-[#38a169] p-6 rounded-r-lg hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
               <h3 className="font-montserrat text-h3-mobile md:text-h3-tablet font-semibold text-gray-700 mb-3 flex items-center">
                 <span className="w-8 h-8 bg-[#38a169] text-white rounded-full flex items-center justify-center mr-3 text-sm">3</span>
                 Rezultatul Final: Transformarea
@@ -118,7 +127,7 @@ export default function CaseStudy({
           </div>
 
           <div className="space-y-6">
-            <div className="bg-navy text-white p-6 rounded-lg lg:sticky lg:top-24 hover:shadow-card-hover transition-all duration-300">
+            <div ref={sidebarRef} className="bg-navy text-white p-6 rounded-lg lg:sticky lg:top-24 hover:shadow-card-hover transition-all duration-300">
               <h3 className="font-montserrat text-h3-mobile md:text-h3-tablet font-semibold mb-4">
                 Detalii Proiect
               </h3>
@@ -155,7 +164,7 @@ export default function CaseStudy({
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-lg hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
+        <div ref={testimonialRef} className="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-lg hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
           <div className="flex items-start space-x-4">
             <div className="flex-shrink-0">
               <div className="w-16 h-16 bg-gold rounded-full flex items-center justify-center">

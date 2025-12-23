@@ -1,37 +1,51 @@
 import { useEffect, useRef, useState } from 'react';
 
-export function useScrollAnimation(options = {}) {
-  const elementRef = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+interface ScrollAnimationOptions {
+  distance?: number;
+  delay?: number;
+  threshold?: number;
+}
+
+export function useScrollAnimation<T extends HTMLElement = HTMLDivElement>(
+  options: ScrollAnimationOptions = {}
+): React.RefObject<T> {
+  const ref = useRef<T>(null);
+  const { distance = 50, delay = 0, threshold = 0.1 } = options;
 
   useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const isMobile = window.innerWidth < 768;
+    const adjustedDistance = isMobile ? distance * 0.5 : distance;
+    const adjustedDelay = isMobile ? delay * 0.7 : delay;
+
+    element.style.opacity = '0';
+    element.style.transform = `translateY(${adjustedDistance}px) scale(0.95)`;
+    element.style.transition = `opacity 0.6s ease-out ${adjustedDelay}ms, transform 0.6s ease-out ${adjustedDelay}ms`;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0) scale(1)';
           observer.disconnect();
         }
       },
       {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px',
-        ...options,
+        threshold,
+        rootMargin: '0px 0px -50px 0px',
       }
     );
 
-    const currentElement = elementRef.current;
-    if (currentElement) {
-      observer.observe(currentElement);
-    }
+    observer.observe(element);
 
     return () => {
-      if (currentElement) {
-        observer.unobserve(currentElement);
-      }
+      observer.disconnect();
     };
-  }, [options]);
+  }, [distance, delay, threshold]);
 
-  return { elementRef, isVisible };
+  return ref;
 }
 
 export function useStaggeredAnimation(count: number, delay = 100) {
@@ -83,6 +97,7 @@ export function useAnimatedCounter(end: number, duration = 2000, start = 0) {
       ([entry]) => {
         if (entry.isIntersecting && !isVisible) {
           setIsVisible(true);
+          observer.disconnect();
         }
       },
       { threshold: 0.5 }
@@ -103,20 +118,28 @@ export function useAnimatedCounter(end: number, duration = 2000, start = 0) {
   useEffect(() => {
     if (!isVisible) return;
 
-    const increment = (end - start) / (duration / 16);
-    let current = start;
+    const startTime = performance.now();
 
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= end) {
-        setCount(end);
-        clearInterval(timer);
+    const easeOutQuart = (t: number): number => {
+      return 1 - Math.pow(1 - t, 4);
+    };
+
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutQuart(progress);
+
+      const currentCount = start + (end - start) * easedProgress;
+      setCount(Math.floor(currentCount));
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
       } else {
-        setCount(Math.floor(current));
+        setCount(end);
       }
-    }, 16);
+    };
 
-    return () => clearInterval(timer);
+    requestAnimationFrame(animate);
   }, [isVisible, end, duration, start]);
 
   return { count, elementRef };

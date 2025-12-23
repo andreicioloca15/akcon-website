@@ -118,8 +118,8 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <a href={`tel:+40${companyData.phone.replace(/\s/g, '')}`} className="hidden lg:flex items-center text-navy font-semibold font-open-sans focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 rounded">
-            <Phone className="w-5 h-5 mr-2" />
+          <a href={`tel:+40${companyData.phone.replace(/\s/g, '')}`} className="hidden lg:flex items-center text-navy font-semibold font-open-sans focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 rounded hover:scale-105 transition-transform duration-300">
+            <Phone className="w-5 h-5 mr-2 hover:rotate-12 transition-transform duration-300" />
             <span>{companyData.phone}</span>
           </a>
           <button onClick={() => scrollToSection('contact')} className="bg-gold text-white px-8 py-4 rounded-lg font-semibold font-montserrat hover:bg-gold-hover transition-all duration-300 hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 relative overflow-hidden group">
