@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import ScrollProgress from './components/ScrollProgress';
 import HomePage from './pages/HomePage';
 import MontajAcoperisuri from './pages/MontajAcoperisuri';
 import RenovareAcoperisuri from './pages/RenovareAcoperisuri';
@@ -34,6 +35,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <ScrollProgress />
       <div className="min-h-screen bg-white">
         <Header />
         <main className="pt-20">

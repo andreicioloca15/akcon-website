@@ -52,16 +52,17 @@ export default function WhatsAppButton() {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-4 md:right-8 z-50 w-14 h-14 bg-[#25D366] rounded-full shadow-2xl flex items-center justify-center hover:bg-[#20BA5A] transition-all hover:scale-110 group"
+        className="fixed bottom-6 right-4 md:right-8 z-50 w-14 h-14 bg-[#25D366] rounded-full shadow-2xl flex items-center justify-center hover:bg-[#20BA5A] transition-all hover:scale-110 hover:rotate-12 group pulse-soft"
+        style={{ willChange: 'transform' }}
         aria-label="WhatsApp"
       >
         {isOpen ? (
-          <X className="w-6 h-6 text-white" />
+          <X className="w-6 h-6 text-white transition-transform group-hover:rotate-90 duration-300" />
         ) : (
-          <MessageCircle className="w-6 h-6 text-white" />
+          <MessageCircle className="w-6 h-6 text-white transition-transform group-hover:scale-110 duration-300" />
         )}
 
-        <div className="absolute -left-2 top-0 w-3 h-3 bg-[#25D366] rounded-full animate-ping"></div>
+        {!isOpen && <div className="absolute -left-2 top-0 w-3 h-3 bg-[#25D366] rounded-full animate-ping"></div>}
 
         <span className="absolute right-full mr-3 bg-white text-[#2d3748] px-3 py-2 rounded-lg shadow-lg text-sm font-['Open_Sans'] font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
           Contactează-ne pe WhatsApp
