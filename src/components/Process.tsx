@@ -1,7 +1,9 @@
+import { useStaggeredAnimation } from '../hooks/useScrollAnimation';
 import processData from '../content/process-steps.json';
 
 export default function Process() {
   const steps = processData.steps.sort((a, b) => a.order - b.order);
+  const { elementRef, visibleItems } = useStaggeredAnimation(steps.length, 100);
 
   return (
     <section className="py-20 bg-white" id="proces">
@@ -15,10 +17,20 @@ export default function Process() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {steps.map((step) => (
-            <div key={step.number} className="relative">
-              <div className="flex items-start">
+        <div ref={elementRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {steps.map((step, index) => (
+            <div
+              key={step.number}
+              className={`relative transition-all duration-700 ${
+                visibleItems.has(index)
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{
+                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+              }}
+            >
+              <div className="flex items-start card-animate bg-white p-6 rounded-lg shadow-md">
                 <div className="flex-shrink-0 w-12 h-12 bg-gold rounded-full flex items-center justify-center font-montserrat text-xl font-bold text-white">
                   {step.number}
                 </div>

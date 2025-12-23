@@ -17,13 +17,27 @@
 }
 
 @layer utilities {
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+  }
+
+  .animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+    will-change: auto;
+  }
+
   .fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
   }
 
   .fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
     transform: translateY(30px);
   }
@@ -91,7 +105,46 @@
   }
 
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-animate {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-animate:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .image-zoom-container {
+    @apply overflow-hidden rounded-lg;
+  }
+
+  .image-zoom {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .image-zoom-container:hover .image-zoom {
+    transform: scale(1.08);
+  }
+
+  .form-input {
+    transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .form-input:focus {
+    border-color: #c6a052;
+    box-shadow: 0 0 0 3px rgba(198, 160, 82, 0.1);
+    outline: none;
   }
 
   .hover-glow-gold {
@@ -108,24 +161,38 @@
 
   .btn-primary {
     @apply bg-gold text-white px-8 py-4 rounded-lg font-montserrat font-semibold
-           transition-all duration-300 hover:bg-gold-hover hover:shadow-2xl hover:scale-105
-           focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2
-           active:scale-95;
+           focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .btn-primary:hover {
-    box-shadow: 0 10px 40px rgba(198, 160, 82, 0.4);
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(198, 160, 82, 0.3);
+    background-color: #b89048;
+  }
+
+  .btn-primary:active {
+    transform: scale(0.98);
   }
 
   .btn-secondary {
     @apply bg-white text-navy px-8 py-4 rounded-lg font-montserrat font-semibold
-           transition-all duration-300 hover:bg-gray-100 hover:shadow-2xl hover:scale-105
-           focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2
-           active:scale-95;
+           focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .btn-secondary:hover {
-    @apply bg-gold/10 border-gold;
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background-color: #f3f4f6;
+  }
+
+  .btn-secondary:active {
+    transform: scale(0.98);
   }
 
   .gradient-overlay {

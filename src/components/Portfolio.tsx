@@ -1,3 +1,4 @@
+import { useStaggeredAnimation } from '../hooks/useScrollAnimation';
 import vilaAlbaIulia from '../content/portfolio/vila-premium-alba-iulia.json';
 import renovareSebes from '../content/portfolio/renovare-completa-sebes.json';
 import mansardareAiud from '../content/portfolio/mansardare-premium-aiud.json';
@@ -61,6 +62,8 @@ export default function Portfolio() {
     }
   };
 
+  const { elementRef, visibleItems } = useStaggeredAnimation(projects.length, 100);
+
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white" id="portofoliu">
       <div className="max-w-7xl mx-auto px-4">
@@ -73,15 +76,22 @@ export default function Portfolio() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={elementRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer h-80 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 fade-in-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`group relative rounded-lg shadow-lg cursor-pointer h-80 transition-all duration-700 image-zoom-container ${
+                visibleItems.has(index)
+                  ? 'opacity-100 translate-y-0 hover:shadow-2xl hover:-translate-y-2'
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{
+                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                transitionDuration: '0.7s',
+              }}
             >
               <div
-                className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                className="image-zoom w-full h-full bg-cover bg-center"
                 style={{ backgroundImage: `url(${project.image})` }}
               ></div>
               <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/50 to-transparent opacity-60 group-hover:opacity-95 transition-all duration-500"></div>

@@ -1,4 +1,5 @@
 import { Star } from 'lucide-react';
+import { useStaggeredAnimation } from '../hooks/useScrollAnimation';
 import mariaGeorgescu from '../content/testimonials/maria-georgescu.json';
 import ioanPopescu from '../content/testimonials/ioan-popescu.json';
 import andreiDumitrescu from '../content/testimonials/andrei-dumitrescu.json';
@@ -36,6 +37,8 @@ export default function Testimonials() {
       avatar: t.avatar
     }));
 
+  const { elementRef, visibleItems } = useStaggeredAnimation(testimonials.length, 100);
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
@@ -48,9 +51,19 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div ref={elementRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-8 rounded-lg shadow-md hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
+            <div
+              key={index}
+              className={`bg-white p-8 rounded-lg shadow-md card-animate transition-all duration-700 ${
+                visibleItems.has(index)
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{
+                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+              }}
+            >
               <div className="flex items-center mb-4">
                 <div className="flex text-gold">
                   {[1, 2, 3, 4, 5].map((star) => (

@@ -14,6 +14,7 @@ export function useScrollAnimation(options = {}) {
       },
       {
         threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px',
         ...options,
       }
     );
@@ -31,6 +32,45 @@ export function useScrollAnimation(options = {}) {
   }, [options]);
 
   return { elementRef, isVisible };
+}
+
+export function useStaggeredAnimation(count: number, delay = 100) {
+  const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
+  const elementRef = useRef<HTMLDivElement>(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const element = elementRef.current;
+    if (!element || hasAnimated) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasAnimated(true);
+          for (let i = 0; i < count; i++) {
+            setTimeout(() => {
+              setVisibleItems((prev) => new Set([...prev, i]));
+            }, i * delay);
+          }
+          observer.unobserve(element);
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px',
+      }
+    );
+
+    observer.observe(element);
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, [count, delay, hasAnimated]);
+
+  return { elementRef, visibleItems };
 }
 
 export function useAnimatedCounter(end: number, duration = 2000, start = 0) {

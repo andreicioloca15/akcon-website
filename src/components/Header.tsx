@@ -25,9 +25,9 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 100);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -61,9 +61,11 @@ export default function Header() {
     }));
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+    <header className={`fixed top-0 w-full z-50 ${
       scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-white shadow-md py-4'
-    }`}>
+    }`} style={{
+      transition: 'background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+    }}>
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
           <Link to="/" className="font-montserrat text-2xl font-bold text-navy focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 rounded">

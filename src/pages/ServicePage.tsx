@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Phone, CheckCircle, Shield, Clock, Award } from 'lucide-react';
+import { useStaggeredAnimation } from '../hooks/useScrollAnimation';
 import Breadcrumbs from '../components/Breadcrumbs';
 import CaseStudy from '../components/CaseStudy';
 import Contact from '../components/Contact';
@@ -147,28 +148,7 @@ export default function ServicePage({
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="font-montserrat text-h2-mobile md:text-h2-tablet lg:text-h2-desktop font-bold text-gray-700 mb-12 text-center">
-            Procesul Nostru de Lucru
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
-                <div className="w-12 h-12 bg-gold text-white rounded-full flex items-center justify-center font-montserrat text-xl font-bold mb-4">
-                  {index + 1}
-                </div>
-                <h3 className="font-montserrat text-h3-mobile md:text-h3-tablet font-semibold text-gray-700 mb-2">
-                  {step.title}
-                </h3>
-                <p className="font-open-sans text-sm text-gray-600 leading-body">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessStepsSection processSteps={processSteps} />
 
       {caseStudy && <CaseStudy {...caseStudy} />}
 
@@ -194,5 +174,44 @@ export default function ServicePage({
 
       <Contact />
     </div>
+  );
+}
+
+function ProcessStepsSection({ processSteps }: { processSteps: { title: string; description: string }[] }) {
+  const { elementRef, visibleItems } = useStaggeredAnimation(processSteps.length, 100);
+
+  return (
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="font-montserrat text-h2-mobile md:text-h2-tablet lg:text-h2-desktop font-bold text-gray-700 mb-12 text-center">
+          Procesul Nostru de Lucru
+        </h2>
+        <div ref={elementRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {processSteps.map((step, index) => (
+            <div
+              key={index}
+              className={`bg-white p-6 rounded-lg shadow-md card-animate transition-all duration-700 ${
+                visibleItems.has(index)
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{
+                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+              }}
+            >
+              <div className="w-12 h-12 bg-gold text-white rounded-full flex items-center justify-center font-montserrat text-xl font-bold mb-4">
+                {index + 1}
+              </div>
+              <h3 className="font-montserrat text-h3-mobile md:text-h3-tablet font-semibold text-gray-700 mb-2">
+                {step.title}
+              </h3>
+              <p className="font-open-sans text-sm text-gray-600 leading-body">
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

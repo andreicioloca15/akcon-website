@@ -48,7 +48,7 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold font-open-sans text-base transition-all duration-300 hover:border-gold/50"
+                  className="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-open-sans text-base hover:border-gold/50"
                   placeholder="ex: Ion Popescu"
                   autoComplete="name"
                   required
@@ -64,7 +64,7 @@ export default function Contact() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent font-open-sans text-base transition-all duration-300"
+                  className="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-open-sans text-base hover:border-gold/50"
                   placeholder="ex: 0749 616 796"
                   autoComplete="tel"
                   inputMode="tel"
@@ -81,7 +81,7 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent font-open-sans text-base transition-all duration-300"
+                  className="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-open-sans text-base hover:border-gold/50"
                   placeholder="ex: ion.popescu@email.com"
                   autoComplete="email"
                   inputMode="email"
@@ -97,7 +97,7 @@ export default function Contact() {
                   name="city"
                   value={formData.city}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent font-open-sans transition-all duration-300"
+                  className="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-open-sans hover:border-gold/50"
                   placeholder="ex: Alba Iulia"
                   required
                 />
@@ -111,7 +111,7 @@ export default function Contact() {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent font-open-sans transition-all duration-300"
+                  className="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-open-sans hover:border-gold/50"
                   required
                 >
                   <option value="">Selectează serviciul</option>
@@ -131,7 +131,7 @@ export default function Contact() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent font-open-sans transition-all duration-300"
+                  className="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-open-sans hover:border-gold/50"
                   rows={4}
                   placeholder="Detalii despre proiect..."
                 ></textarea>
