@@ -80,14 +80,17 @@ export default function Portfolio() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`group relative rounded-lg shadow-lg cursor-pointer h-80 transition-all duration-700 image-zoom-container ${
+              className={`group relative rounded-lg shadow-lg cursor-pointer h-80 image-zoom-container ${
                 visibleItems.has(index)
-                  ? 'opacity-100 translate-y-0 hover:shadow-2xl hover:-translate-y-2'
-                  : 'opacity-0 translate-y-8'
+                  ? 'opacity-100 hover:shadow-2xl'
+                  : 'opacity-0'
               }`}
               style={{
-                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
-                transitionDuration: '0.7s',
+                transform: visibleItems.has(index)
+                  ? 'translate3d(0, 0, 0) scale3d(1, 1, 1)'
+                  : 'translate3d(0, 20px, 0) scale3d(1.04, 1.04, 1)',
+                transition: 'opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                willChange: visibleItems.has(index) ? 'auto' : 'transform, opacity',
               }}
             >
               <div

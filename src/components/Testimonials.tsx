@@ -55,13 +55,17 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={`bg-white p-8 rounded-lg shadow-md card-animate transition-all duration-700 ${
+              className={`bg-white p-8 rounded-lg shadow-md card-animate ${
                 visibleItems.has(index)
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-8'
+                  ? 'opacity-100'
+                  : 'opacity-0'
               }`}
               style={{
-                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                transform: visibleItems.has(index)
+                  ? 'translate3d(0, 0, 0) scale3d(1, 1, 1)'
+                  : 'translate3d(0, 16px, 0) scale3d(1.03, 1.03, 1)',
+                transition: 'opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                willChange: visibleItems.has(index) ? 'auto' : 'transform, opacity',
               }}
             >
               <div className="flex items-center mb-4">

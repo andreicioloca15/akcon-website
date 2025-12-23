@@ -21,13 +21,17 @@ export default function Process() {
           {steps.map((step, index) => (
             <div
               key={step.number}
-              className={`relative transition-all duration-700 ${
+              className={`relative transition-all ${
                 visibleItems.has(index)
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-8'
+                  ? 'opacity-100'
+                  : 'opacity-0'
               }`}
               style={{
-                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                transform: visibleItems.has(index)
+                  ? 'translate3d(0, 0, 0) scale3d(1, 1, 1)'
+                  : 'translate3d(0, 16px, 0) scale3d(1.03, 1.03, 1)',
+                transition: 'opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+                willChange: visibleItems.has(index) ? 'auto' : 'transform, opacity',
               }}
             >
               <div className="flex items-start card-animate bg-white p-6 rounded-lg shadow-md">

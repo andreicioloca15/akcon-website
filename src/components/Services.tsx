@@ -63,12 +63,27 @@ export default function Services() {
             return (
               <div
                 key={index}
-                className="bg-white p-8 rounded-lg shadow-card hover:shadow-2xl transition-all duration-300 group hover:-translate-y-2 border border-gray-100 hover:border-gold/50 relative overflow-hidden fade-in-up"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="bg-white p-8 rounded-lg border border-gray-100 hover:border-gray-200 relative overflow-hidden fade-in-up group"
+                style={{
+                  animationDelay: `${index * 100}ms`,
+                  transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+                  willChange: 'transform',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translate3d(0, -4px, 0)';
+                  e.currentTarget.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.12)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translate3d(0, 0, 0)';
+                  e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+                }}
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl transform translate-x-16 -translate-y-16 group-hover:bg-gold/10 transition-all duration-500"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl transform translate-x-16 -translate-y-16 group-hover:bg-gold/8 transition-all duration-300"></div>
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-gradient-to-br from-gold to-gold-hover rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
+                  <div className="w-16 h-16 bg-gradient-to-br from-gold to-gold-hover rounded-full flex items-center justify-center mb-6 shadow-lg" style={{
+                    transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                  }}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="font-montserrat text-h3-mobile md:text-h3-tablet text-gray-700 mb-4 group-hover:text-gold transition-colors duration-300">
