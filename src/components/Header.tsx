@@ -17,6 +17,11 @@ interface Service {
   order: number;
 }
 
+interface MappedHeaderService {
+  name: string;
+  path: string;
+}
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
@@ -24,14 +29,14 @@ export default function Header() {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       setScrolled(window.scrollY > 100);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (id: string): void => {
     if (location.pathname !== '/') {
       window.location.href = `/#${id}`;
     } else {
@@ -52,7 +57,7 @@ export default function Header() {
     mansardari
   ];
 
-  const services = servicesData
+  const services: MappedHeaderService[] = servicesData
     .sort((a, b) => a.order - b.order)
     .filter(s => s.link)
     .map(s => ({

@@ -1,13 +1,16 @@
 import * as LucideIcons from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 import whyChooseData from '../content/why-choose-us.json';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+
+type LucideIconsType = Record<string, LucideIcon>;
 
 export default function WhyChooseUs() {
   const headingRef = useScrollAnimation<HTMLDivElement>({ distance: 40 });
 
-  const getIconComponent = (iconName: string | null) => {
+  const getIconComponent = (iconName: string | null): LucideIcon | null => {
     if (!iconName) return null;
-    const Icon = (LucideIcons as any)[iconName];
+    const Icon = (LucideIcons as LucideIconsType)[iconName];
     return Icon || null;
   };
 

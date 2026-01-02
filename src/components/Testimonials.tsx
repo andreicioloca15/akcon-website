@@ -16,6 +16,16 @@ interface Testimonial {
   featured?: boolean;
 }
 
+interface MappedTestimonial {
+  name: string;
+  location: string;
+  profession?: string;
+  initials: string;
+  text: string;
+  rating: number;
+  avatar?: string;
+}
+
 export default function Testimonials() {
   const testimonialsData: Testimonial[] = [
     mariaGeorgescu,
@@ -23,7 +33,7 @@ export default function Testimonials() {
     andreiDumitrescu
   ];
 
-  const testimonials = testimonialsData
+  const testimonials: MappedTestimonial[] = testimonialsData
     .filter(t => t.featured !== false)
     .sort((a, b) => a.order - b.order)
     .slice(0, 3)

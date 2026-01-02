@@ -1,8 +1,21 @@
 import { useEffect, useState, useRef } from 'react';
-import { Calendar, Trophy, Shield, Smile } from 'lucide-react';
+import { Calendar, Trophy, Shield, Smile, LucideIcon } from 'lucide-react';
 import companyData from '../content/company.json';
 
-function CountUp({ end, duration = 2500, suffix = '' }: { end: number; duration?: number; suffix?: string }) {
+interface CountUpProps {
+  end: number;
+  duration?: number;
+  suffix?: string;
+}
+
+interface StatItem {
+  value: number;
+  suffix: string;
+  label: string;
+  Icon: LucideIcon;
+}
+
+function CountUp({ end, duration = 2500, suffix = '' }: CountUpProps) {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -36,7 +49,7 @@ function CountUp({ end, duration = 2500, suffix = '' }: { end: number; duration?
 
     const easeOutQuart = (t: number): number => 1 - Math.pow(1 - t, 4);
 
-    const animate = (currentTime: number) => {
+    const animate = (currentTime: number): void => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
       const easedProgress = easeOutQuart(progress);
@@ -66,7 +79,7 @@ function CountUp({ end, duration = 2500, suffix = '' }: { end: number; duration?
 }
 
 export default function Stats() {
-  const stats = [
+  const stats: StatItem[] = [
     { value: companyData.yearsExperience, suffix: '+', label: 'Ani Experiență', Icon: Calendar },
     { value: companyData.projectsCompleted, suffix: '+', label: 'Proiecte Finalizate', Icon: Trophy },
     { value: 15, suffix: '', label: 'Ani Garanție', Icon: Shield },

@@ -9,7 +9,7 @@ export default function Hero() {
   const subtitleRef = useScrollAnimation<HTMLParagraphElement>({ distance: 60, delay: 150 });
   const buttonsRef = useScrollAnimation<HTMLDivElement>({ distance: 60, delay: 300 });
 
-  const scrollToContact = () => {
+  const scrollToContact = (): void => {
     const element = document.getElementById('contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });

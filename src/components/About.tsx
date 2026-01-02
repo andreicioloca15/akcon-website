@@ -1,7 +1,19 @@
-import { Target, Eye, Shield, Users, Award, TrendingUp, CheckCircle, Building2 } from 'lucide-react';
+import { Target, Eye, Shield, Users, Award, TrendingUp, CheckCircle, Building2, LucideIcon } from 'lucide-react';
 import ProjectCarousel from './ProjectCarousel';
 import companyData from '../content/company.json';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+
+interface ValueItem {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+interface ChooseUsItem {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
 
 export default function About() {
   const heroLeftRef = useScrollAnimation<HTMLDivElement>({ distance: 60 });
@@ -13,7 +25,7 @@ export default function About() {
   const projectsCarouselRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 200 });
   const chooseUsHeadingRef = useScrollAnimation<HTMLDivElement>({ distance: 40 });
 
-  const values = [
+  const values: ValueItem[] = [
     {
       icon: Shield,
       title: 'Calitate',
@@ -165,7 +177,7 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
+            {([
               {
                 icon: Shield,
                 title: 'Garanție Extinsă',
@@ -196,7 +208,7 @@ export default function About() {
                 title: 'Local & Rapid',
                 description: 'Sediu în Alba Iulia - intervenție rapidă în tot județul'
               }
-            ].map((item, index) => {
+            ] as ChooseUsItem[]).map((item, index) => {
               const Icon = item.icon;
               const ChooseUsCard = () => {
                 const cardRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: index * 100 });
