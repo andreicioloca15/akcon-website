@@ -5,7 +5,7 @@ export default function ScrollProgress() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const updateProgress = () => {
+    const updateProgress = (): void => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollProgress = (scrollTop / docHeight) * 100;

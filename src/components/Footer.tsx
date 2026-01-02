@@ -1,11 +1,20 @@
 import { MapPin, Phone, Mail, Facebook, Instagram } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import companyData from '../content/company.json';
 
 export default function Footer() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const location = useLocation();
+
+  const scrollToSection = (id: string): void => {
+    // If we're on the home page, scroll to the section
+    if (location.pathname === '/') {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If we're on another page, navigate to home with hash
+      window.location.href = `/#${id}`;
     }
   };
 
@@ -20,13 +29,19 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/akcon"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/akcon"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold"
               >
                 <Instagram className="w-5 h-5" />
@@ -94,14 +109,14 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <a href="#" className="hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
+                <Link to="/politica-confidentialitate" className="hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
                   Politică Confidențialitate
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
+                <Link to="/termeni-conditii" className="hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
                   Termeni și Condiții
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

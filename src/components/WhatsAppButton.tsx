@@ -7,7 +7,7 @@ export default function WhatsAppButton() {
   const phoneNumber = companyData.whatsapp;
   const message = 'Bună ziua! Sunt interesat de serviciile dvs. de acoperișuri.';
 
-  const handleWhatsAppClick = () => {
+  const handleWhatsAppClick = (): void => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     setIsOpen(false);

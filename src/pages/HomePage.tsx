@@ -8,6 +8,7 @@ import Process from '../components/Process';
 import Testimonials from '../components/Testimonials';
 import Portfolio from '../components/Portfolio';
 import ServiceArea from '../components/ServiceArea';
+import LocationServices from '../components/LocationServices';
 import Contact from '../components/Contact';
 
 export default function HomePage() {
@@ -23,6 +24,7 @@ export default function HomePage() {
       <Testimonials />
       <Portfolio />
       <ServiceArea />
+      <LocationServices />
       <Contact />
     </>
   );

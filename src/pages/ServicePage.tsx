@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
 import { Phone, CheckCircle, Shield, Clock, Award } from 'lucide-react';
 import { useStaggeredAnimation } from '../hooks/useScrollAnimation';
 import Breadcrumbs from '../components/Breadcrumbs';
 import CaseStudy from '../components/CaseStudy';
 import Contact from '../components/Contact';
+import SEO from '../components/SEO';
 
 interface FAQItem {
   question: string;
@@ -52,19 +52,7 @@ export default function ServicePage({
   faq,
   caseStudy
 }: ServicePageProps) {
-  useEffect(() => {
-    document.title = metaTitle;
-    const metaDescTag = document.querySelector('meta[name="description"]');
-    if (metaDescTag) {
-      metaDescTag.setAttribute('content', metaDescription);
-    }
-    const keywordsTag = document.querySelector('meta[name="keywords"]');
-    if (keywordsTag) {
-      keywordsTag.setAttribute('content', keywords.join(', '));
-    }
-  }, [metaTitle, metaDescription, keywords]);
-
-  const scrollToContact = () => {
+  const scrollToContact = (): void => {
     const element = document.getElementById('contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -73,6 +61,13 @@ export default function ServicePage({
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title={metaTitle}
+        description={metaDescription}
+        keywords={keywords}
+        ogType="service"
+        faq={faq}
+      />
       <Breadcrumbs items={[{ label: 'Servicii', path: '/#servicii' }, { label: title }]} />
 
       <section className="relative py-20 bg-gradient-to-br from-navy via-navy-light to-navy text-white overflow-hidden">

@@ -1,4 +1,5 @@
 import * as LucideIcons from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 import montajAcoperisuri from '../content/services/montaj-acoperisuri.json';
 import renovareAcoperisuri from '../content/services/renovare-acoperisuri.json';
 import reparatiiAcoperisuri from '../content/services/reparatii-acoperisuri.json';
@@ -14,6 +15,15 @@ interface Service {
   order: number;
 }
 
+interface MappedService {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  link?: string;
+}
+
+type LucideIconsType = Record<string, LucideIcon>;
+
 export default function Services() {
   const servicesData: Service[] = [
     montajAcoperisuri,
@@ -24,12 +34,12 @@ export default function Services() {
     mansardari
   ];
 
-  const getIconComponent = (iconName: string) => {
-    const Icon = (LucideIcons as any)[iconName];
+  const getIconComponent = (iconName: string): LucideIcon => {
+    const Icon = (LucideIcons as LucideIconsType)[iconName];
     return Icon || LucideIcons.Home;
   };
 
-  const services = servicesData
+  const services: MappedService[] = servicesData
     .sort((a, b) => a.order - b.order)
     .map(s => ({
       icon: getIconComponent(s.icon),
@@ -38,7 +48,7 @@ export default function Services() {
       link: s.link
     }));
 
-  const scrollToContact = () => {
+  const scrollToContact = (): void => {
     const element = document.getElementById('contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -70,11 +80,11 @@ export default function Services() {
                   boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
                   willChange: 'transform',
                 }}
-                onMouseEnter={(e) => {
+                onMouseEnter={(e: React.MouseEvent<HTMLDivElement>): void => {
                   e.currentTarget.style.transform = 'translate3d(0, -4px, 0)';
                   e.currentTarget.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.12)';
                 }}
-                onMouseLeave={(e) => {
+                onMouseLeave={(e: React.MouseEvent<HTMLDivElement>): void => {
                   e.currentTarget.style.transform = 'translate3d(0, 0, 0)';
                   e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
                 }}

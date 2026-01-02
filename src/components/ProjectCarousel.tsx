@@ -36,17 +36,17 @@ export default function ProjectCarousel() {
     return () => clearInterval(interval);
   }, [isAutoPlaying, projects.length]);
 
-  const goToPrevious = () => {
+  const goToPrevious = (): void => {
     setIsAutoPlaying(false);
     setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
-  const goToNext = () => {
+  const goToNext = (): void => {
     setIsAutoPlaying(false);
     setCurrentIndex((prev) => (prev + 1) % projects.length);
   };
 
-  const goToSlide = (index: number) => {
+  const goToSlide = (index: number): void => {
     setIsAutoPlaying(false);
     setCurrentIndex(index);
   };

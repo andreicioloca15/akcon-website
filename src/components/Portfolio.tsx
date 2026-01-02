@@ -24,6 +24,14 @@ interface PortfolioProject {
   };
 }
 
+interface MappedProject {
+  title: string;
+  details: string;
+  quote: string;
+  gradient: string;
+  image: string;
+}
+
 export default function Portfolio() {
   const portfolioData: PortfolioProject[] = [
     vilaAlbaIulia,
@@ -43,7 +51,7 @@ export default function Portfolio() {
     'from-gray-600 to-navy-light'
   ];
 
-  const projects = portfolioData
+  const projects: MappedProject[] = portfolioData
     .filter(p => p.featured !== false)
     .sort((a, b) => a.order - b.order)
     .slice(0, 6)
@@ -55,7 +63,7 @@ export default function Portfolio() {
       image: p.image
     }));
 
-  const scrollToContact = () => {
+  const scrollToContact = (): void => {
     const element = document.getElementById('contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });

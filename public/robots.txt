@@ -1,0 +1,10 @@
+# robots.txt for Akcon - Acoperișuri Premium Alba Iulia
+
+User-agent: *
+Allow: /
+
+# Block admin area
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://akcon.ro/sitemap.xml
