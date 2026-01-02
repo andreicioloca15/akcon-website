@@ -73,7 +73,8 @@ export default function About() {
               <div className="absolute inset-0 bg-gold/20 rounded-lg transform translate-x-6 translate-y-6 -z-10"></div>
               <img
                 src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="AKCON - Experți în Acoperișuri"
+                alt="AKCON - Construcție și renovare acoperișuri profesionale în Alba Iulia, Aiud, Teiuș - Garanție 15 ani"
+                loading="lazy"
                 className="rounded-lg shadow-2xl w-full h-auto object-cover relative z-10 hover:shadow-gold/50 transition-shadow duration-300"
               />
             </div>
