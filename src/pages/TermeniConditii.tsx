@@ -1,5 +1,6 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import Breadcrumbs from '../components/Breadcrumbs';
+import SEO from '../components/SEO';
 import companyData from '../content/company.json';
 
 export default function TermeniConditii() {
@@ -8,6 +9,12 @@ export default function TermeniConditii() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <SEO
+        title="Termeni și Condiții - Akcon | Servicii Acoperișuri Alba Iulia"
+        description="Termenii și condițiile Akcon pentru servicii de montaj, renovare și reparații acoperișuri în Alba Iulia. Garanție 15 ani."
+        keywords={['termeni conditii', 'garantie acoperisuri', 'contracte acoperisuri', 'akcon alba iulia']}
+        ogType="article"
+      />
       <Breadcrumbs items={[{ label: 'Termeni și Condiții' }]} />
 
       <section className="py-20">

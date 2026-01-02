@@ -1,5 +1,6 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import Breadcrumbs from '../components/Breadcrumbs';
+import SEO from '../components/SEO';
 import companyData from '../content/company.json';
 
 export default function PoliticaConfidentialitate() {
@@ -8,6 +9,12 @@ export default function PoliticaConfidentialitate() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <SEO
+        title="Politică de Confidențialitate - Akcon | Protecția Datelor GDPR"
+        description="Politica de confidențialitate Akcon în conformitate cu GDPR. Aflați cum colectăm, utilizăm și protejăm datele dvs. personale."
+        keywords={['politica confidentialitate', 'protectia datelor', 'GDPR', 'privacy policy akcon']}
+        ogType="article"
+      />
       <Breadcrumbs items={[{ label: 'Politică de Confidențialitate' }]} />
 
       <section className="py-20">

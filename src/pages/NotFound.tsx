@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom';
 import { Home, ArrowLeft } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-navy via-navy-light to-navy text-white flex items-center justify-center px-4">
+      <SEO
+        title="Pagina Nu A Fost Găsită - 404 | Akcon"
+        description="Pagina pe care o căutați nu există. Reveniți la pagina principală Akcon pentru servicii premium de acoperișuri în Alba Iulia."
+        keywords={['404', 'pagina negasita']}
+      />
       <div className="max-w-2xl mx-auto text-center">
         <div className="mb-8">
           <h1 className="font-montserrat text-9xl md:text-[12rem] font-bold text-gold mb-4">
