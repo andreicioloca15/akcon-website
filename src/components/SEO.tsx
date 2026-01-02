@@ -1,6 +1,11 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 interface SEOProps {
   title: string;
   description: string;
@@ -8,6 +13,7 @@ interface SEOProps {
   ogImage?: string;
   ogType?: string;
   canonical?: string;
+  faq?: FAQItem[];
 }
 
 export default function SEO({
@@ -16,7 +22,8 @@ export default function SEO({
   keywords = [],
   ogImage = '/og-image.jpg',
   ogType = 'website',
-  canonical
+  canonical,
+  faq = []
 }: SEOProps): null {
   const location = useLocation();
   const baseUrl = 'https://akcon.ro';
@@ -71,10 +78,40 @@ export default function SEO({
     }
     canonicalTag.setAttribute('href', fullUrl);
 
+    // Handle FAQ Schema
+    const faqSchemaId = 'faq-schema';
+    let faqSchemaTag = document.getElementById(faqSchemaId) as HTMLScriptElement;
+
+    if (faq && faq.length > 0) {
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faq.map(item => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+          }
+        }))
+      };
+
+      if (!faqSchemaTag) {
+        faqSchemaTag = document.createElement('script');
+        faqSchemaTag.id = faqSchemaId;
+        faqSchemaTag.type = 'application/ld+json';
+        document.head.appendChild(faqSchemaTag);
+      }
+      faqSchemaTag.textContent = JSON.stringify(faqSchema);
+    } else if (faqSchemaTag) {
+      // Remove FAQ schema if no FAQ data
+      faqSchemaTag.remove();
+    }
+
     // Update language attribute
     document.documentElement.setAttribute('lang', 'ro');
 
-  }, [title, description, keywords, ogImage, ogType, fullUrl]);
+  }, [title, description, keywords, ogImage, ogType, fullUrl, faq]);
 
   return null;
 }
