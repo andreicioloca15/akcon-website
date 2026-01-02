@@ -14,6 +14,7 @@ export default function TermeniConditii() {
         description="Termenii și condițiile Akcon pentru servicii de montaj, renovare și reparații acoperișuri în Alba Iulia. Garanție 15 ani."
         keywords={['termeni conditii', 'garantie acoperisuri', 'contracte acoperisuri', 'akcon alba iulia']}
         ogType="article"
+        breadcrumbs={[{ label: 'Termeni și Condiții' }]}
       />
       <Breadcrumbs items={[{ label: 'Termeni și Condiții' }]} />
 

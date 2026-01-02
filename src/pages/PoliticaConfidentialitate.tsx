@@ -14,6 +14,7 @@ export default function PoliticaConfidentialitate() {
         description="Politica de confidențialitate Akcon în conformitate cu GDPR. Aflați cum colectăm, utilizăm și protejăm datele dvs. personale."
         keywords={['politica confidentialitate', 'protectia datelor', 'GDPR', 'privacy policy akcon']}
         ogType="article"
+        breadcrumbs={[{ label: 'Politică de Confidențialitate' }]}
       />
       <Breadcrumbs items={[{ label: 'Politică de Confidențialitate' }]} />
 

@@ -6,6 +6,11 @@ interface FAQItem {
   answer: string;
 }
 
+interface BreadcrumbItem {
+  label: string;
+  path?: string;
+}
+
 interface SEOProps {
   title: string;
   description: string;
@@ -14,6 +19,7 @@ interface SEOProps {
   ogType?: string;
   canonical?: string;
   faq?: FAQItem[];
+  breadcrumbs?: BreadcrumbItem[];
 }
 
 export default function SEO({
@@ -23,7 +29,8 @@ export default function SEO({
   ogImage = '/og-image.jpg',
   ogType = 'website',
   canonical,
-  faq = []
+  faq = [],
+  breadcrumbs = []
 }: SEOProps): null {
   const location = useLocation();
   const baseUrl = 'https://akcon.ro';
@@ -108,10 +115,46 @@ export default function SEO({
       faqSchemaTag.remove();
     }
 
+    // Handle Breadcrumb Schema
+    const breadcrumbSchemaId = 'breadcrumb-schema';
+    let breadcrumbSchemaTag = document.getElementById(breadcrumbSchemaId) as HTMLScriptElement;
+
+    if (breadcrumbs && breadcrumbs.length > 0) {
+      const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Acasă",
+            "item": baseUrl
+          },
+          ...breadcrumbs.map((item, index) => ({
+            "@type": "ListItem",
+            "position": index + 2,
+            "name": item.label,
+            "item": item.path ? `${baseUrl}${item.path}` : undefined
+          }))
+        ]
+      };
+
+      if (!breadcrumbSchemaTag) {
+        breadcrumbSchemaTag = document.createElement('script');
+        breadcrumbSchemaTag.id = breadcrumbSchemaId;
+        breadcrumbSchemaTag.type = 'application/ld+json';
+        document.head.appendChild(breadcrumbSchemaTag);
+      }
+      breadcrumbSchemaTag.textContent = JSON.stringify(breadcrumbSchema);
+    } else if (breadcrumbSchemaTag) {
+      // Remove breadcrumb schema if no breadcrumb data
+      breadcrumbSchemaTag.remove();
+    }
+
     // Update language attribute
     document.documentElement.setAttribute('lang', 'ro');
 
-  }, [title, description, keywords, ogImage, ogType, fullUrl, faq]);
+  }, [title, description, keywords, ogImage, ogType, fullUrl, faq, breadcrumbs]);
 
   return null;
 }

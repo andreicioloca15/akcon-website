@@ -67,6 +67,7 @@ export default function ServicePage({
         keywords={keywords}
         ogType="service"
         faq={faq}
+        breadcrumbs={[{ label: 'Servicii', path: '/#servicii' }, { label: title }]}
       />
       <Breadcrumbs items={[{ label: 'Servicii', path: '/#servicii' }, { label: title }]} />
 
