@@ -52,7 +52,7 @@ export default function AboutTabs() {
             Despre AKCON
           </h2>
           <p className="font-open-sans text-xl mb-6 opacity-95 leading-body">
-            Cu peste {companyData.yearsExperience} ani de experiență în domeniul construcțiilor și acoperișurilor, <span className="text-gold font-semibold">AKCON</span> s-a impus ca lider pe piața din Alba Iulia și județele limitrofe.
+            Cu experiență <span className="text-gold font-semibold">din 1977</span> în domeniul construcțiilor și acoperișurilor, <span className="text-gold font-semibold">AKCON</span> s-a impus ca lider pe piața din Alba Iulia și județele limitrofe.
           </p>
           <p className="font-open-sans text-lg mb-8 opacity-90 leading-body">
             Am finalizat peste {companyData.projectsCompleted} de proiecte de succes, de la case particulare la construcții comerciale complexe. Satisfacția clienților noștri este cea mai bună dovadă a calității serviciilor noastre.
@@ -246,7 +246,7 @@ export default function AboutTabs() {
             <ul className="font-open-sans text-base opacity-90 leading-body space-y-2">
               <li className="flex items-start">
                 <span className="text-gold mr-2">✅</span>
-                <span>Finalizat peste 1000+ proiecte</span>
+                <span>Finalizat peste {companyData.projectsCompleted}+ proiecte cu {companyData.satisfiedClients}% satisfacție clienți</span>
               </li>
               <li className="flex items-start">
                 <span className="text-gold mr-2">✅</span>

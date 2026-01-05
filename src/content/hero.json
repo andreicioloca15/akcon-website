@@ -5,9 +5,8 @@
   "secondaryButtonText": "Sună Acum",
   "badges": [
     {
-      "text": "ani experiență",
-      "usesCompanyData": true,
-      "companyField": "yearsExperience",
+      "text": "Experiență din 1977",
+      "usesCompanyData": false,
       "order": 1
     },
     {
@@ -22,7 +21,7 @@
       "order": 3
     },
     {
-      "text": "Echipă certificată",
+      "text": "100% satisfacție clienți",
       "usesCompanyData": false,
       "order": 4
     }

@@ -55,7 +55,7 @@ export default function DespreNoi() {
             Construim Case, Construim Încredere
           </h2>
           <p className="font-open-sans text-xl mb-6 opacity-95 leading-body">
-            Cu peste {companyData.yearsExperience} ani de experiență în domeniul construcțiilor și acoperișurilor, <span className="text-gold font-semibold">AKCON</span> s-a impus ca lider pe piața din Alba Iulia și județele limitrofe.
+            Cu experiență <span className="text-gold font-semibold">din 1977</span> în domeniul construcțiilor și acoperișurilor, <span className="text-gold font-semibold">AKCON</span> s-a impus ca lider pe piața din Alba Iulia și județele limitrofe.
           </p>
           <p className="font-open-sans text-lg mb-8 opacity-90 leading-body">
             Am finalizat peste {companyData.projectsCompleted} de proiecte de succes, de la case particulare la construcții comerciale complexe. Satisfacția clienților noștri este cea mai bună dovadă a calității serviciilor noastre.
@@ -246,7 +246,7 @@ export default function DespreNoi() {
             <ul className="font-open-sans text-base opacity-90 leading-body space-y-2">
               <li className="flex items-start">
                 <span className="text-gold mr-2">✅</span>
-                <span>1000+ proiecte finalizate</span>
+                <span>{companyData.projectsCompleted}+ proiecte finalizate cu {companyData.satisfiedClients}% satisfacție clienți</span>
               </li>
               <li className="flex items-start">
                 <span className="text-gold mr-2">✅</span>
@@ -276,8 +276,8 @@ export default function DespreNoi() {
   return (
     <>
       <SEO
-        title="Despre Noi - AKCON | 4 Generații, 50 de Ani de Experiență"
-        description="Povestea AKCON: 4 generații, 50 ani experiență în construcții. Cunoaște echipa, proprietarul Cristian, și moștenirea noastră din 1977."
+        title="Despre Noi - AKCON | 4 Generații, Experiență din 1977"
+        description="Povestea AKCON: 4 generații, experiență din 1977 în construcții. Cunoaște echipa, proprietarul Cristian, și moștenirea noastră."
         keywords={['despre akcon', 'constructii alba iulia', 'acoperisuri alba iulia', 'echipa akcon', 'cristian akcon', 'istorie akcon']}
         canonical="https://akcon.ro/despre-noi"
       />
@@ -431,7 +431,7 @@ export default function DespreNoi() {
                 Solicită Ofertă
               </Link>
               <a
-                href={`tel:${companyData.phone}`}
+                href={`tel:+40${companyData.phone.replace(/\s/g, '')}`}
                 className="btn-primary bg-navy text-white hover:bg-navy-light inline-flex items-center gap-2"
               >
                 <Phone className="w-5 h-5" />
