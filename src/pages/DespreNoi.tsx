@@ -278,7 +278,7 @@ export default function DespreNoi() {
       <SEO
         title="Despre Noi - AKCON | 4 Generații, 50 de Ani de Experiență"
         description="Povestea AKCON: 4 generații, 50 ani experiență în construcții. Cunoaște echipa, proprietarul Cristian, și moștenirea noastră din 1977."
-        keywords="despre akcon, constructii alba iulia, acoperisuri alba iulia, echipa akcon, cristian akcon, istorie akcon"
+        keywords={['despre akcon', 'constructii alba iulia', 'acoperisuri alba iulia', 'echipa akcon', 'cristian akcon', 'istorie akcon']}
         canonical="https://akcon.ro/despre-noi"
       />
 
