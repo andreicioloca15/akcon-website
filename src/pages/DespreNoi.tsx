@@ -307,7 +307,7 @@ export default function DespreNoi() {
               4 Generații. 50 de Ani. O Singură Promisiune: Calitate.
             </p>
             <p className="font-open-sans text-lg opacity-90 max-w-2xl mx-auto">
-              De la 1977, familia AKCON construiește case și încredere în Alba Iulia și județele limitrofe.
+              Din 1977, familia AKCON construiește case și încredere în Alba Iulia și județele limitrofe.
             </p>
           </div>
 
