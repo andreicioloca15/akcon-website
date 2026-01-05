@@ -226,6 +226,23 @@
   .gradient-overlay-navy {
     @apply absolute inset-0 bg-gradient-to-br from-navy/90 via-navy/80 to-navy-light/90;
   }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .shadow-glow-gold {
+    box-shadow: 0 4px 20px rgba(198, 160, 82, 0.6);
+  }
 }
 
 @keyframes fadeIn {

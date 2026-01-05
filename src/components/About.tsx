@@ -2,6 +2,7 @@ import { Target, Eye, Shield, Users, Award, TrendingUp, CheckCircle, Building2, 
 import ProjectCarousel from './ProjectCarousel';
 import companyData from '../content/company.json';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import AboutTabs from './AboutTabs';
 
 interface ValueItem {
   icon: LucideIcon;
@@ -16,8 +17,6 @@ interface ChooseUsItem {
 }
 
 export default function About() {
-  const heroLeftRef = useScrollAnimation<HTMLDivElement>({ distance: 60 });
-  const heroRightRef = useScrollAnimation<HTMLDivElement>({ distance: 60, delay: 200 });
   const missionRef = useScrollAnimation<HTMLDivElement>({ distance: 50 });
   const visionRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 200 });
   const valuesHeadingRef = useScrollAnimation<HTMLDivElement>({ distance: 40 });
@@ -49,37 +48,8 @@ export default function About() {
   ];
 
   return (
-    <div id="despre">
-      <section className="relative py-20 bg-gradient-to-br from-navy via-navy-light to-navy text-white overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-gold/20 rounded-full blur-3xl floating"></div>
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-white/10 rounded-full blur-3xl floating" style={{ animationDelay: '1s' }}></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div ref={heroLeftRef}>
-              <h2 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-glow-white">
-                Despre AKCON
-              </h2>
-              <p className="font-open-sans text-xl mb-6 opacity-95 leading-body">
-                Cu peste {companyData.yearsExperience} ani de experiență în domeniul construcțiilor și acoperișurilor, <span className="text-gold font-semibold">AKCON</span> s-a impus ca lider pe piața din Alba Iulia și județele limitrofe.
-              </p>
-              <p className="font-open-sans text-lg mb-8 opacity-90 leading-body">
-                Am finalizat peste {companyData.projectsCompleted} de proiecte de succes, de la case particulare la construcții comerciale complexe. Satisfacția clienților noștri este cea mai bună dovadă a calității serviciilor noastre.
-              </p>
-            </div>
-            <div ref={heroRightRef} className="relative">
-              <div className="absolute inset-0 bg-gold/20 rounded-lg transform translate-x-6 translate-y-6 -z-10"></div>
-              <img
-                src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="AKCON - Experți în Acoperișuri"
-                className="rounded-lg shadow-2xl w-full h-auto object-cover relative z-10 hover:shadow-gold/50 transition-shadow duration-300"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+    <div>
+      <AboutTabs />
 
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4">
