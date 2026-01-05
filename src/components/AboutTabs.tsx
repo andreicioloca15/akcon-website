@@ -288,9 +288,9 @@ export default function AboutTabs() {
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Tab Navigation */}
-        <div className="mb-12 overflow-x-auto scrollbar-hide">
+        <div className="mb-8 xs:mb-12 overflow-x-auto scrollbar-hide">
           <div
-            className="flex space-x-2 md:space-x-4 border-b border-white/20 min-w-max md:min-w-0 md:justify-center pb-2"
+            className="flex flex-wrap xs:flex-nowrap justify-center gap-2 xs:gap-3 md:gap-4 border-b border-white/20 pb-2"
             role="tablist"
             aria-label="Despre AKCON tabs"
           >
@@ -299,7 +299,7 @@ export default function AboutTabs() {
                 key={tab.id}
                 onClick={() => setActiveTab(index)}
                 className={`
-                  font-montserrat text-sm md:text-base lg:text-lg font-semibold px-4 py-3 whitespace-nowrap
+                  font-montserrat text-xs xs:text-sm md:text-base lg:text-lg font-semibold px-3 xs:px-4 py-2 xs:py-3 whitespace-nowrap
                   transition-all duration-300 relative
                   ${activeTab === index
                     ? 'text-white'

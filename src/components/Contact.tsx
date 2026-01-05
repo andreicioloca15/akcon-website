@@ -48,7 +48,7 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-open-sans text-base hover:border-gold/50"
+                  className="form-input w-full px-4 py-3.5 border-2 border-gray-200 rounded-lg font-open-sans text-base hover:border-gold/50"
                   placeholder="ex: Ion Popescu"
                   autoComplete="name"
                   required
@@ -64,7 +64,7 @@ export default function Contact() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-open-sans text-base hover:border-gold/50"
+                  className="form-input w-full px-4 py-3.5 border-2 border-gray-200 rounded-lg font-open-sans text-base hover:border-gold/50"
                   placeholder="ex: 0749 616 796"
                   autoComplete="tel"
                   inputMode="tel"
@@ -81,7 +81,7 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-open-sans text-base hover:border-gold/50"
+                  className="form-input w-full px-4 py-3.5 border-2 border-gray-200 rounded-lg font-open-sans text-base hover:border-gold/50"
                   placeholder="ex: ion.popescu@email.com"
                   autoComplete="email"
                   inputMode="email"
@@ -97,7 +97,7 @@ export default function Contact() {
                   name="city"
                   value={formData.city}
                   onChange={handleChange}
-                  className="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-open-sans hover:border-gold/50"
+                  className="form-input w-full px-4 py-3.5 border-2 border-gray-200 rounded-lg font-open-sans hover:border-gold/50"
                   placeholder="ex: Alba Iulia"
                   required
                 />
@@ -111,7 +111,7 @@ export default function Contact() {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-open-sans hover:border-gold/50"
+                  className="form-input w-full px-4 py-3.5 border-2 border-gray-200 rounded-lg font-open-sans hover:border-gold/50"
                   required
                 >
                   <option value="">Selectează serviciul</option>
@@ -131,7 +131,7 @@ export default function Contact() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-open-sans hover:border-gold/50"
+                  className="form-input w-full px-4 py-3.5 border-2 border-gray-200 rounded-lg font-open-sans hover:border-gold/50"
                   rows={4}
                   placeholder="Detalii despre proiect..."
                 ></textarea>
@@ -139,7 +139,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-gold text-white px-8 py-4 rounded-lg font-montserrat text-lg font-semibold hover:bg-gold-hover transition-all duration-300 hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold relative overflow-hidden group"
+                className="w-full bg-gold text-white px-4 xs:px-6 md:px-8 py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gold-hover transition-all duration-300 hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold relative overflow-hidden group"
               >
                 <span className="relative z-10">Trimite Cererea</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-gold-hover to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

@@ -129,7 +129,7 @@ export default function Portfolio() {
         <div className="text-center mt-12 fade-in-up delay-300">
           <button
             onClick={scrollToContact}
-            className="bg-gold text-white px-8 py-4 rounded-lg font-montserrat text-lg font-semibold hover:bg-gold-hover transition-all duration-300 hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold relative overflow-hidden group"
+            className="bg-gold text-white px-4 xs:px-6 md:px-8 py-3 xs:py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gold-hover transition-all duration-300 hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold relative overflow-hidden group"
           >
             <span className="relative z-10">Solicită Ofertă Gratuită</span>
             <div className="absolute inset-0 bg-gradient-to-r from-gold-hover to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

@@ -3,17 +3,33 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    box-sizing: border-box;
+  }
+
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
   }
 
   body {
     @apply antialiased;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
   }
 
   img {
     @apply transition-transform duration-700 ease-out;
     will-change: transform;
+    max-width: 100%;
+    height: auto;
+  }
+
+  section,
+  div {
+    max-width: 100%;
   }
 }
 

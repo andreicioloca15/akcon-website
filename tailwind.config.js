@@ -2,6 +2,14 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      'xs': '375px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       colors: {
         navy: {
@@ -32,6 +40,7 @@ export default {
         'open-sans': ['Open Sans', 'sans-serif'],
       },
       fontSize: {
+        'h1-xs': ['1.875rem', { lineHeight: '2.25rem', fontWeight: '700' }],
         'h1-mobile': ['2.25rem', { lineHeight: '2.5rem', fontWeight: '700' }],
         'h1-tablet': ['3rem', { lineHeight: '3.25rem', fontWeight: '700' }],
         'h1-desktop': ['3.75rem', { lineHeight: '4rem', fontWeight: '700' }],

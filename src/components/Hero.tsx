@@ -28,38 +28,38 @@ export default function Hero() {
       </div>
 
       <div className="relative z-30 max-w-5xl mx-auto px-4 text-center text-white">
-        <h1 ref={headingRef} className="font-montserrat text-h1-mobile md:text-h1-tablet lg:text-h1-desktop mb-8 text-glow-white">
+        <h1 ref={headingRef} className="font-montserrat text-h1-xs xs:text-h1-mobile md:text-h1-tablet lg:text-h1-desktop mb-6 xs:mb-8 text-glow-white">
           {heroData.mainHeadline}
         </h1>
-        <p ref={subtitleRef} className="font-open-sans text-lg md:text-xl lg:text-2xl mb-12 max-w-2xl mx-auto leading-body">
+        <p ref={subtitleRef} className="font-open-sans text-base xs:text-lg md:text-xl lg:text-2xl mb-10 xs:mb-12 max-w-2xl mx-auto leading-body">
           {heroData.subtitle}
         </p>
 
-        <div ref={buttonsRef} className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
+        <div ref={buttonsRef} className="flex flex-col sm:flex-row justify-center gap-4 xs:gap-6 mb-12 xs:mb-16">
           <button
             onClick={scrollToContact}
-            className="bg-gold text-white px-8 py-4 rounded-lg font-montserrat text-lg font-semibold hover:bg-gold-hover transition-all duration-300 shadow-2xl hover:shadow-gold/50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-navy relative overflow-hidden group"
+            className="bg-gold text-white px-4 xs:px-6 md:px-8 py-3 xs:py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gold-hover transition-all duration-300 shadow-2xl hover:shadow-gold/50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-navy relative overflow-hidden group"
           >
             <span className="relative z-10">{heroData.primaryButtonText}</span>
             <div className="absolute inset-0 bg-gradient-to-r from-gold-hover to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
           <a
             href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`}
-            className="bg-white text-navy px-8 py-4 rounded-lg font-montserrat text-lg font-semibold hover:bg-gold hover:text-white transition-all duration-300 shadow-2xl hover:shadow-white/50 hover:scale-105 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-navy"
+            className="bg-white text-navy px-4 xs:px-6 md:px-8 py-3 xs:py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gold hover:text-white transition-all duration-300 shadow-2xl hover:shadow-white/50 hover:scale-105 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-navy"
           >
-            <Phone className="w-5 h-5 mr-2" />
+            <Phone className="w-4 h-4 xs:w-5 xs:h-5 mr-2" />
             {heroData.secondaryButtonText}: {companyData.phone}
           </a>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8 text-base">
+        <div className="flex flex-wrap justify-center gap-4 xs:gap-6 md:gap-8 text-sm xs:text-base">
           {badges.map((badge, index) => {
             const BadgeItem = () => {
               const badgeRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 450 + index * 100 });
               return (
                 <div
                   ref={badgeRef}
-                  className="flex items-center glass-effect px-4 py-2 rounded-full hover-lift"
+                  className="flex items-center glass-effect px-3 xs:px-4 py-2 rounded-full hover-lift"
                 >
               <CheckCircle className="w-6 h-6 text-gold mr-3 flex-shrink-0 pulse-soft" />
               <span className="font-open-sans">

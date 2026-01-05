@@ -82,15 +82,15 @@ export default function ServicePage({
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={scrollToContact}
-                className="bg-gold text-white px-8 py-4 rounded-lg font-montserrat text-lg font-semibold hover:bg-gold-hover transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold"
+                className="bg-gold text-white px-4 xs:px-6 md:px-8 py-3 xs:py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gold-hover transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold"
               >
                 Solicită Ofertă Gratuită
               </button>
               <a
                 href="tel:+40749616796"
-                className="bg-white text-navy px-8 py-4 rounded-lg font-montserrat text-lg font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-gold"
+                className="bg-white text-navy px-4 xs:px-6 md:px-8 py-3 xs:py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-gold"
               >
-                <Phone className="w-5 h-5 mr-2" />
+                <Phone className="w-4 h-4 xs:w-5 xs:h-5 mr-2" />
                 Sună Acum
               </a>
             </div>

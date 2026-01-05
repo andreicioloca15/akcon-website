@@ -26,16 +26,16 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link
             to="/"
-            className="inline-flex items-center bg-gold text-white px-8 py-4 rounded-lg font-montserrat text-lg font-semibold hover:bg-gold-hover transition-all duration-300 hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-navy"
+            className="inline-flex items-center bg-gold text-white px-4 xs:px-6 md:px-8 py-3 xs:py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gold-hover transition-all duration-300 hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-navy"
           >
-            <Home className="w-5 h-5 mr-2" />
+            <Home className="w-4 h-4 xs:w-5 xs:h-5 mr-2" />
             Pagina Principală
           </Link>
           <button
             onClick={() => window.history.back()}
-            className="inline-flex items-center bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-lg font-montserrat text-lg font-semibold hover:bg-white/20 transition-all duration-300 hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white"
+            className="inline-flex items-center bg-white/10 backdrop-blur-md text-white px-4 xs:px-6 md:px-8 py-3 xs:py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-white/20 transition-all duration-300 hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white"
           >
-            <ArrowLeft className="w-5 h-5 mr-2" />
+            <ArrowLeft className="w-4 h-4 xs:w-5 xs:h-5 mr-2" />
             Înapoi
           </button>
         </div>
