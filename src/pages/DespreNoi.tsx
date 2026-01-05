@@ -71,7 +71,7 @@ export default function DespreNoi() {
       content: (
         <div>
           <h2 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-glow-white">
-            Viziune Tânără, Experiență de 10 Ani
+            Cristian - CEO & Proprietar AKCON
           </h2>
           <p className="font-open-sans text-xl mb-6 opacity-95 leading-body">
             La doar <span className="text-gold font-semibold">25 de ani</span>, Cristian conduce AKCON cu o pasiune moștenită și o viziune modernă. Cu 10 ani de experiență practică în domeniul acoperișurilor și construcțiilor, Cristian a transformat provocările într-o oportunitate de inovație.
