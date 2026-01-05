@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollProgress from './components/ScrollProgress';
 import HomePage from './pages/HomePage';
+import DespreNoi from './pages/DespreNoi';
 import MontajAcoperisuri from './pages/MontajAcoperisuri';
 import RenovareAcoperisuri from './pages/RenovareAcoperisuri';
 import TiglaCeramica from './pages/TiglaCeramica';
@@ -44,6 +45,7 @@ function App() {
         <main className="pt-20">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/despre-noi" element={<DespreNoi />} />
             <Route path="/servicii/montaj-acoperisuri" element={<MontajAcoperisuri />} />
             <Route path="/servicii/montaj-acoperisuri-noi" element={<MontajAcoperisuri />} />
             <Route path="/servicii/renovare-acoperisuri" element={<RenovareAcoperisuri />} />

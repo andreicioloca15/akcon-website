@@ -89,9 +89,9 @@ export default function Footer() {
             <h4 className="font-montserrat font-semibold text-lg mb-6">Link-uri Rapide</h4>
             <ul className="space-y-3 font-open-sans text-sm">
               <li>
-                <button onClick={() => scrollToSection('despre')} className="hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
+                <Link to="/despre-noi" className="hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
                   Despre Noi
-                </button>
+                </Link>
               </li>
               <li>
                 <button onClick={() => scrollToSection('portofoliu')} className="hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold">

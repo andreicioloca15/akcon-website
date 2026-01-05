@@ -2,7 +2,6 @@ import { Target, Eye, Shield, Users, Award, TrendingUp, CheckCircle, Building2, 
 import ProjectCarousel from './ProjectCarousel';
 import companyData from '../content/company.json';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import AboutTabs from './AboutTabs';
 
 interface ValueItem {
   icon: LucideIcon;
@@ -48,9 +47,7 @@ export default function About() {
   ];
 
   return (
-    <div>
-      <AboutTabs />
-
+    <div id="despre">
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

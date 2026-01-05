@@ -79,10 +79,10 @@ export default function Header() {
         </div>
 
         <nav className="hidden md:flex space-x-8 items-center">
-          <button onClick={() => scrollToSection('despre')} className="text-gray-700 hover:text-gold transition-all duration-300 font-open-sans focus:outline-none focus:text-gold relative group">
+          <Link to="/despre-noi" className="text-gray-700 hover:text-gold transition-all duration-300 font-open-sans focus:outline-none focus:text-gold relative group">
             Despre Noi
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
-          </button>
+          </Link>
           <div
             className="relative"
             onMouseEnter={() => setServicesDropdownOpen(true)}
@@ -141,9 +141,9 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
           <nav className="flex flex-col p-4 space-y-4">
-            <button onClick={() => scrollToSection('despre')} className="text-gray-700 hover:text-gold transition font-open-sans text-left py-2 focus:outline-none focus:text-gold">
+            <Link to="/despre-noi" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-gold transition font-open-sans text-left py-2 focus:outline-none focus:text-gold">
               Despre Noi
-            </button>
+            </Link>
             <div>
               <p className="text-gray-700 font-semibold font-open-sans mb-3">Servicii</p>
               <div className="pl-4 space-y-3">
