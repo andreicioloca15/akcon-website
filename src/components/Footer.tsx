@@ -133,7 +133,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Phone className="w-5 h-5 text-gold mr-2 flex-shrink-0" />
-                <a href={`tel:+40${companyData.phone.replace(/\s/g, '')}`} className="hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold leading-body">
+                <a href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`} className="hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold leading-body">
                   {companyData.phone}
                 </a>
               </li>

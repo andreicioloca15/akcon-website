@@ -44,7 +44,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-r from-gold-hover to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
           <a
-            href={`tel:+40${companyData.phone.replace(/\s/g, '')}`}
+            href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`}
             className="bg-white text-navy px-8 py-4 rounded-lg font-montserrat text-lg font-semibold hover:bg-gold hover:text-white transition-all duration-300 shadow-2xl hover:shadow-white/50 hover:scale-105 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-navy"
           >
             <Phone className="w-5 h-5 mr-2" />

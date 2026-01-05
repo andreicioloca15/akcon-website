@@ -163,7 +163,7 @@ export default function Contact() {
                   <Phone className="w-6 h-6 text-gold mr-4 flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-montserrat font-semibold mb-1">Telefon</div>
-                    <a href={`tel:+40${companyData.phone.replace(/\s/g, '')}`} className="font-open-sans leading-body hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
+                    <a href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`} className="font-open-sans leading-body hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
                       {companyData.phone}
                     </a>
                   </div>

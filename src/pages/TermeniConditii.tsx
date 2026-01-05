@@ -146,7 +146,7 @@ export default function TermeniConditii() {
                   {companyData.streetAddress}<br />
                   {companyData.cityAddress} {companyData.postalCode}, {companyData.county}<br />
                   Email: <a href={`mailto:${companyData.email}`} className="text-gold hover:text-gold-hover">{companyData.email}</a><br />
-                  Telefon: <a href={`tel:+40${companyData.phone.replace(/\s/g, '')}`} className="text-gold hover:text-gold-hover">{companyData.phone}</a>
+                  Telefon: <a href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`} className="text-gold hover:text-gold-hover">{companyData.phone}</a>
                 </p>
               </div>
             </div>

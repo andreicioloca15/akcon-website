@@ -431,7 +431,7 @@ export default function DespreNoi() {
                 Solicită Ofertă
               </Link>
               <a
-                href={`tel:+40${companyData.phone.replace(/\s/g, '')}`}
+                href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`}
                 className="btn-primary bg-navy text-white hover:bg-navy-light inline-flex items-center gap-2"
               >
                 <Phone className="w-5 h-5" />
