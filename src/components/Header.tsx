@@ -149,37 +149,58 @@ export default function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
-          <nav className="flex flex-col p-4 space-y-2">
-            <Link to="/despre-noi" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-gold transition font-open-sans text-left py-3 focus:outline-none focus:text-gold">
+        <div className="md:hidden fixed inset-0 top-[73px] bg-white z-50 overflow-y-auto">
+          <nav className="flex flex-col p-6">
+            <Link
+              to="/despre-noi"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-navy hover:text-gold transition-all duration-300 font-open-sans text-lg py-4 border-b border-gray-100 focus:outline-none focus:text-gold"
+            >
               Despre Noi
             </Link>
-            <div>
-              <p className="text-gray-700 font-semibold font-open-sans mb-2 py-3">Servicii</p>
-              <div className="pl-4 space-y-2">
+
+            <div className="border-b border-gray-100">
+              <p className="text-navy font-bold font-montserrat text-lg pt-4 pb-3">Servicii</p>
+              <div className="pb-2">
                 {services.map((service) => (
                   <Link
                     key={service.path}
                     to={service.path}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block text-gray-600 hover:text-gold transition font-open-sans text-sm py-3 focus:outline-none focus:text-gold"
+                    className="block text-gray-600 hover:text-gold transition-all duration-300 font-open-sans py-3 pl-4 focus:outline-none focus:text-gold"
                   >
                     {service.name}
                   </Link>
                 ))}
               </div>
             </div>
-            <button onClick={() => scrollToSection('portofoliu')} className="text-gray-700 hover:text-gold transition font-open-sans text-left py-3 focus:outline-none focus:text-gold">
+
+            <button
+              onClick={() => scrollToSection('portofoliu')}
+              className="text-navy hover:text-gold transition-all duration-300 font-open-sans text-lg text-left py-4 border-b border-gray-100 focus:outline-none focus:text-gold"
+            >
               Portofoliu
             </button>
-            <button onClick={() => scrollToSection('proces')} className="text-gray-700 hover:text-gold transition font-open-sans text-left py-3 focus:outline-none focus:text-gold">
+
+            <button
+              onClick={() => scrollToSection('proces')}
+              className="text-navy hover:text-gold transition-all duration-300 font-open-sans text-lg text-left py-4 border-b border-gray-100 focus:outline-none focus:text-gold"
+            >
               Cum Lucrăm
             </button>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-gold transition font-open-sans text-left py-3 focus:outline-none focus:text-gold">
+
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="text-navy hover:text-gold transition-all duration-300 font-open-sans text-lg text-left py-4 border-b border-gray-100 focus:outline-none focus:text-gold"
+            >
               Contact
             </button>
-            <a href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`} className="flex items-center text-navy font-semibold font-open-sans py-3 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 rounded">
-              <Phone className="w-5 h-5 mr-2" />
+
+            <a
+              href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`}
+              className="flex items-center text-navy font-semibold font-open-sans text-lg py-4 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 rounded mt-2"
+            >
+              <Phone className="w-5 h-5 mr-3 text-gold" />
               <span>{companyData.phone}</span>
             </a>
           </nav>

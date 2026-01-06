@@ -70,7 +70,12 @@ export default function ServicePage({
       />
       <Breadcrumbs items={[{ label: 'Servicii', path: '/#servicii' }, { label: title }]} />
 
-      <section className="relative py-20 bg-gradient-to-br from-navy via-navy-light to-navy text-white overflow-hidden">
+      <section className="relative py-20 md:py-24 lg:py-28 bg-gradient-to-br from-navy via-navy-light to-navy text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-gold rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
@@ -82,13 +87,13 @@ export default function ServicePage({
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={scrollToContact}
-                className="bg-gold text-white px-4 xs:px-6 md:px-8 py-3 xs:py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gold-hover transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold"
+                className="bg-gold text-white px-4 xs:px-6 md:px-8 py-3 xs:py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gold-hover transition-all duration-300 shadow-lg hover:shadow-gold/50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold"
               >
                 Solicită Ofertă Gratuită
               </button>
               <a
                 href="tel:+40749616796"
-                className="bg-white text-navy px-4 xs:px-6 md:px-8 py-3 xs:py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-gold"
+                className="bg-white text-navy px-4 xs:px-6 md:px-8 py-3 xs:py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:scale-105 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-gold"
               >
                 <Phone className="w-4 h-4 xs:w-5 xs:h-5 mr-2" />
                 Sună Acum
