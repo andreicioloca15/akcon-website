@@ -94,12 +94,12 @@ export default function Header() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
             </button>
             {servicesDropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 bg-white/95 backdrop-blur-md shadow-2xl rounded-lg py-2 w-64 border border-gray-100 animate-in fade-in slide-in-from-top-2 duration-200 z-[9999]">
+              <div className="absolute top-full left-0 mt-2 bg-white shadow-[0_8px_24px_rgba(0,0,0,0.15)] rounded-lg py-3 w-64 border border-gray-200 z-[9999]">
                 {services.map((service, index) => (
                   <Link
                     key={service.path}
                     to={service.path}
-                    className="block px-4 py-3 text-gray-700 hover:bg-gold/10 hover:text-gold transition-all duration-300 font-open-sans text-sm focus:outline-none focus:bg-gold/10 focus:text-gold hover:translate-x-1"
+                    className="block px-6 py-3 text-navy hover:bg-gray-50 hover:text-gold transition-all duration-200 font-open-sans text-sm focus:outline-none focus:bg-gray-50 focus:text-gold"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     {service.name}
