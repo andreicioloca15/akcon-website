@@ -87,42 +87,41 @@ export default function Stats() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gold via-gold-hover to-gold text-white relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-gradient-to-br from-gold via-yellow-600 to-gold text-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-10 right-10 w-80 h-80 bg-white rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
           {stats.map((stat, index) => {
             const Icon = stat.Icon;
             return (
               <div
                 key={index}
-                className="group transition-all duration-500 hover:-translate-y-3 hover:scale-105"
+                className="group fade-in-up transition-all duration-500 hover:-translate-y-3 hover:scale-105"
                 style={{
-                  animation: 'fadeInUp 0.8s ease-out forwards',
-                  animationDelay: `${index * 100}ms`,
-                  opacity: 0
+                  animationDelay: `${index * 100}ms`
                 }}
               >
                 <div
-                  className="mb-4 inline-flex items-center justify-center w-16 h-16 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"
+                  className="mb-4 inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"
                   style={{
                     animation: 'floating 3s ease-in-out infinite',
                     animationDelay: `${index * 200}ms`
                   }}
                 >
-                  <Icon className="w-12 h-12" />
+                  <Icon className="w-10 h-10 md:w-12 md:h-12" />
                 </div>
                 <CountUp end={stat.value} suffix={stat.suffix} />
-                <div className="font-open-sans text-base md:text-lg opacity-95 mt-3 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="font-open-sans text-sm md:text-base lg:text-lg opacity-95 mt-2 md:mt-3 transition-opacity duration-300 group-hover:opacity-100 leading-snug">
                   {stat.label}
                 </div>
               </div>
             );
           })}
         </div>
-      </div>
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
     </section>
   );
