@@ -1,9 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from './components/Header';
-import HeaderMobile from './components/HeaderMobile';
 import Footer from './components/Footer';
-import FooterMobile from './components/FooterMobile';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollProgress from './components/ScrollProgress';
 import HomePage from './pages/HomePage';
@@ -43,38 +41,24 @@ function App() {
       <ScrollToTop />
       <ScrollProgress />
       <div className="min-h-screen bg-white">
-        <HeaderMobile />
-        <div className="hidden md:block">
-          <Header />
-        </div>
-        <main>
+        <Header />
+        <main className="pt-20">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/despre-noi" element={<DespreNoi />} />
-            <Route path="/montaj-acoperisuri" element={<MontajAcoperisuri />} />
             <Route path="/servicii/montaj-acoperisuri" element={<MontajAcoperisuri />} />
             <Route path="/servicii/montaj-acoperisuri-noi" element={<MontajAcoperisuri />} />
-            <Route path="/renovare-acoperisuri" element={<RenovareAcoperisuri />} />
             <Route path="/servicii/renovare-acoperisuri" element={<RenovareAcoperisuri />} />
-            <Route path="/tigla-ceramica" element={<TiglaCeramica />} />
             <Route path="/servicii/tigla-ceramica" element={<TiglaCeramica />} />
-            <Route path="/tigla-metalica" element={<TiglaMetalica />} />
             <Route path="/servicii/tigla-metalica" element={<TiglaMetalica />} />
-            <Route path="/mansardari" element={<Mansardari />} />
             <Route path="/servicii/mansardari" element={<Mansardari />} />
-            <Route path="/reparatii-acoperisuri" element={<ReparatiiAcoperisuri />} />
             <Route path="/servicii/reparatii-acoperisuri" element={<ReparatiiAcoperisuri />} />
             <Route path="/politica-confidentialitate" element={<PoliticaConfidentialitate />} />
             <Route path="/termeni-conditii" element={<TermeniConditii />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
-        <div className="md:hidden">
-          <FooterMobile />
-        </div>
-        <div className="hidden md:block">
-          <Footer />
-        </div>
+        <Footer />
         <WhatsAppButton />
       </div>
     </BrowserRouter>
