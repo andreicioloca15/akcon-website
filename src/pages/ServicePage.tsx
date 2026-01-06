@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import CaseStudy from '../components/CaseStudy';
 import Contact from '../components/Contact';
 import SEO from '../components/SEO';
+import companyData from '../content/company.json';
 
 interface FAQItem {
   question: string;
@@ -92,7 +93,7 @@ export default function ServicePage({
                 Solicită Ofertă Gratuită
               </button>
               <a
-                href="tel:+40749616796"
+                href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`}
                 className="bg-white text-navy px-4 xs:px-6 md:px-8 py-3 xs:py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:scale-105 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-gold"
               >
                 <Phone className="w-4 h-4 xs:w-5 xs:h-5 mr-2" />
