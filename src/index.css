@@ -833,23 +833,23 @@ nav .dropdown {
 
   .hero,
   section.relative.min-h-screen {
-    padding: 100px 20px 50px !important;
+    padding: 70px 20px 50px !important;
     min-height: auto !important;
   }
 
   .hero h1,
   .hero .font-montserrat.text-5xl,
   .hero .font-montserrat.text-6xl {
-    font-size: 26px !important;
+    font-size: 24px !important;
     line-height: 1.3 !important;
-    margin-bottom: 16px !important;
+    margin-bottom: 14px !important;
   }
 
   .hero p,
   .hero .text-xl {
     font-size: 15px !important;
     line-height: 1.5 !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 18px !important;
   }
 
   /* ============================================
@@ -861,13 +861,23 @@ nav .dropdown {
   a[class*="bg-white"],
   .cta-button {
     min-height: 48px !important;
-    font-size: 16px !important;
-    padding: 14px 24px !important;
-    width: 100% !important;
-    max-width: 320px !important;
+    font-size: 15px !important;
+    padding: 14px 20px !important;
+    width: auto !important;
+    max-width: 90% !important;
     display: inline-block !important;
     text-align: center !important;
     font-weight: 600 !important;
+  }
+
+  /* Hero Buttons - Compact & Professional */
+  .hero button,
+  .hero a.cta-button,
+  .hero .btn {
+    font-size: 14px !important;
+    padding: 12px 18px !important;
+    max-width: 280px !important;
+    min-height: 48px !important;
   }
 
   /* Hero Buttons Stacked */
@@ -879,11 +889,13 @@ nav .dropdown {
     align-items: center !important;
   }
 
-  /* Phone Button - Special */
-  a[href^="tel"] {
-    min-height: 52px !important;
-    font-size: 17px !important;
-    font-weight: 700 !important;
+  /* Phone Button - Compact */
+  .hero a[href^="tel"] {
+    min-height: 48px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 11px 16px !important;
+    max-width: 280px !important;
   }
 
   /* ============================================
@@ -1061,23 +1073,48 @@ nav .dropdown {
   }
 
   /* ============================================
-     NAVIGATION - Mobile Header
+     NAVIGATION - Mobile Header (Compact)
      ============================================ */
 
   header {
-    padding: 12px 16px !important;
+    padding: 10px 16px !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  header > div,
+  header .max-w-7xl,
+  header .mx-auto {
+    padding: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  header .flex {
+    align-items: center !important;
+    gap: 8px !important;
   }
 
   .logo,
   header .font-montserrat {
-    font-size: 22px !important;
+    font-size: 20px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   /* Mobile Menu Icon */
   .md\:hidden button,
   .mobile-menu-button {
-    width: 40px !important;
-    height: 40px !important;
+    width: 36px !important;
+    height: 36px !important;
+    padding: 6px !important;
+    margin: 0 !important;
+  }
+
+  .md\:hidden button svg {
+    width: 24px !important;
+    height: 24px !important;
   }
 
   /* Mobile Menu Overlay */
@@ -1203,8 +1240,12 @@ nav .dropdown {
   }
 
   /* Hero Adjustments */
+  .hero {
+    padding: 65px 16px 45px !important;
+  }
+
   .hero h1 {
-    font-size: 24px !important;
+    font-size: 22px !important;
   }
 
   .hero p {
@@ -1214,8 +1255,15 @@ nav .dropdown {
   /* Buttons */
   button,
   .cta-button {
-    font-size: 15px !important;
-    padding: 12px 20px !important;
+    font-size: 14px !important;
+    padding: 12px 18px !important;
+  }
+
+  .hero button,
+  .hero .btn {
+    font-size: 13px !important;
+    padding: 11px 16px !important;
+    max-width: 260px !important;
   }
 
   /* Containers */
@@ -1250,11 +1298,22 @@ nav .dropdown {
 
   /* Optimized for Samsung Galaxy */
   .hero {
-    padding: 90px 16px 40px !important;
+    padding: 60px 14px 40px !important;
   }
 
   .hero h1 {
-    font-size: 22px !important;
+    font-size: 20px !important;
+  }
+
+  .hero p {
+    font-size: 13px !important;
+  }
+
+  .hero button,
+  .hero .btn {
+    font-size: 12px !important;
+    padding: 10px 14px !important;
+    max-width: 240px !important;
   }
 
   h2 {
@@ -1266,7 +1325,15 @@ nav .dropdown {
   }
 
   button {
-    font-size: 14px !important;
+    font-size: 13px !important;
+  }
+
+  header {
+    padding: 6px 12px !important;
+  }
+
+  header .font-montserrat {
+    font-size: 18px !important;
   }
 }
 
