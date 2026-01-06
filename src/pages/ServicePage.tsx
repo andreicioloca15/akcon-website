@@ -130,7 +130,7 @@ export default function ServicePage({
               </div>
               <div className="bg-gold text-white p-6 rounded-lg text-center hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
                 <Award className="w-12 h-12 mx-auto mb-3" />
-                <p className="font-montserrat text-3xl font-bold mb-2">500+</p>
+                <p className="font-montserrat text-3xl font-bold mb-2">100+</p>
                 <p className="font-open-sans text-sm opacity-90 leading-body">Proiecte Finalizate</p>
               </div>
               <div className="bg-navy text-white p-6 rounded-lg text-center hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
