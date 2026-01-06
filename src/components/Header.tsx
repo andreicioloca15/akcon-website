@@ -94,7 +94,16 @@ export default function Header() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
             </button>
             {servicesDropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 bg-white shadow-[0_8px_24px_rgba(0,0,0,0.15)] rounded-lg py-3 w-64 border border-gray-200 z-[9999]">
+              <div
+                className="absolute top-full left-0 mt-2 rounded-lg py-3 w-64 border border-gray-200"
+                style={{
+                  backgroundColor: '#ffffff',
+                  opacity: 1,
+                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
+                  zIndex: 99999,
+                  position: 'absolute'
+                }}
+              >
                 {services.map((service, index) => (
                   <Link
                     key={service.path}
