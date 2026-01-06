@@ -19,7 +19,7 @@ export default function Hero() {
   const badges = heroData.badges.sort((a, b) => a.order - b.order);
 
   return (
-    <section className="hero hero-section relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="hero hero-section relative min-h-screen md:h-screen flex items-center justify-center overflow-hidden">
       <HeroVideoBackground />
 
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-20">

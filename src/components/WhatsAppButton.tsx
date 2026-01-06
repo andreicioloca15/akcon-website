@@ -52,7 +52,7 @@ export default function WhatsAppButton() {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-4 md:right-8 z-50 w-14 h-14 bg-[#25D366] rounded-full shadow-2xl flex items-center justify-center hover:bg-[#20BA5A] transition-all hover:scale-110 hover:rotate-12 group pulse-soft"
+        className="whatsapp-float fixed bottom-6 right-4 md:right-8 z-50 w-14 h-14 bg-[#25D366] rounded-full shadow-2xl flex items-center justify-center hover:bg-[#20BA5A] transition-all hover:scale-110 hover:rotate-12 group pulse-soft"
         style={{ willChange: 'transform' }}
         aria-label="WhatsApp"
       >
