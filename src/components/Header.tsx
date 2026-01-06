@@ -95,7 +95,7 @@ export default function Header() {
             </button>
             {servicesDropdownOpen && (
               <div
-                className="absolute top-full left-0 mt-2 rounded-lg py-3 w-64"
+                className="servicii-dropdown absolute top-full left-0 mt-2 rounded-lg py-3 w-64"
                 style={{
                   backgroundColor: '#ffffff',
                   border: '1px solid #e5e7eb',
