@@ -132,12 +132,12 @@ export default function Header() {
           </button>
         </nav>
 
-        <div className="flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-4">
           <a href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`} className="hidden lg:flex items-center text-navy font-semibold font-open-sans focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 rounded hover:scale-105 transition-transform duration-300">
             <Phone className="w-5 h-5 mr-2 hover:rotate-12 transition-transform duration-300" />
             <span>{companyData.phone}</span>
           </a>
-          <button onClick={() => scrollToSection('contact')} className="bg-gold text-white px-4 xs:px-6 md:px-8 py-3 xs:py-4 rounded-lg text-sm xs:text-base font-semibold font-montserrat hover:bg-gold-hover transition-all duration-300 hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 relative overflow-hidden group">
+          <button onClick={() => scrollToSection('contact')} className="bg-gold text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-sm md:text-base font-semibold font-montserrat hover:bg-gold-hover transition-all duration-300 hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 relative overflow-hidden group whitespace-nowrap">
             <span className="relative z-10">Ofertă Gratuită</span>
             <div className="absolute inset-0 bg-gradient-to-r from-gold-hover to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
