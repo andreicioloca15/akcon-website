@@ -98,18 +98,38 @@ export default function Header() {
                 className="absolute top-full left-0 mt-2 rounded-lg py-3 w-64 border border-gray-200"
                 style={{
                   backgroundColor: '#ffffff',
+                  background: '#ffffff',
                   opacity: 1,
                   boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
                   zIndex: 99999,
-                  position: 'absolute'
+                  position: 'absolute',
+                  backdropFilter: 'none',
+                  WebkitBackdropFilter: 'none',
+                  isolation: 'isolate'
                 }}
               >
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: '#ffffff',
+                    borderRadius: '8px',
+                    zIndex: -1
+                  }}
+                />
                 {services.map((service, index) => (
                   <Link
                     key={service.path}
                     to={service.path}
                     className="block px-6 py-3 text-navy hover:bg-gray-50 hover:text-gold transition-all duration-200 font-open-sans text-sm focus:outline-none focus:bg-gray-50 focus:text-gold"
-                    style={{ animationDelay: `${index * 50}ms` }}
+                    style={{
+                      animationDelay: `${index * 50}ms`,
+                      position: 'relative',
+                      zIndex: 1
+                    }}
                   >
                     {service.name}
                   </Link>
