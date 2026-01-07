@@ -6,9 +6,11 @@ export default function MontajAcoperisuri() {
     ? serviceData.keywords.split(', ')
     : serviceData.keywords;
 
+  const { caseStudy, ...restData } = serviceData;
+
   return (
     <ServicePage
-      {...serviceData}
+      {...restData}
       keywords={keywords}
       showTransformationStory={true}
     />
