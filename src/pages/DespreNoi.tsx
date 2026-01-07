@@ -109,7 +109,7 @@ export default function DespreNoi() {
           </p>
         </div>
       ),
-      image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image: '/cristi.jpg',
       imageAlt: 'Cristian - Proprietar și CEO AKCON'
     },
     {
