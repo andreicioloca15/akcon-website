@@ -18,7 +18,6 @@ export default function MontajAcoperisuri() {
     <ServicePage
       {...serviceData}
       keywords={keywords}
-      showTransformationStory={true}
       caseStudy={{
         ...serviceData.caseStudy,
         duration,
