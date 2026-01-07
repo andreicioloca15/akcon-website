@@ -1,7 +1,6 @@
 import { useStaggeredAnimation } from '../hooks/useScrollAnimation';
-import renovareStremt from '../content/portfolio/renovare-stremt.json';
 import montajTiglaAlbaIulia from '../content/portfolio/montaj-tigla-metalica-alba-iulia.json';
-import vilaAlbaIulia from '../content/portfolio/vila-premium-alba-iulia.json';
+import transformareStremt from '../content/portfolio/vila-premium-alba-iulia.json';
 import renovareSebes from '../content/portfolio/renovare-completa-sebes.json';
 import mansardareAiud from '../content/portfolio/mansardare-premium-aiud.json';
 import casaBlaj from '../content/portfolio/casa-moderna-blaj.json';
@@ -32,6 +31,7 @@ interface MappedProject {
   title: string;
   details: string;
   quote: string;
+  clientName: string;
   gradient: string;
   image: string;
   badge?: string;
@@ -39,9 +39,8 @@ interface MappedProject {
 
 export default function Portfolio() {
   const portfolioData: PortfolioProject[] = [
-    renovareStremt,
+    transformareStremt,
     montajTiglaAlbaIulia,
-    vilaAlbaIulia,
     renovareSebes,
     mansardareAiud,
     casaBlaj,
@@ -66,6 +65,7 @@ export default function Portfolio() {
       title: p.title,
       details: `${p.type} • ${p.area} • ${p.duration}`,
       quote: p.clientQuote,
+      clientName: p.clientName,
       gradient: gradients[index % gradients.length],
       image: p.image,
       badge: p.badge
@@ -122,9 +122,14 @@ export default function Portfolio() {
                   <p className="font-open-sans text-sm mb-3 leading-body opacity-90">
                     {project.details}
                   </p>
-                  <p className="font-open-sans text-sm italic opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 leading-body">
-                    "{project.quote}"
-                  </p>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                    <p className="font-open-sans text-sm italic leading-body mb-1">
+                      "{project.quote}"
+                    </p>
+                    <p className="font-open-sans text-xs text-gold font-semibold">
+                      - {project.clientName}
+                    </p>
+                  </div>
                 </div>
               </div>
               {project.badge ? (
