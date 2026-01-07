@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { CheckCircle, ArrowRight, Phone, Mail } from 'lucide-react';
-import BeforeAfterSlider from './BeforeAfterSlider';
+import BeforeAfterComparison from './BeforeAfterComparison';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import companyData from '../content/company.json';
 
@@ -49,11 +49,15 @@ export default function TransformationShowcase({
           </div>
 
           <div ref={sliderRef} className="mb-8">
-            <BeforeAfterSlider
-              beforeImage="/4ac47dd7-66b7-4dd6-88d1-f4239a53e6e2_(1).jpg"
-              afterImage="/00a8129e-d3fd-43a3-a9e5-49704438504e.jpg"
+            <BeforeAfterComparison
+              beforeImage="/ceaf613f-3ff1-4440-a8a4-8d5427638a14 copy copy.jpg"
+              afterImage="/4ac47dd7-66b7-4dd6-88d1-f4239a53e6e2 copy.jpg"
               beforeLabel="ÎNAINTE"
               afterLabel="DUPĂ"
+              beforeCaption="Acoperiș vechi în construcție"
+              afterCaption="Țiglă metalică premium - gri antracit"
+              title="Transformare Completă"
+              subtitle="Vedere aeriană - Înainte și După"
             />
           </div>
 
@@ -89,11 +93,13 @@ export default function TransformationShowcase({
         </div>
 
         <div ref={sliderRef} className="mb-16">
-          <BeforeAfterSlider
-            beforeImage="/4ac47dd7-66b7-4dd6-88d1-f4239a53e6e2_(1).jpg"
-            afterImage="/00a8129e-d3fd-43a3-a9e5-49704438504e.jpg"
+          <BeforeAfterComparison
+            beforeImage="/ceaf613f-3ff1-4440-a8a4-8d5427638a14 copy copy.jpg"
+            afterImage="/4ac47dd7-66b7-4dd6-88d1-f4239a53e6e2 copy.jpg"
             beforeLabel="ÎNAINTE"
             afterLabel="DUPĂ"
+            beforeCaption="Acoperiș vechi în construcție"
+            afterCaption="Țiglă metalică premium - gri antracit"
           />
         </div>
 
