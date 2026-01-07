@@ -2,7 +2,6 @@ import Hero from '../components/Hero';
 import BrandPartners from '../components/BrandPartners';
 import About from '../components/About';
 import Services from '../components/Services';
-import WhyChooseUs from '../components/WhyChooseUs';
 import Stats from '../components/Stats';
 import Process from '../components/Process';
 import Testimonials from '../components/Testimonials';
@@ -18,7 +17,6 @@ export default function HomePage() {
       <BrandPartners />
       <About />
       <Services />
-      <WhyChooseUs />
       <Stats />
       <Process />
       <Testimonials />
