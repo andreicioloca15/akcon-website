@@ -1,4 +1,4 @@
-import { CheckCircle, X, Phone, Mail, MapPin, Building2, Hammer, Settings, Shield, ArrowRight, ArrowDown } from 'lucide-react';
+import { CheckCircle, X, Phone, Mail, ArrowRight, ArrowDown } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import companyData from '../content/company.json';
 
@@ -7,8 +7,7 @@ export default function TransformationStory() {
   const introRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 100 });
   const comparisonRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 200 });
   const detailsRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 300 });
-  const specsRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 400 });
-  const resultsRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 500 });
+  const resultsRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 400 });
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -147,51 +146,6 @@ export default function TransformationStory() {
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
                 <p className="font-open-sans text-gray-700">Finisaje profesionale complete</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div ref={specsRef} className="max-w-4xl mx-auto mb-16">
-          <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
-            <h3 className="font-montserrat text-2xl font-bold text-navy mb-6 text-center">
-              Specificații Tehnice
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="flex items-start gap-4">
-                <MapPin className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-montserrat font-semibold text-navy mb-1">Locație</p>
-                  <p className="font-open-sans text-gray-600">Stremț, Alba</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Building2 className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-montserrat font-semibold text-navy mb-1">Tip</p>
-                  <p className="font-open-sans text-gray-600">Renovare completă acoperiș</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Hammer className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-montserrat font-semibold text-navy mb-1">Material Nou</p>
-                  <p className="font-open-sans text-gray-600">Țiglă metalică gri antracit</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Settings className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-montserrat font-semibold text-navy mb-1">Complexitate</p>
-                  <p className="font-open-sans text-gray-600">Acoperiș complex multi-vale</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 md:col-span-2">
-                <Shield className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-montserrat font-semibold text-navy mb-1">Garanție</p>
-                  <p className="font-open-sans text-gray-600">15 ani manoperă + materiale</p>
-                </div>
               </div>
             </div>
           </div>
