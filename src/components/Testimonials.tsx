@@ -1,13 +1,15 @@
 import { Star } from 'lucide-react';
 import { useStaggeredAnimation } from '../hooks/useScrollAnimation';
-import mariaGeorgescu from '../content/testimonials/maria-georgescu.json';
-import ioanPopescu from '../content/testimonials/ioan-popescu.json';
-import andreiDumitrescu from '../content/testimonials/andrei-dumitrescu.json';
+import alexTanea from '../content/testimonials/alex-tanea.json';
+import adrianCosoveanu from '../content/testimonials/adrian-cosoveanu.json';
+import emilRadu from '../content/testimonials/emil-radu.json';
+import popaMircea from '../content/testimonials/popa-mircea.json';
 
 interface Testimonial {
   name: string;
   city: string;
   profession?: string;
+  service?: string;
   rating: number;
   quote: string;
   date: string;
@@ -19,7 +21,7 @@ interface Testimonial {
 interface MappedTestimonial {
   name: string;
   location: string;
-  profession?: string;
+  service?: string;
   initials: string;
   text: string;
   rating: number;
@@ -28,19 +30,19 @@ interface MappedTestimonial {
 
 export default function Testimonials() {
   const testimonialsData: Testimonial[] = [
-    mariaGeorgescu,
-    ioanPopescu,
-    andreiDumitrescu
+    alexTanea,
+    adrianCosoveanu,
+    emilRadu,
+    popaMircea
   ];
 
   const testimonials: MappedTestimonial[] = testimonialsData
     .filter(t => t.featured !== false)
     .sort((a, b) => a.order - b.order)
-    .slice(0, 3)
     .map(t => ({
       name: t.name,
       location: t.city,
-      profession: t.profession,
+      service: t.service,
       initials: t.name.split(' ').map(n => n[0]).join(''),
       text: t.quote,
       rating: t.rating,
@@ -53,19 +55,19 @@ export default function Testimonials() {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="font-montserrat text-h2-mobile md:text-h2-tablet lg:text-h2-desktop font-bold text-gray-700 mb-4">
+          <h2 className="font-montserrat text-h2-mobile md:text-h2-tablet lg:text-h2-desktop font-bold text-navy mb-4">
             Ce Spun Clienții Noștri
           </h2>
           <p className="font-open-sans text-base md:text-lg text-gray-600 leading-body max-w-2xl mx-auto">
-            Încrederea câștigată prin lucrări impecabile și rezultate măsurabile
+            Peste 100 de clienți mulțumiți care au avut încredere în AKCON
           </p>
         </div>
 
-        <div ref={elementRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div ref={elementRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={`bg-white p-8 rounded-lg shadow-md card-animate ${
+              className={`bg-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-xl card-animate ${
                 visibleItems.has(index)
                   ? 'opacity-100'
                   : 'opacity-0'
@@ -85,10 +87,10 @@ export default function Testimonials() {
                   ))}
                 </div>
               </div>
-              <p className="font-open-sans text-gray-600 leading-body mb-6 italic">
+              <p className="font-open-sans text-gray-700 text-sm md:text-base leading-relaxed mb-6 italic">
                 "{testimonial.text}"
               </p>
-              <div className="flex items-center">
+              <div className="flex items-center pt-4 border-t-2 border-gray-100">
                 {testimonial.avatar ? (
                   <img
                     src={testimonial.avatar}
@@ -96,16 +98,16 @@ export default function Testimonials() {
                     className="w-12 h-12 rounded-full object-cover"
                   />
                 ) : (
-                  <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center font-montserrat font-bold text-gray-700">
+                  <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center font-montserrat font-bold text-gold">
                     {testimonial.initials}
                   </div>
                 )}
                 <div className="ml-4">
-                  <div className="font-montserrat font-semibold text-gray-700">
+                  <div className="font-montserrat font-semibold text-navy text-base">
                     {testimonial.name}
                   </div>
                   <div className="font-open-sans text-sm text-gray-600">
-                    {testimonial.profession ? `${testimonial.profession}, ${testimonial.location}` : testimonial.location}
+                    {testimonial.service || testimonial.location}
                   </div>
                 </div>
               </div>
