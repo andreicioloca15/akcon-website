@@ -24,7 +24,7 @@ export default function TransformationStory() {
             Studiu de Caz: Renovare Completă Acoperiș
           </h2>
           <p className="font-open-sans text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Transformare de la țiglă ceramică veche la țiglă metalică premium - Stremț, Alba
+            Transformare de la țiglă ceramică veche la țiglă metalică premium
           </p>
         </div>
 
