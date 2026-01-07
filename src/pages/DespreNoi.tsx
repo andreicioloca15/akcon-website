@@ -271,49 +271,6 @@ export default function DespreNoi() {
       image: 'https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?auto=compress&cs=tinysrgb&w=1200',
       imageAlt: 'Moștenirea AKCON - 4 Generații de Construcții'
     },
-    {
-      id: 'proiect-recent',
-      title: 'Proiect Recent',
-      content: (
-        <div>
-          <h2 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-glow-white">
-            Montaj Țiglă Metalică Premium
-          </h2>
-          <p className="font-open-sans text-xl mb-4 opacity-95 leading-body">
-            <span className="text-gold font-semibold">Alba Iulia</span> • Noiembrie 2024
-          </p>
-          <p className="font-open-sans text-lg mb-6 opacity-90 leading-body">
-            Casa familiei Țanea necesita înlocuirea completă a acoperișului vechi deteriorat. Proiectul a fost finalizat în doar <span className="text-gold font-semibold">5 zile</span>, cu țiglă metalică premium și sistem complet de protecție.
-          </p>
-
-          <div className="space-y-4 mb-6">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <p className="font-open-sans text-base font-semibold text-gold mb-2">
-                📐 Specificații Proiect
-              </p>
-              <ul className="font-open-sans text-sm opacity-90 leading-body space-y-1 ml-4">
-                <li>• Suprafață: 150 mp</li>
-                <li>• Durată: 5 zile lucrătoare</li>
-                <li>• Material: Țiglă metalică premium</li>
-                <li>• Echipă: 4 meșteri certificați</li>
-              </ul>
-            </div>
-          </div>
-
-          <blockquote className="font-open-sans text-base italic opacity-95 border-l-4 border-gold pl-6 py-3 mb-4 leading-relaxed">
-            "Am avut plăcerea de a colabora cu echipa AKCON pentru schimbarea acoperișului casei mele, iar experiența a fost una excelentă. De la primul contact, echipa s-a dovedit a fi profesionistă, bine organizată și orientată spre detalii. Lucrarea a fost finalizată în numai 5 zile, fără a face rabat la calitate."
-          </blockquote>
-          <p className="font-open-sans text-sm opacity-75 mb-2">
-            — Alex Țanea, Alba Iulia
-          </p>
-          <p className="font-open-sans text-sm text-gold font-semibold">
-            ⭐⭐⭐⭐⭐ Evaluare 5/5
-          </p>
-        </div>
-      ),
-      image: '/example2.jpg',
-      imageAlt: 'Montaj Țiglă Metalică - Alba Iulia - Alex Țanea'
-    }
   ];
 
   return (
@@ -465,19 +422,19 @@ export default function DespreNoi() {
               Contactează-ne astăzi pentru o consultație gratuită și descoperă cum putem transforma visul tău într-o realitate.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link
                 to="/#contact"
-                className="btn-primary bg-white text-gold hover:bg-gray-100 inline-flex items-center gap-2"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-gold font-montserrat font-semibold text-lg rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-6 h-6" />
                 Solicită Ofertă
               </Link>
               <a
                 href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`}
-                className="btn-primary bg-navy text-white hover:bg-navy-light inline-flex items-center gap-2"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-navy text-white font-montserrat font-semibold text-lg rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-6 h-6" />
                 Sună Acum
               </a>
             </div>
