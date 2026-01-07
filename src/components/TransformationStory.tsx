@@ -20,9 +20,6 @@ export default function TransformationStory() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <div ref={headingRef} className="text-center mb-12">
-          <div className="inline-block bg-gold text-white px-6 py-3 rounded-full font-montserrat font-semibold text-sm mb-6">
-            Proiect Real AKCON
-          </div>
           <h2 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6">
             Studiu de Caz: Renovare Completă Acoperiș
           </h2>
