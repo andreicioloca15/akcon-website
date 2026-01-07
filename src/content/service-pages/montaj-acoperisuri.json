@@ -69,26 +69,6 @@
     "Finalizare la timp",
     "Preț corect, transparent"
   ],
-  "materials": [
-    {
-      "name": "Țiglă Ceramică",
-      "description": "Clasică, durabilă, elegantă",
-      "price": "De la 80 EUR/mp",
-      "image": "https://images.pexels.com/photos/259950/pexels-photo-259950.jpeg?auto=compress&cs=tinysrgb&w=800"
-    },
-    {
-      "name": "Țiglă Metalică",
-      "description": "Modernă, ușoară, rezistentă",
-      "price": "De la 50 EUR/mp",
-      "image": "https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=800"
-    },
-    {
-      "name": "Șindrilă Bituminoasă",
-      "description": "Economică, versatilă",
-      "price": "De la 35 EUR/mp",
-      "image": "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=800"
-    }
-  ],
   "description": "Montaj acoperișuri noi în Alba Iulia cu garanție 15 ani.",
   "heroTitle": "Montaj Acoperișuri Noi Premium în Alba Iulia"
 }

@@ -106,41 +106,6 @@ export default function MontajAcoperisuri() {
         </div>
       </section>
 
-      {/* Materials Section */}
-      {serviceData.materials && (
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-navy mb-4">
-                Materiale Disponibile
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {serviceData.materials.map((material, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                  <img
-                    src={material.image}
-                    alt={material.name}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="font-montserrat text-xl font-bold text-navy mb-2">
-                      {material.name}
-                    </h3>
-                    <p className="font-open-sans text-gray-600 mb-4">
-                      {material.description}
-                    </p>
-                    <p className="font-montserrat text-gold font-bold text-lg">
-                      {material.price}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
