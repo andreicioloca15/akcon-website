@@ -21,18 +21,17 @@ export default function TransformationStory() {
       <div className="max-w-7xl mx-auto px-4">
         <div ref={headingRef} className="text-center mb-12">
           <h2 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6">
-            Studiu de Caz: Renovare Completă Acoperiș
+            Studiu de Caz: Montaj Acoperiș Nou - Construcție de la Zero
           </h2>
           <p className="font-open-sans text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Transformare de la țiglă ceramică veche la țiglă metalică premium
+            Acoperiș complet pentru casă nouă - Stremț, Alba
           </p>
         </div>
 
         <div ref={introRef} className="max-w-4xl mx-auto mb-16">
           <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
             <p className="font-open-sans text-lg text-gray-700 leading-relaxed text-center">
-              Acest proiect demonstrează expertiza AKCON în renovări complete de acoperișuri.
-              Am transformat un acoperiș vechi deteriorat într-un acoperiș modern premium în Stremț, Alba.
+              Acest proiect demonstrează expertiza AKCON în construcția de acoperișuri noi pentru case construite de la zero. Am realizat un acoperiș complet cu șarpantă, izolație și țiglă metalică premium pentru o casă nouă în Stremț, Alba.
             </p>
           </div>
         </div>
@@ -43,17 +42,17 @@ export default function TransformationStory() {
               <div className="relative group">
                 <div className="absolute top-4 left-4 z-10 bg-gold px-6 py-3 rounded-lg shadow-lg">
                   <span className="font-montserrat font-bold text-white text-sm uppercase tracking-wide">
-                    CONSTRUCȚIE ÎN PROGRES
+                    CONSTRUCȚIE ȘARPANTĂ
                   </span>
                 </div>
                 <img
                   src="/ceaf613f-3ff1-4440-a8a4-8d5427638a14 copy copy.jpg"
-                  alt="Construcție în progres"
+                  alt="Construcție șarpantă"
                   className="w-full h-auto rounded-xl shadow-2xl group-hover:shadow-3xl transition-all duration-300"
                 />
               </div>
               <p className="text-center mt-4 font-open-sans text-gray-600 text-base leading-relaxed">
-                Șarpantă nouă cu structură complexă și izolație modernă
+                Șarpantă nouă cu structură complexă - faza de construcție
               </p>
             </div>
 
@@ -70,17 +69,17 @@ export default function TransformationStory() {
               <div className="relative group">
                 <div className="absolute top-4 left-4 z-10 bg-gold px-6 py-3 rounded-lg shadow-lg">
                   <span className="font-montserrat font-bold text-white text-sm uppercase tracking-wide">
-                    REZULTAT FINAL
+                    ACOPERIȘ FINALIZAT
                   </span>
                 </div>
                 <img
                   src="/4ac47dd7-66b7-4dd6-88d1-f4239a53e6e2 copy.jpg"
-                  alt="Rezultat final"
+                  alt="Acoperiș finalizat"
                   className="w-full h-auto rounded-xl shadow-2xl group-hover:shadow-3xl transition-all duration-300"
                 />
               </div>
               <p className="text-center mt-4 font-open-sans text-gray-600 text-base leading-relaxed">
-                Acoperiș finalizat - țiglă metalică gri antracit, aspect premium
+                Casă nouă cu acoperiș complet - țiglă metalică gri antracit
               </p>
             </div>
           </div>
@@ -93,24 +92,28 @@ export default function TransformationStory() {
               Provocarea
             </h3>
             <p className="font-open-sans text-base text-gray-700 mb-6">
-              Proprietarul din Stremț necesita:
+              Proiectul necesita:
             </p>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                <p className="font-open-sans text-gray-700">Înlocuire completă acoperiș vechi</p>
+                <p className="font-open-sans text-gray-700">Construcție șarpantă completă pentru acoperiș complex</p>
               </div>
               <div className="flex items-start gap-3">
                 <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                <p className="font-open-sans text-gray-700">Soluție modernă și durabilă</p>
+                <p className="font-open-sans text-gray-700">Izolație termică modernă</p>
               </div>
               <div className="flex items-start gap-3">
                 <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                <p className="font-open-sans text-gray-700">Aspect premium</p>
+                <p className="font-open-sans text-gray-700">Montaj țiglă metalică premium</p>
               </div>
               <div className="flex items-start gap-3">
                 <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                <p className="font-open-sans text-gray-700">Izolație termică superioară</p>
+                <p className="font-open-sans text-gray-700">Finisaje profesionale pentru casă nouă</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
+                <p className="font-open-sans text-gray-700">Respect total pentru planurile arhitecturale</p>
               </div>
             </div>
           </div>
@@ -126,11 +129,11 @@ export default function TransformationStory() {
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
-                <p className="font-open-sans text-gray-700">Demontare acoperiș vechi</p>
+                <p className="font-open-sans text-gray-700">Construcție șarpantă nouă din lemn de calitate</p>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
-                <p className="font-open-sans text-gray-700">Construcție șarpantă nouă completă</p>
+                <p className="font-open-sans text-gray-700">Structură complexă cu văi multiple</p>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
@@ -142,7 +145,11 @@ export default function TransformationStory() {
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
-                <p className="font-open-sans text-gray-700">Finisaje profesionale complete</p>
+                <p className="font-open-sans text-gray-700">Finisaje complete: coamă, streașină, jgheaburi</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
+                <p className="font-open-sans text-gray-700">Livrare la timp pentru familie</p>
               </div>
             </div>
           </div>
@@ -157,37 +164,43 @@ export default function TransformationStory() {
               <div className="flex items-start gap-4">
                 <CheckCircle className="w-7 h-7 text-white flex-shrink-0 mt-1" />
                 <p className="font-open-sans text-lg text-white leading-relaxed">
-                  Transformare completă de la vechi la modern
+                  Acoperiș complet realizat pentru casă nouă
                 </p>
               </div>
               <div className="flex items-start gap-4">
                 <CheckCircle className="w-7 h-7 text-white flex-shrink-0 mt-1" />
                 <p className="font-open-sans text-lg text-white leading-relaxed">
-                  Acoperiș nou durabil cu garanție 15 ani
+                  Șarpantă profesională cu structură complexă
                 </p>
               </div>
               <div className="flex items-start gap-4">
                 <CheckCircle className="w-7 h-7 text-white flex-shrink-0 mt-1" />
                 <p className="font-open-sans text-lg text-white leading-relaxed">
-                  Aspect premium - valoare proprietate crescută
+                  Izolație termică premium instalată
                 </p>
               </div>
               <div className="flex items-start gap-4">
                 <CheckCircle className="w-7 h-7 text-white flex-shrink-0 mt-1" />
                 <p className="font-open-sans text-lg text-white leading-relaxed">
-                  Izolație termică superioară
+                  Țiglă metalică montată impecabil
                 </p>
               </div>
               <div className="flex items-start gap-4">
                 <CheckCircle className="w-7 h-7 text-white flex-shrink-0 mt-1" />
                 <p className="font-open-sans text-lg text-white leading-relaxed">
-                  Etanșeitate perfectă, zero infiltrații
+                  Aspect modern premium pentru locuință nouă
                 </p>
               </div>
               <div className="flex items-start gap-4">
                 <CheckCircle className="w-7 h-7 text-white flex-shrink-0 mt-1" />
                 <p className="font-open-sans text-lg text-white leading-relaxed">
-                  Client extrem de mulțumit
+                  Finalizat la timp, garanție completă 15 ani
+                </p>
+              </div>
+              <div className="flex items-start gap-4">
+                <CheckCircle className="w-7 h-7 text-white flex-shrink-0 mt-1" />
+                <p className="font-open-sans text-lg text-white leading-relaxed">
+                  Proprietari extrem de mulțumiți
                 </p>
               </div>
             </div>
@@ -196,10 +209,10 @@ export default function TransformationStory() {
 
         <div className="bg-gradient-to-br from-navy to-navy-light text-white rounded-2xl p-12 text-center shadow-xl">
           <h3 className="font-montserrat text-3xl md:text-4xl font-bold mb-4">
-            Vrei și Tu o Renovare Similară?
+            Construiești o Casă Nouă?
           </h3>
           <p className="font-open-sans text-lg mb-8 opacity-95 max-w-2xl mx-auto leading-relaxed">
-            Echipa AKCON poate transforma și acoperișul tău cu experiență de peste 45 de ani și garanție completă.
+            Echipa AKCON construiește acoperișuri complete pentru case noi cu experiență de peste 45 de ani. De la șarpantă la finisaje, ne ocupăm de tot cu profesionalism și garanție completă.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
@@ -207,7 +220,7 @@ export default function TransformationStory() {
               className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-white font-montserrat font-semibold text-lg rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
               <Mail className="w-6 h-6" />
-              Solicită Ofertă Gratuită
+              Solicită Ofertă pentru Casă Nouă
             </button>
             <a
               href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`}
