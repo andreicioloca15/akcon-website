@@ -63,20 +63,6 @@ export default function MontajAcoperisuri() {
         </div>
       </section>
 
-      {/* Quick Benefits */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {serviceData.benefits.map((benefit, index) => (
-              <div key={index} className="flex items-center p-4 bg-gray-50 rounded-lg hover:shadow-lg transition-all duration-300">
-                <CheckCircle className="w-6 h-6 text-gold mr-3 flex-shrink-0" />
-                <p className="font-open-sans text-gray-800 font-medium">{benefit}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Transformation Story */}
       <TransformationStory />
 
