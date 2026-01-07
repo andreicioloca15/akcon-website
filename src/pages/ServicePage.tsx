@@ -5,6 +5,7 @@ import CaseStudy from '../components/CaseStudy';
 import Contact from '../components/Contact';
 import SEO from '../components/SEO';
 import TransformationShowcase from '../components/TransformationShowcase';
+import TransformationStory from '../components/TransformationStory';
 import companyData from '../content/company.json';
 
 interface FAQItem {
@@ -25,6 +26,7 @@ interface ServicePageProps {
   processSteps: { title: string; description: string }[];
   faq: FAQItem[];
   showTransformation?: boolean;
+  showTransformationStory?: boolean;
   caseStudy?: {
     title: string;
     clientName: string;
@@ -54,6 +56,7 @@ export default function ServicePage({
   processSteps,
   faq,
   showTransformation = false,
+  showTransformationStory = false,
   caseStudy
 }: ServicePageProps) {
   const scrollToContact = (): void => {
@@ -157,6 +160,8 @@ export default function ServicePage({
       <ProcessStepsSection processSteps={processSteps} />
 
       {showTransformation && <TransformationShowcase variant="full" showCTA={false} />}
+
+      {showTransformationStory && <TransformationStory />}
 
       {caseStudy && <CaseStudy {...caseStudy} />}
 
