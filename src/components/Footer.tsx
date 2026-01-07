@@ -25,7 +25,7 @@ export default function Footer() {
           <div>
             <div className="font-montserrat text-2xl font-bold mb-6">AKCON</div>
             <p className="font-open-sans text-sm opacity-80 mb-4 leading-body">
-              Acoperișuri premium pentru case excepționale. Singurul specialist cu sediu în județul Alba.
+              Specialiști în montaj, renovare și reparații acoperișuri în județul Alba și împrejurimi.
             </p>
             <div className="flex space-x-4">
               <a
