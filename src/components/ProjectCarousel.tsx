@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, CheckCircle } from 'lucide-react';
+import montajTiglaAlbaIulia from '../content/portfolio/montaj-tigla-metalica-alba-iulia.json';
 import vilaAlbaIulia from '../content/portfolio/vila-premium-alba-iulia.json';
 import renovareSebes from '../content/portfolio/renovare-completa-sebes.json';
 import mansardareAiud from '../content/portfolio/mansardare-premium-aiud.json';
@@ -10,7 +11,11 @@ import acoperisOcnaMures from '../content/portfolio/acoperis-nou-ocna-mures.json
 interface Project {
   title: string;
   location: string;
+  type?: string;
+  duration?: string;
+  clientName?: string;
   image: string;
+  verified?: boolean;
 }
 
 export default function ProjectCarousel() {
@@ -22,6 +27,7 @@ export default function ProjectCarousel() {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const projects: Project[] = [
+    { ...montajTiglaAlbaIulia, verified: true },
     vilaAlbaIulia,
     renovareSebes,
     mansardareAiud,
@@ -112,11 +118,50 @@ export default function ProjectCarousel() {
             style={{ backgroundImage: `url(${project.image})` }}
           ></div>
           <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/40 to-transparent"></div>
+
+          {project.verified && (
+            <div className="absolute top-4 right-4 md:top-6 md:right-6 z-20">
+              <div className="bg-gold text-white px-3 py-2 md:px-4 md:py-2 rounded-full shadow-lg flex items-center gap-2 backdrop-blur-sm animate-pulse">
+                <CheckCircle className="w-4 h-4 md:w-5 md:h-5" />
+                <span className="font-montserrat text-xs md:text-sm font-bold">Proiect Verificat</span>
+              </div>
+            </div>
+          )}
+
           <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-8 text-white">
+            {project.verified && (
+              <div className="mb-3 flex flex-wrap items-center gap-2 md:gap-3">
+                <div className="flex items-center gap-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-4 h-4 md:w-5 md:h-5 fill-gold text-gold" />
+                  ))}
+                </div>
+                {project.duration && (
+                  <div className="bg-white/20 backdrop-blur-sm px-2 py-1 md:px-3 md:py-1 rounded-full">
+                    <span className="font-open-sans text-xs md:text-sm font-semibold">
+                      Finalizat în {project.duration}
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
+
             <h3 className="font-montserrat text-xl md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2 text-glow-white">
               {project.title}
             </h3>
-            <p className="font-open-sans text-sm md:text-base lg:text-lg opacity-90">{project.location}</p>
+            <p className="font-open-sans text-sm md:text-base lg:text-lg opacity-90 mb-1">
+              {project.location}
+            </p>
+
+            {project.verified && project.clientName && (
+              <div className="flex items-center gap-2 mt-2">
+                <div className="bg-gold/20 backdrop-blur-sm px-3 py-1 rounded-full border border-gold/40">
+                  <span className="font-open-sans text-xs md:text-sm">
+                    <span className="text-gold font-semibold">Client Real:</span> {project.clientName}
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       ))}
