@@ -33,6 +33,8 @@ export default function CaseStudy({
   solutionDescription,
   resultsDescription,
   testimonial,
+  duringImages,
+  afterImages,
   investmentValue
 }: CaseStudyProps) {
   const headerRef = useScrollAnimation<HTMLDivElement>({ distance: 40 });
@@ -61,7 +63,7 @@ export default function CaseStudy({
             </div>
             <div className="flex items-center text-gray-600">
               <Clock className="w-5 h-5 text-gold mr-2" />
-              <span className="leading-body">{duration} săptămâni</span>
+              <span className="leading-body">{duration < 20 ? `${duration} zile` : `${duration} săptămâni`}</span>
             </div>
             <div className="flex items-center text-gray-600">
               <TrendingUp className="w-5 h-5 text-gold mr-2" />
@@ -82,19 +84,79 @@ export default function CaseStudy({
               </p>
             </div>
 
-            <div ref={imagesRef} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-gradient-to-br from-[#e53e3e] to-[#c53030] h-64 rounded-lg flex items-center justify-center text-white hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
-                <div className="text-center">
-                  <p className="font-montserrat text-lg font-semibold mb-2">ÎNAINTE</p>
-                  <p className="font-open-sans text-sm opacity-90 leading-body">Foto proiect înainte</p>
+            <div ref={imagesRef} className="space-y-6">
+              {duringImages && duringImages.length > 0 && (
+                <div className="space-y-3">
+                  <h4 className="font-montserrat text-lg font-semibold text-navy">
+                    În Lucru: Montaj Țiglă Metalică
+                  </h4>
+                  <div className="grid grid-cols-1 gap-4">
+                    {duringImages.map((image, index) => (
+                      <div key={index} className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        <img
+                          src={image}
+                          alt={`Montaj țiglă metalică ${clientLocation} - în lucru`}
+                          className="w-full h-80 md:h-96 object-cover"
+                          loading="lazy"
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4">
+                          <p className="font-montserrat text-white font-semibold text-lg">
+                            În Lucru: Montaj Țiglă Metalică
+                          </p>
+                          <p className="font-open-sans text-white/90 text-sm">
+                            {clientLocation}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="bg-gradient-to-br from-[#38a169] to-[#2f855a] h-64 rounded-lg flex items-center justify-center text-white hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
-                <div className="text-center">
-                  <p className="font-montserrat text-lg font-semibold mb-2">DUPĂ</p>
-                  <p className="font-open-sans text-sm opacity-90 leading-body">Foto proiect finalizat</p>
+              )}
+
+              {afterImages && afterImages.length > 0 && (
+                <div className="space-y-3">
+                  <h4 className="font-montserrat text-lg font-semibold text-navy">
+                    După: Proiect Finalizat
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {afterImages.map((image, index) => (
+                      <div key={index} className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        <img
+                          src={image}
+                          alt={`Montaj țiglă metalică ${clientLocation} - proiect finalizat ${index + 1}`}
+                          className="w-full h-80 object-cover"
+                          loading="lazy"
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4">
+                          <p className="font-montserrat text-white font-semibold">
+                            Proiect Finalizat
+                          </p>
+                          <p className="font-open-sans text-white/90 text-sm">
+                            {clientLocation}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
+
+              {(!duringImages || duringImages.length === 0) && (!afterImages || afterImages.length === 0) && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-gradient-to-br from-[#e53e3e] to-[#c53030] h-64 rounded-lg flex items-center justify-center text-white hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
+                    <div className="text-center">
+                      <p className="font-montserrat text-lg font-semibold mb-2">ÎNAINTE</p>
+                      <p className="font-open-sans text-sm opacity-90 leading-body">Foto proiect înainte</p>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-[#38a169] to-[#2f855a] h-64 rounded-lg flex items-center justify-center text-white hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
+                    <div className="text-center">
+                      <p className="font-montserrat text-lg font-semibold mb-2">DUPĂ</p>
+                      <p className="font-open-sans text-sm opacity-90 leading-body">Foto proiect finalizat</p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             <div ref={solutionRef} className="bg-[#e6f7ff] border-l-4 border-navy p-6 rounded-r-lg hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
@@ -143,7 +205,7 @@ export default function CaseStudy({
                 </div>
                 <div>
                   <p className="opacity-75 mb-1 leading-body">Durată Execuție</p>
-                  <p className="font-semibold leading-body">{duration} săptămâni</p>
+                  <p className="font-semibold leading-body">{duration < 20 ? `${duration} zile lucrătoare` : `${duration} săptămâni`}</p>
                 </div>
                 <div>
                   <p className="opacity-75 mb-1 leading-body">Suprafață</p>

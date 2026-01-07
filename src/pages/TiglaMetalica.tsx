@@ -21,7 +21,9 @@ export default function TiglaMetalica() {
       caseStudy={{
         ...serviceData.caseStudy,
         duration,
-        area
+        area,
+        duringImages: serviceData.caseStudy.duringImages,
+        afterImages: serviceData.caseStudy.afterImages
       }}
     />
   );
