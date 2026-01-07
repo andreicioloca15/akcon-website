@@ -1,4 +1,5 @@
 import { useStaggeredAnimation } from '../hooks/useScrollAnimation';
+import montajTiglaAlbaIulia from '../content/portfolio/montaj-tigla-metalica-alba-iulia.json';
 import vilaAlbaIulia from '../content/portfolio/vila-premium-alba-iulia.json';
 import renovareSebes from '../content/portfolio/renovare-completa-sebes.json';
 import mansardareAiud from '../content/portfolio/mansardare-premium-aiud.json';
@@ -34,6 +35,7 @@ interface MappedProject {
 
 export default function Portfolio() {
   const portfolioData: PortfolioProject[] = [
+    montajTiglaAlbaIulia,
     vilaAlbaIulia,
     renovareSebes,
     mansardareAiud,
