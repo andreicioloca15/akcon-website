@@ -6,24 +6,11 @@ export default function MontajAcoperisuri() {
     ? serviceData.keywords.split(', ')
     : serviceData.keywords;
 
-  const duration = typeof serviceData.caseStudy.duration === 'string'
-    ? parseInt(serviceData.caseStudy.duration.match(/\d+/)?.[0] || '0')
-    : serviceData.caseStudy.duration;
-
-  const area = typeof serviceData.caseStudy.area === 'string'
-    ? parseInt(serviceData.caseStudy.area.match(/\d+/)?.[0] || '0')
-    : serviceData.caseStudy.area;
-
   return (
     <ServicePage
       {...serviceData}
       keywords={keywords}
       showTransformationStory={true}
-      caseStudy={{
-        ...serviceData.caseStudy,
-        duration,
-        area
-      }}
     />
   );
 }
