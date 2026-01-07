@@ -115,33 +115,6 @@ export default function MontajAcoperisuri() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-16 bg-gradient-to-br from-navy to-navy-light text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-4">
-            Pregătit să Începi Proiectul?
-          </h2>
-          <p className="font-open-sans text-lg mb-8 opacity-90">
-            Solicită o evaluare gratuită astăzi și primește o ofertă personalizată pentru acoperișul tău.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={scrollToContact}
-              className="bg-gold text-white px-8 py-4 rounded-lg font-montserrat text-lg font-semibold hover:bg-gold-hover transition-all duration-300 shadow-lg hover:scale-105"
-            >
-              Solicită Ofertă Gratuită
-            </button>
-            <a
-              href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`}
-              className="bg-white text-navy px-8 py-4 rounded-lg font-montserrat text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:scale-105 flex items-center justify-center"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Sună: {companyData.phone}
-            </a>
-          </div>
-        </div>
-      </section>
-
       <Contact />
     </div>
   );
