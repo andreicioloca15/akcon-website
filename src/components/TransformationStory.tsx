@@ -24,14 +24,14 @@ export default function TransformationStory() {
             Studiu de Caz: Montaj Acoperiș Nou - Construcție de la Zero
           </h2>
           <p className="font-open-sans text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Acoperiș complet pentru casă nouă - Stremț, Alba
+            Acoperiș complet pentru casă nouă
           </p>
         </div>
 
         <div ref={introRef} className="max-w-4xl mx-auto mb-16">
           <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
             <p className="font-open-sans text-lg text-gray-700 leading-relaxed text-center">
-              Acest proiect demonstrează expertiza AKCON în construcția de acoperișuri noi pentru case construite de la zero. Am realizat un acoperiș complet cu șarpantă, izolație și țiglă metalică premium pentru o casă nouă în Stremț, Alba.
+              Acest proiect demonstrează expertiza AKCON în construcția de acoperișuri noi pentru case construite de la zero. Am realizat un acoperiș complet cu șarpantă, izolație și țiglă metalică premium pentru o casă nouă.
             </p>
           </div>
         </div>
