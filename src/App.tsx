@@ -6,6 +6,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 import ScrollProgress from './components/ScrollProgress';
 import HomePage from './pages/HomePage';
 import DespreNoi from './pages/DespreNoi';
+import Servicii from './pages/Servicii';
 import MontajAcoperisuri from './pages/MontajAcoperisuri';
 import RenovareAcoperisuri from './pages/RenovareAcoperisuri';
 import TiglaCeramica from './pages/TiglaCeramica';
@@ -46,6 +47,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/despre-noi" element={<DespreNoi />} />
+            <Route path="/servicii" element={<Servicii />} />
             <Route path="/servicii/montaj-acoperisuri" element={<MontajAcoperisuri />} />
             <Route path="/servicii/montaj-acoperisuri-noi" element={<MontajAcoperisuri />} />
             <Route path="/servicii/renovare-acoperisuri" element={<RenovareAcoperisuri />} />

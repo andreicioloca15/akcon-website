@@ -1,30 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Phone, Menu, X, ChevronDown } from 'lucide-react';
+import { Phone, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import companyData from '../content/company.json';
-import montajAcoperisuri from '../content/services/montaj-acoperisuri.json';
-import renovareAcoperisuri from '../content/services/renovare-acoperisuri.json';
-import reparatiiAcoperisuri from '../content/services/reparatii-acoperisuri.json';
-import tiglaCeramica from '../content/services/tigla-ceramica.json';
-import tiglaMetalica from '../content/services/tigla-metalica.json';
-import mansardari from '../content/services/mansardari.json';
-
-interface Service {
-  title: string;
-  description: string;
-  icon: string;
-  link?: string;
-  order: number;
-}
-
-interface MappedHeaderService {
-  name: string;
-  path: string;
-}
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
@@ -48,23 +28,6 @@ export default function Header() {
     }
   };
 
-  const servicesData: Service[] = [
-    montajAcoperisuri,
-    renovareAcoperisuri,
-    reparatiiAcoperisuri,
-    tiglaCeramica,
-    tiglaMetalica,
-    mansardari
-  ];
-
-  const services: MappedHeaderService[] = servicesData
-    .sort((a, b) => a.order - b.order)
-    .filter(s => s.link)
-    .map(s => ({
-      name: s.title,
-      path: s.link || '#'
-    }));
-
   return (
     <header className={`fixed top-0 w-full z-50 ${
       scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-white shadow-md py-4'
@@ -83,30 +46,10 @@ export default function Header() {
             Despre Noi
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
           </Link>
-          <div
-            className="relative"
-            onMouseEnter={() => setServicesDropdownOpen(true)}
-            onMouseLeave={() => setServicesDropdownOpen(false)}
-          >
-            <button className="text-gray-700 hover:text-gold transition-all duration-300 font-open-sans flex items-center focus:outline-none focus:text-gold relative group">
-              Servicii
-              <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-300 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
-            </button>
-            {servicesDropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-xl py-3 w-64 z-50">
-                {services.map((service, index) => (
-                  <Link
-                    key={service.path}
-                    to={service.path}
-                    className="block px-6 py-3 text-navy hover:bg-gray-50 hover:text-gold transition-all duration-200 font-open-sans text-sm"
-                  >
-                    {service.name}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+          <Link to="/servicii" className="text-gray-700 hover:text-gold transition-all duration-300 font-open-sans focus:outline-none focus:text-gold relative group">
+            Servicii
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+          </Link>
           <button onClick={() => scrollToSection('portofoliu')} className="text-gray-700 hover:text-gold transition-all duration-300 font-open-sans focus:outline-none focus:text-gold relative group">
             Portofoliu
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
@@ -148,21 +91,13 @@ export default function Header() {
               Despre Noi
             </Link>
 
-            <div className="border-b border-gray-100">
-              <p className="text-navy font-bold font-montserrat text-lg pt-4 pb-3">Servicii</p>
-              <div className="pb-2">
-                {services.map((service) => (
-                  <Link
-                    key={service.path}
-                    to={service.path}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block text-gray-600 hover:text-gold transition-all duration-300 font-open-sans py-3 pl-4 focus:outline-none focus:text-gold"
-                  >
-                    {service.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            <Link
+              to="/servicii"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-navy hover:text-gold transition-all duration-300 font-open-sans text-lg py-4 border-b border-gray-100 focus:outline-none focus:text-gold"
+            >
+              Servicii
+            </Link>
 
             <button
               onClick={() => scrollToSection('portofoliu')}
