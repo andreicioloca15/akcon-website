@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Wrench, Home, Hammer, Droplet, Shield, Building } from 'lucide-react';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
+import TransformationShowcase from '../components/TransformationShowcase';
 import montajAcoperisuri from '../content/services/montaj-acoperisuri.json';
 import renovareAcoperisuri from '../content/services/renovare-acoperisuri.json';
 import reparatiiAcoperisuri from '../content/services/reparatii-acoperisuri.json';
@@ -103,8 +104,14 @@ export default function Servicii() {
               );
             })}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-16 text-center">
+      <TransformationShowcase variant="compact" showCTA={true} />
+
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center">
             <div className="bg-navy rounded-xl p-8 md:p-12 text-white">
               <h2 className="font-montserrat text-2xl md:text-3xl font-bold mb-4">
                 Nu ești sigur ce serviciu ai nevoie?

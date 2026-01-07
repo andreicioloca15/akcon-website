@@ -1,4 +1,5 @@
 import { useStaggeredAnimation } from '../hooks/useScrollAnimation';
+import renovareStremt from '../content/portfolio/renovare-stremt.json';
 import montajTiglaAlbaIulia from '../content/portfolio/montaj-tigla-metalica-alba-iulia.json';
 import vilaAlbaIulia from '../content/portfolio/vila-premium-alba-iulia.json';
 import renovareSebes from '../content/portfolio/renovare-completa-sebes.json';
@@ -19,9 +20,11 @@ interface PortfolioProject {
   clientName: string;
   order: number;
   featured?: boolean;
+  badge?: string;
   beforeAfter?: {
     before: string;
     after: string;
+    during?: string;
   };
 }
 
@@ -31,10 +34,12 @@ interface MappedProject {
   quote: string;
   gradient: string;
   image: string;
+  badge?: string;
 }
 
 export default function Portfolio() {
   const portfolioData: PortfolioProject[] = [
+    renovareStremt,
     montajTiglaAlbaIulia,
     vilaAlbaIulia,
     renovareSebes,
@@ -62,7 +67,8 @@ export default function Portfolio() {
       details: `${p.type} • ${p.area} • ${p.duration}`,
       quote: p.clientQuote,
       gradient: gradients[index % gradients.length],
-      image: p.image
+      image: p.image,
+      badge: p.badge
     }));
 
   const scrollToContact = (): void => {
@@ -121,9 +127,15 @@ export default function Portfolio() {
                   </p>
                 </div>
               </div>
-              <div className="absolute top-4 right-4 bg-gold text-white px-3 py-1 rounded-full text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                Vezi Detalii
-              </div>
+              {project.badge ? (
+                <div className="absolute top-4 right-4 bg-gold text-white px-4 py-2 rounded-lg text-xs font-semibold shadow-lg">
+                  {project.badge}
+                </div>
+              ) : (
+                <div className="absolute top-4 right-4 bg-gold text-white px-3 py-1 rounded-full text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Vezi Detalii
+                </div>
+              )}
             </div>
           ))}
         </div>

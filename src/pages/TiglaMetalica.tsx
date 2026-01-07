@@ -18,6 +18,7 @@ export default function TiglaMetalica() {
     <ServicePage
       {...serviceData}
       keywords={keywords}
+      showTransformation={true}
       caseStudy={{
         ...serviceData.caseStudy,
         duration,

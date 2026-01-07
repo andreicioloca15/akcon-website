@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import CaseStudy from '../components/CaseStudy';
 import Contact from '../components/Contact';
 import SEO from '../components/SEO';
+import TransformationShowcase from '../components/TransformationShowcase';
 import companyData from '../content/company.json';
 
 interface FAQItem {
@@ -23,6 +24,7 @@ interface ServicePageProps {
   benefits: string[];
   processSteps: { title: string; description: string }[];
   faq: FAQItem[];
+  showTransformation?: boolean;
   caseStudy?: {
     title: string;
     clientName: string;
@@ -51,6 +53,7 @@ export default function ServicePage({
   benefits,
   processSteps,
   faq,
+  showTransformation = false,
   caseStudy
 }: ServicePageProps) {
   const scrollToContact = (): void => {
@@ -152,6 +155,8 @@ export default function ServicePage({
       )}
 
       <ProcessStepsSection processSteps={processSteps} />
+
+      {showTransformation && <TransformationShowcase variant="full" showCTA={false} />}
 
       {caseStudy && <CaseStudy {...caseStudy} />}
 
