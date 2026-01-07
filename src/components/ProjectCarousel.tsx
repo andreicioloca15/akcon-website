@@ -157,7 +157,7 @@ export default function ProjectCarousel() {
               <div className="flex items-center gap-2 mt-2">
                 <div className="bg-gold/20 backdrop-blur-sm px-3 py-1 rounded-full border border-gold/40">
                   <span className="font-open-sans text-xs md:text-sm">
-                    <span className="text-gold font-semibold">Client Real:</span> {project.clientName}
+                    <span className="text-gold font-semibold">Client:</span> {project.clientName}
                   </span>
                 </div>
               </div>
