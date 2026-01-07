@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { Wrench, Home, Hammer, Droplet, Shield, Building } from 'lucide-react';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
-import TransformationShowcase from '../components/TransformationShowcase';
 import montajAcoperisuri from '../content/services/montaj-acoperisuri.json';
 import renovareAcoperisuri from '../content/services/renovare-acoperisuri.json';
 import reparatiiAcoperisuri from '../content/services/reparatii-acoperisuri.json';
@@ -106,8 +105,6 @@ export default function Servicii() {
           </div>
         </div>
       </section>
-
-      <TransformationShowcase variant="compact" showCTA={true} />
 
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
