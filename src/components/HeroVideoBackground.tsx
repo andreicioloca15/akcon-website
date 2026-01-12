@@ -65,7 +65,10 @@ export default function HeroVideoBackground() {
                 loop
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover"
-                style={{ display: isActive ? 'block' : 'none' }}
+                style={{
+                  display: isActive ? 'block' : 'none',
+                  animation: isActive ? `kenBurnsZoom ${item.duration}ms ease-out forwards` : 'none'
+                }}
               >
                 <source src={item.src} type="video/mp4" />
               </video>
@@ -85,6 +88,8 @@ export default function HeroVideoBackground() {
               className="w-full h-full bg-cover bg-center"
               style={{
                 backgroundImage: `url(${item.src})`,
+                animation: isActive ? `kenBurnsZoom ${item.duration}ms ease-out forwards` : 'none',
+                transform: 'scale(1)',
               }}
             />
           </div>
@@ -92,7 +97,20 @@ export default function HeroVideoBackground() {
       })}
 
       <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-navy/80 to-navy-light/85 z-10" />
-      <div className="absolute inset-0 bg-navy/40 z-22" />
+      <div className="absolute inset-0 bg-navy/40 z-20" />
+
+      <style>
+        {`
+          @keyframes kenBurnsZoom {
+            0% {
+              transform: scale(1);
+            }
+            100% {
+              transform: scale(1.05);
+            }
+          }
+        `}
+      </style>
     </div>
   );
 }
