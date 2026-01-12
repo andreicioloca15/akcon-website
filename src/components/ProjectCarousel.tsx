@@ -1,12 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Star, CheckCircle } from 'lucide-react';
-import montajTiglaAlbaIulia from '../content/portfolio/montaj-tigla-metalica-alba-iulia.json';
-import vilaAlbaIulia from '../content/portfolio/vila-premium-alba-iulia.json';
-import renovareSebes from '../content/portfolio/renovare-completa-sebes.json';
-import mansardareAiud from '../content/portfolio/mansardare-premium-aiud.json';
-import casaBlaj from '../content/portfolio/casa-moderna-blaj.json';
-import renovareCugir from '../content/portfolio/renovare-vila-cugir.json';
-import acoperisOcnaMures from '../content/portfolio/acoperis-nou-ocna-mures.json';
 
 interface Project {
   title: string;
@@ -26,7 +19,7 @@ export default function ProjectCarousel() {
   const [isMobile, setIsMobile] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
 
-  const realProjects: Project[] = [
+  const projects: Project[] = [
     {
       title: 'Montaj Acoperiș Nou - Țiglă Metalică',
       location: 'Alba Iulia',
@@ -79,17 +72,6 @@ export default function ProjectCarousel() {
       image: '/acoperis_albastru_-_alba_iulia.jpeg',
       verified: true
     }
-  ];
-
-  const projects: Project[] = [
-    ...realProjects,
-    { ...montajTiglaAlbaIulia, verified: true },
-    vilaAlbaIulia,
-    renovareSebes,
-    mansardareAiud,
-    casaBlaj,
-    renovareCugir,
-    acoperisOcnaMures
   ];
 
   useEffect(() => {
