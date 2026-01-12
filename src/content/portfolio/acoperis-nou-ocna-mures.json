@@ -1,13 +1,19 @@
 {
-  "title": "Acoperiș Nou Ocna Mureș",
-  "location": "Ocna Mureș",
+  "title": "Construcție Acoperiș Nou - Stremț",
+  "location": "Stremț, Alba",
   "type": "Țiglă metalică Lindab",
   "area": "200 mp",
   "duration": "4 săptămâni",
-  "image": "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=800",
-  "description": "Construcție acoperiș nou pentru casă rezidențială cu sistem Lindab premium.",
-  "clientQuote": "Profesionalism desăvârșit",
-  "clientName": "Familie Ocna Mureș",
+  "image": "/dji_fly_20250725_174044_171_1767900943954_photo.jpg",
+  "description": "Construcție acoperiș nou pentru casă rezidențială cu sistem Lindab premium - de la șarpantă la finisaje.",
+  "clientQuote": "Profesionalism desăvârșit și atenție la detalii",
+  "clientName": "Familie Stremț",
   "order": 6,
-  "featured": true
+  "featured": true,
+  "badge": "Proiect Finalizat",
+  "beforeAfter": {
+    "before": "/dji_fly_20250725_174044_171_1767900943954_photo.jpg",
+    "after": "/dji_fly_20250909_160218_261_1767899902514_photo.jpg",
+    "during": "/dji_fly_20250725_174154_175_1767900940021_photo.jpg"
+  }
 }
