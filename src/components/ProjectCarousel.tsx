@@ -22,7 +22,7 @@ export default function ProjectCarousel() {
   const projects: Project[] = [
     {
       title: 'Montaj Acoperiș Nou - Țiglă Metalică',
-      location: 'Alba Iulia',
+      location: 'Stremț, Alba',
       type: 'Țiglă Metalică',
       clientName: 'Gheorghe Gerea',
       image: '/screenshot.jpg',
