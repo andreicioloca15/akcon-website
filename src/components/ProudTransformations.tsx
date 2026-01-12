@@ -85,6 +85,16 @@ const realProjects: RealProject[] = [
     badge: 'Proiect Finalizat',
     rating: 5,
   },
+  {
+    id: 'cabane-tip-a',
+    clientName: 'Proiect AKCON',
+    location: 'Județul Alba',
+    projectType: 'Cabane Tip A - Acoperiș Metalic',
+    image: '/dji_fly_20250909_160218_261_1767899902514_photo copy.jpg',
+    description: 'Proiect AKCON - acoperișuri metalice gri pentru cabane tip A. Fotografie aeriană profesională.',
+    badge: 'Proiect Finalizat',
+    rating: 5,
+  },
 ];
 
 export default function ProudTransformations() {
