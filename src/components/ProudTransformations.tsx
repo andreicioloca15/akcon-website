@@ -1,5 +1,4 @@
 import { Star, MapPin, Ruler, Clock, Award, CheckCircle } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface RealProject {
@@ -123,7 +122,7 @@ export default function ProudTransformations() {
         </div>
 
         <div ref={featuredRef} className="mb-8">
-          <Link to="/proiecte/gheorghe-gerea-stremt" className="group relative bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 block cursor-pointer">
+          <div className="group relative bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
             <div className="absolute top-6 right-6 z-20">
               <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-5 py-3 rounded-full shadow-lg flex items-center gap-2 backdrop-blur-sm">
                 <Award className="w-5 h-5" />
@@ -133,11 +132,15 @@ export default function ProudTransformations() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               <div className="relative h-64 md:h-80 lg:h-[500px] overflow-hidden">
-                <img
-                  src={featuredProject.image}
-                  alt={featuredProject.clientName}
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+                >
+                  <source src="/videos/Vid3.mp4" type="video/mp4" />
+                </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent lg:hidden"></div>
               </div>
 
@@ -173,16 +176,9 @@ export default function ProudTransformations() {
                 <p className="font-open-sans text-lg text-gray-700 leading-relaxed mb-6 border-l-4 border-gold pl-4 italic">
                   "{featuredProject.description}"
                 </p>
-
-                <div className="inline-flex items-center gap-2 text-gold font-montserrat font-semibold group-hover:gap-3 transition-all">
-                  Vezi Detalii Proiect
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
               </div>
             </div>
-          </Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
