@@ -24,10 +24,9 @@ export default function HeroVideoBackground() {
   const desktopMedia: MediaItem[] = [
     { type: 'image', src: '/dji_fly_20250725_174044_171_1767900943954_photo.jpg', duration: 5000 },
     { type: 'image', src: '/dji_fly_20250725_174154_175_1767900940021_photo.jpg', duration: 5000 },
-    { type: 'video', src: '/videos/Vid3.mp4', duration: 10000 },
     { type: 'image', src: '/dji_fly_20250909_160218_261_1767899902514_photo.jpg', duration: 5000 },
     { type: 'image', src: '/dji_fly_20251203_101628_298_1767899813998_photo.jpg', duration: 5000 },
-    { type: 'image', src: '/dji_fly_20250909_160308_264_1767899897525_photo.jpeg', duration: 5000 },
+    { type: 'video', src: '/videos/Vid3.mp4', duration: 10000 },
   ];
 
   const mobileMedia: MediaItem[] = desktopMedia.filter(item => item.type === 'image');
@@ -54,20 +53,22 @@ export default function HeroVideoBackground() {
           return (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-2000 ${
-                isActive ? 'opacity-100' : 'opacity-0'
+              className={`absolute inset-0 transition-opacity ${
+                isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'
               }`}
-              style={{ transitionDuration: '2000ms' }}
+              style={{
+                transitionDuration: '1000ms',
+                willChange: 'opacity',
+              }}
             >
               <video
                 autoPlay
                 muted
-                loop
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{
-                  display: isActive ? 'block' : 'none',
-                  animation: isActive ? `kenBurnsZoom ${item.duration}ms ease-out forwards` : 'none'
+                  transform: 'translateZ(0)',
+                  backfaceVisibility: 'hidden',
                 }}
               >
                 <source src={item.src} type="video/mp4" />
@@ -79,17 +80,21 @@ export default function HeroVideoBackground() {
         return (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-2000 ${
-              isActive ? 'opacity-100' : 'opacity-0'
+            className={`absolute inset-0 transition-opacity ${
+              isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'
             }`}
-            style={{ transitionDuration: '2000ms' }}
+            style={{
+              transitionDuration: '1000ms',
+              willChange: 'opacity, transform',
+            }}
           >
             <div
               className="w-full h-full bg-cover bg-center"
               style={{
                 backgroundImage: `url(${item.src})`,
-                animation: isActive ? `kenBurnsZoom ${item.duration}ms ease-out forwards` : 'none',
-                transform: 'scale(1)',
+                transform: 'translateZ(0)',
+                backfaceVisibility: 'hidden',
+                animation: isActive && !isMobile ? `subtleZoom ${item.duration}ms ease-out forwards` : 'none',
               }}
             />
           </div>
@@ -101,12 +106,12 @@ export default function HeroVideoBackground() {
 
       <style>
         {`
-          @keyframes kenBurnsZoom {
+          @keyframes subtleZoom {
             0% {
-              transform: scale(1);
+              transform: scale(1) translateZ(0);
             }
             100% {
-              transform: scale(1.05);
+              transform: scale(1.05) translateZ(0);
             }
           }
         `}
