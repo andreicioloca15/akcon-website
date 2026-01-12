@@ -1,19 +1,9 @@
-import { useEffect, useRef } from 'react';
 import { Star, MapPin, Calendar, Clock, Award, CheckCircle } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import SEO from '../components/SEO';
 
 export default function GheorgheGereaCaseStudy() {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const contentRef = useScrollAnimation<HTMLDivElement>({ distance: 50, delay: 200 });
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.log('Video autoplay prevented:', error);
-      });
-    }
-  }, []);
 
   return (
     <>
@@ -24,69 +14,26 @@ export default function GheorgheGereaCaseStudy() {
         image="/screenshot.jpg"
       />
 
-      {/* Video Hero Section */}
-      <section className="relative w-full h-[70vh] min-h-[500px] max-h-[800px] overflow-hidden">
-        {/* Video Background */}
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover"
-        >
-          <source src="/videos/Vid3.mp4" type="video/mp4" />
-        </video>
-
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/40 z-10"></div>
-
-        {/* Content Overlay */}
-        <div className="relative z-20 h-full flex items-center justify-center px-4">
+      {/* Hero Section */}
+      <section className="relative w-full h-[50vh] min-h-[300px] bg-gradient-to-r from-navy to-navy/90 overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative z-10 h-full flex items-center justify-center px-4">
           <div className="text-center text-white max-w-4xl">
-            {/* Stars */}
-            <div className="flex justify-center items-center gap-2 mb-6">
+            <div className="flex justify-center items-center gap-2 mb-4">
               {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="w-7 h-7 fill-yellow-400 text-yellow-400 drop-shadow-lg" />
+                <Star key={star} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
               ))}
-              <span className="font-montserrat text-xl font-bold ml-2 drop-shadow-lg">5/5</span>
+              <span className="font-montserrat text-lg font-bold ml-2">5/5</span>
             </div>
-
-            {/* Title */}
-            <h1 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-2xl">
+            <h1 className="font-montserrat text-3xl md:text-5xl font-bold mb-4">
               Montaj Acoperiș Nou - Țiglă Metalică
             </h1>
-
-            {/* Location */}
-            <div className="flex items-center justify-center gap-3 text-xl md:text-2xl mb-4">
-              <MapPin className="w-6 h-6 text-gold drop-shadow-lg" />
-              <span className="font-open-sans drop-shadow-lg">Stremț, Alba</span>
-            </div>
-
-            {/* Client */}
-            <div className="flex items-center justify-center gap-3 text-lg md:text-xl mb-6">
-              <CheckCircle className="w-5 h-5 text-gold drop-shadow-lg" />
-              <span className="font-open-sans drop-shadow-lg">
-                <span className="font-semibold">Client:</span> Gheorghe Gerea
-              </span>
-            </div>
-
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-6 py-3 rounded-full shadow-2xl">
-              <Award className="w-5 h-5" />
-              <span className="font-montserrat text-sm font-bold">Cel Mai Frumos Acoperiș</span>
+            <div className="flex items-center justify-center gap-3 text-lg">
+              <MapPin className="w-5 h-5 text-gold" />
+              <span className="font-open-sans">Stremț, Alba</span>
             </div>
           </div>
         </div>
-
-        {/* Mobile Poster Fallback */}
-        <style>{`
-          @media (max-width: 768px) {
-            video {
-              display: block;
-            }
-          }
-        `}</style>
       </section>
 
       {/* Project Details Section */}
@@ -111,18 +58,22 @@ export default function GheorgheGereaCaseStudy() {
                 </p>
               </div>
 
-              {/* Project Images */}
+              {/* Project Video */}
               <div className="space-y-6">
                 <h3 className="font-montserrat text-2xl md:text-3xl font-bold text-navy">
-                  Galerie Foto
+                  Video Proiect
                 </h3>
                 <div className="grid grid-cols-1 gap-6">
                   <div className="relative rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
-                    <img
-                      src="/screenshot.jpg"
-                      alt="Montaj acoperiș nou Stremț - vedere aeriană"
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
                       className="w-full h-[500px] object-cover"
-                    />
+                    >
+                      <source src="/videos/Vid3.mp4" type="video/mp4" />
+                    </video>
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
                       <p className="font-montserrat text-white font-semibold text-xl">
                         Vedere Aeriană - Proiect Finalizat
