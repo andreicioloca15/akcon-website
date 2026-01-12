@@ -51,6 +51,40 @@ const realProjects: RealProject[] = [
     badge: 'Proiect Finalizat',
     rating: 5,
   },
+  {
+    id: 'alex-tanea',
+    clientName: 'Alex Țanea',
+    location: 'Alba Iulia',
+    projectType: 'Schimbare Acoperiș - Montaj Țiglă Metalică',
+    duration: '5 zile',
+    image: '/alex_tanea.jpg',
+    description: 'Experiență excelentă! Finalizat în 5 zile, montaj impecabil țiglă metalică, echipă profesionistă și comunicare clară. Client extrem de mulțumit!',
+    badge: 'Proiect Finalizat',
+    rating: 5,
+  },
+  {
+    id: 'proiect-akcon',
+    clientName: 'Proiect AKCON',
+    location: 'Alba Iulia',
+    projectType: 'Montaj Acoperiș Metalic',
+    duration: '15 zile',
+    image: '/no_details.jpeg',
+    description: 'Montaj profesional acoperiș metalic realizat în 15 zile. Lucrare de calitate executată de echipa AKCON.',
+    badge: 'Proiect Finalizat',
+    rating: 5,
+  },
+  {
+    id: 'alba-iulia-blue',
+    clientName: 'Proiect Alba Iulia',
+    location: 'Alba Iulia',
+    projectType: 'Acoperiș Metalic cu Falt',
+    area: '240mp',
+    duration: '6 zile',
+    image: '/acoperis_albastru_-_alba_iulia.jpeg',
+    description: 'Acoperiș metalic cu falt, 240mp, finalizat în doar 6 zile în Alba Iulia. Construcție rapidă și profesională de la AKCON.',
+    badge: 'Proiect Finalizat',
+    rating: 5,
+  },
 ];
 
 export default function ProudTransformations() {
@@ -138,7 +172,7 @@ export default function ProudTransformations() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {otherProjects.map((project, index) => {
             const ref = index === 0 ? card1Ref : card2Ref;
             return (

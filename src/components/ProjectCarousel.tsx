@@ -52,6 +52,32 @@ export default function ProjectCarousel() {
       clientName: 'Proiect Mihalt',
       image: '/mihalt.jpg',
       verified: true
+    },
+    {
+      title: 'Schimbare Acoperiș - Alba Iulia',
+      location: 'Alba Iulia',
+      type: 'Montaj Țiglă Metalică',
+      duration: '5 zile',
+      clientName: 'Alex Țanea',
+      image: '/alex_tanea.jpg',
+      verified: true
+    },
+    {
+      title: 'Montaj Acoperiș Metalic',
+      location: 'Alba Iulia',
+      type: 'Acoperiș Metalic',
+      duration: '15 zile',
+      image: '/no_details.jpeg',
+      verified: true
+    },
+    {
+      title: 'Acoperiș Metalic cu Falt - Alba Iulia',
+      location: 'Alba Iulia',
+      type: 'Standing Seam Metal Roof',
+      duration: '6 zile',
+      clientName: 'Proiect Alba Iulia',
+      image: '/acoperis_albastru_-_alba_iulia.jpeg',
+      verified: true
     }
   ];
 
