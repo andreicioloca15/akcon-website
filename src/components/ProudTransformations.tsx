@@ -172,11 +172,6 @@ export default function ProudTransformations() {
                 <p className="font-open-sans text-lg text-gray-700 leading-relaxed mb-6 border-l-4 border-gold pl-4 italic">
                   "{featuredProject.description}"
                 </p>
-
-                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-gold to-yellow-600 text-white px-6 py-3 rounded-lg font-montserrat font-semibold text-base shadow-md">
-                  <Award className="w-5 h-5" />
-                  Proiect Premium
-                </div>
               </div>
             </div>
           </div>
