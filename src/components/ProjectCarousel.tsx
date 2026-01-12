@@ -26,7 +26,37 @@ export default function ProjectCarousel() {
   const [isMobile, setIsMobile] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
 
+  const realProjects: Project[] = [
+    {
+      title: 'Montaj Acoperiș Nou - Țiglă Metalică',
+      location: 'Alba Iulia',
+      type: 'Țiglă Metalică',
+      clientName: 'Gheorghe Gerea',
+      image: '/screenshot.jpg',
+      verified: true
+    },
+    {
+      title: 'Renovare Acoperiș - Garbova',
+      location: 'Garbova, Alba',
+      type: 'Renovare Completă',
+      duration: '2 săptămâni',
+      clientName: 'Drăgoș Man',
+      image: '/renovare_garbova_-_dragos_man.jpg',
+      verified: true
+    },
+    {
+      title: 'Montaj Țiglă Metalică - Mihalt',
+      location: 'Mihalt, Alba',
+      type: 'Țiglă Metalică Roșie',
+      duration: '12 zile',
+      clientName: 'Proiect Mihalt',
+      image: '/mihalt.jpg',
+      verified: true
+    }
+  ];
+
   const projects: Project[] = [
+    ...realProjects,
     { ...montajTiglaAlbaIulia, verified: true },
     vilaAlbaIulia,
     renovareSebes,
