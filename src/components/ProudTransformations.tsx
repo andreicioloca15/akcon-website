@@ -19,7 +19,7 @@ const realProjects: RealProject[] = [
   {
     id: 'gheorghe-gerea',
     clientName: 'Gheorghe Gerea',
-    location: 'Alba Iulia',
+    location: 'Stremț, Alba',
     projectType: 'Montaj Acoperiș Nou - Țiglă Metalică',
     image: '/screenshot.jpg',
     description: 'Unul dintre cele mai frumoase acoperișuri realizate de AKCON. Țiglă metalică gri antracit cu finisaje impecabile și atenție maximă la detalii.',
