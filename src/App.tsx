@@ -15,6 +15,7 @@ import Mansardari from './pages/Mansardari';
 import ReparatiiAcoperisuri from './pages/ReparatiiAcoperisuri';
 import PoliticaConfidentialitate from './pages/PoliticaConfidentialitate';
 import TermeniConditii from './pages/TermeniConditii';
+import GheorgheGereaCaseStudy from './pages/GheorgheGereaCaseStudy';
 import NotFound from './pages/NotFound';
 
 function ScrollToTop() {
@@ -55,6 +56,7 @@ function App() {
             <Route path="/servicii/tigla-metalica" element={<TiglaMetalica />} />
             <Route path="/servicii/mansardari" element={<Mansardari />} />
             <Route path="/servicii/reparatii-acoperisuri" element={<ReparatiiAcoperisuri />} />
+            <Route path="/proiecte/gheorghe-gerea-stremt" element={<GheorgheGereaCaseStudy />} />
             <Route path="/politica-confidentialitate" element={<PoliticaConfidentialitate />} />
             <Route path="/termeni-conditii" element={<TermeniConditii />} />
             <Route path="*" element={<NotFound />} />
