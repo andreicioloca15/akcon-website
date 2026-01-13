@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="mb-6">
-              <Logo variant="horizontal" width={160} height={44} />
+              <Logo variant="horizontal" width={160} height={44} dark={true} />
             </div>
             <p className="font-open-sans text-sm opacity-80 mb-4 leading-body">
               Specialiști în montaj, renovare și reparații acoperișuri în județul Alba și împrejurimi.
