@@ -46,7 +46,7 @@ export default function TransformationStory() {
                   </span>
                 </div>
                 <img
-                  src="/ceaf613f-3ff1-4440-a8a4-8d5427638a14 copy copy.jpg"
+                  src="/dji_fly_20250728_174632_193_1767900924129_photo.jpg"
                   alt="Construcție șarpantă"
                   className="w-full h-auto rounded-xl shadow-2xl group-hover:shadow-3xl transition-all duration-300"
                 />
