@@ -32,7 +32,7 @@ export default function TransformationShowcase({
         <div className="max-w-7xl mx-auto px-4">
           <div ref={headingRef} className="text-center mb-12">
             <div className="inline-block bg-gold text-white px-6 py-2 rounded-full font-montserrat font-semibold text-sm mb-4">
-              Proiect Real AKCON
+              Proiect Finalizat
             </div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-navy mb-4">
               Studiu de Caz: Renovare Completă Acoperiș
@@ -69,7 +69,7 @@ export default function TransformationShowcase({
       <div className="max-w-7xl mx-auto px-4">
         <div ref={headingRef} className="text-center mb-12">
           <div className="inline-block bg-gold text-white px-6 py-3 rounded-full font-montserrat font-semibold text-sm mb-6">
-            Proiect Real AKCON
+            Proiect Finalizat
           </div>
           <h2 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6">
             Studiu de Caz: Renovare Completă Acoperiș
