@@ -71,20 +71,21 @@
     }
   ],
   "caseStudy": {
-    "title": "Studiu de Caz: Renovare Completă Acoperiș - Familia Drăgoș Man, Garbova",
-    "clientName": "Drăgoș Man",
-    "clientLocation": "Garbova, Alba",
+    "title": "Studiu de Caz: Renovare Acoperiș - Alba Iulia",
+    "clientName": "Proiect Alba Iulia",
+    "clientLocation": "Alba Iulia",
     "clientProfession": "",
     "projectDate": "2024",
-    "duration": "2 săptămâni",
-    "area": "300 mp",
-    "materials": "Țiglă metalică gri antracit, Structură consolidată, Izolație premium, Membrane moderne",
-    "problemDescription": "Renovare completă acoperiș pentru familia Drăgoș Man din Garbova. Acoperișul roșu vechi necesita înlocuire completă. Clientul dorea o transformare modernă, durabilă și realizată într-un timp scurt pentru a evita expunerea casei la intemperii.",
-    "solutionDescription": "Am realizat o renovare completă în doar 2 săptămâni: demontare acoperiș vechi roșu, verificare și consolidare structură, montaj izolație premium, instalare țiglă metalică gri antracit. Echipa noastră a lucrat eficient și profesional, asigurând o transformare spectaculoasă de la un acoperiș roșu tradițional la unul modern gri.",
-    "resultsDescription": "Proiect de 300mp finalizat la timp cu rezultate excelente. Transformarea este impresionantă - acoperișul modern din țiglă metalică gri antracit oferă un aspect contemporan și protecție superioară. Familia Drăgoș Man este extrem de mulțumită de noua imagine a casei și de calitatea lucrărilor. Rating 5/5.",
-    "testimonial": "Echipa AKCON a realizat o treabă impecabilă! În doar 2 săptămâni am trecut de la un acoperiș vechi roșu la unul modern, elegant. Profesionalismul și atenția la detalii au fost excepționale. Suntem foarte mulțumiți!",
+    "duration": "6 zile",
+    "area": "240 mp",
+    "materials": "Tablă fălțuită (standing seam), Izolație premium, Structură consolidată",
+    "problemDescription": "Renovare acoperiș modern cu tablă fălțuită. Clientul dorea un acoperiș contemporan cu tehnologie standing seam și montaj rapid.",
+    "solutionDescription": "Am realizat renovare completă cu acoperiș metalic cu falt (standing seam) de 240mp, finalizat în doar 6 zile. Montaj rapid și profesional utilizând tehnologie modernă de acoperiș metalic premium. Sistem cu falt asigură impermeabilitate superioară și aspect contemporan.",
+    "resultsDescription": "Proiect de 240mp finalizat în doar 6 zile. Tehnologia standing seam oferă protecție maximă și aspect modern. Calitate profesională și montaj rapid.",
+    "testimonial": "Montaj rapid și profesional! Tehnologia modernă și finisajele impecabile. Echipa AKCON a demonstrat expertiza în acest tip de acoperiș.",
     "investmentValue": "",
-    "duringImages": ["/renovare_garbova_-_dragos_man.jpg"],
+    "badge": "Proiect Finalizat",
+    "duringImages": ["/acoperis_albastru_-_alba_iulia.jpeg"],
     "afterImages": []
   }
 }

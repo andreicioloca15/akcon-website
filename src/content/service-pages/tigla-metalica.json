@@ -47,19 +47,21 @@
     }
   ],
   "caseStudy": {
-    "title": "Montaj Țiglă Metalică - Alba Iulia",
-    "clientName": "Alex Țanea",
-    "clientLocation": "Alba Iulia",
+    "title": "Studiu de Caz: Montaj Țiglă Metalică - Mihalt",
+    "clientName": "Proiect Mihalt",
+    "clientLocation": "Mihalt, Alba",
     "clientProfession": "",
-    "projectDate": "Noiembrie 2024",
-    "duration": "5 zile",
-    "area": "150 mp",
-    "materials": "Țiglă metalică premium, folie impermeabilă, sistem pluvial complet",
-    "problemDescription": "Casa necesita înlocuirea completă a acoperișului vechi deteriorat. Clientul dorea o soluție durabilă, estetică și cu montaj rapid pentru a evita perioadele de vreme nefavorabilă. Era esențială o execuție impecabilă în timp record.",
-    "solutionDescription": "Am realizat demontarea acoperișului vechi, verificarea și consolidarea structurii, montarea foliei impermeabile și instalarea țiglei metalice premium. Echipa de 4 meșteri experimentați a lucrat coordonat pentru finalizarea proiectului în doar 5 zile lucrătoare. Toate lucrările de tinichigerie și sistem pluvial au fost executate profesionist.",
-    "resultsDescription": "Proiect finalizat exact în 5 zile conform planificării. Montajul țiglei metalice a fost realizat impecabil, fără defecte. Clientul a apreciat în mod deosebit comunicarea clară, organizarea echipei și seriozitatea manifestată pe toată durata execuției. Casa a primit un aspect modern și elegant, iar sistemul de acoperiș oferă protecție completă cu garanție de 15 ani la manoperă.",
-    "testimonial": "Am avut plăcerea de a colabora cu echipa AKCON pentru schimbarea acoperișului casei mele, iar experiența a fost una excelentă. De la primul contact, echipa s-a dovedit a fi profesionistă, bine organizată și orientată spre detalii. Lucrarea a fost finalizată în numai 5 zile, fără a face rabat la calitate. Montajul noii țigle metalice a fost realizat impecabil, iar echipa a lucrat eficient și ordonat. Am apreciat comunicarea clară și seriozitatea de care au dat dovadă pe tot parcursul proiectului. Recomand cu încredere AKCON tuturor celor care caută o firmă de construcții de încredere, capabilă să livreze rezultate excelente într-un timp scurt!",
-    "duringImages": ["/dji_fly_20250725_174154_175_1767900940021_photo.jpg"],
-    "afterImages": ["/dji_fly_20250909_160218_261_1767899902514_photo.jpg"]
+    "projectDate": "2024",
+    "duration": "12 zile lucrătoare",
+    "area": "280 mp",
+    "materials": "Țiglă metalică roșie premium, Izolație termică avansată, Sistem de ventilație modern",
+    "problemDescription": "Montaj complet țiglă metalică roșie pentru o casă în Mihalt. Clientul dorea un acoperiș premium cu aspect spectaculos și finisaje impecabile.",
+    "solutionDescription": "Am realizat montaj complet țiglă metalică roșie pentru o casă în Mihalt. 280mp realizați profesional în doar 12 zile lucrătoare cu finisaje impecabile. Echipa a acordat atenție extremă fiecărui detaliu pentru a asigura un rezultat spectaculos.",
+    "resultsDescription": "Proiect de 280mp finalizat exact la timp. Finisaje impecabile, atenție maximă la detalii, aspect premium. Acoperișul roșu oferă casei un caracter distinct și protecție superioară.",
+    "testimonial": "Rezultatul final depășește așteptările! Acoperișul arată spectaculos - finisajele sunt impecabile și atenția la detalii este vizibilă. Echipa AKCON a demonstrat profesionalism maxim. Recomand cu încredere!",
+    "investmentValue": "",
+    "badge": "Proiect Finalizat",
+    "duringImages": [],
+    "afterImages": ["/mihalt.jpg"]
   }
 }

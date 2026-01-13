@@ -38,31 +38,25 @@
   ],
   "faq": [
     {
-      "question": "Orice pod poate fi mansardat?",
-      "answer": "Majoritatea podurilor pot fi mansardate, dar evaluăm fiecare caz individual. Condițiile: înălțime minimă 1.80m, structură solidă, posibilitate autorizare. Oferim evaluare gratuită și soluții personalizate."
-    },
-    {
-      "question": "Cât costă o mansardare completă?",
-      "answer": "Între 400-700 EUR/mp util creat, în funcție de complexitate și finisaje. Include: structură, acoperiș, ferestre Velux, izolație premium, instalații, rigips, finisaje. ROI excelent - recuperezi investiția în 3-5 ani prin creșterea valorii."
+      "question": "Cât costă o mansardare?",
+      "answer": "Costul depinde de suprafață, complexitate și materiale. Oferim consultanță gratuită și ofertă personalizată."
     },
     {
       "question": "Cât durează o mansardare?",
-      "answer": "Pentru 40-60 mp util: 6-10 săptămâni. Include toate etapele: demontare parțială acoperiș existent, consolidări, ridicare, închidere, instalații, finisaje. Lucrăm etapizat pentru confort minim afectat."
+      "answer": "Depinde de dimensiune - între 2-6 săptămâni pentru proiecte standard. Vă oferim un plan detaliat."
+    },
+    {
+      "question": "Am nevoie de autorizații?",
+      "answer": "Da, mansardarea necesită autorizații. Vă ajutăm cu toată documentația necesară."
+    },
+    {
+      "question": "Ce garanții oferă AKCON?",
+      "answer": "Oferim garanție 15 ani pentru manoperă și utilizăm doar materiale premium cu garanție producător."
+    },
+    {
+      "question": "Pot locui în casă în timpul lucrărilor?",
+      "answer": "Depinde de tipul mansardării. Vă informăm exact în etapa de consultanță."
     }
   ],
-  "caseStudy": {
-    "title": "Casă Anul 2000 Alba Iulia - Mansardare cu 2 Dormitoare și Baie",
-    "clientName": "Familia Gheorghe",
-    "clientLocation": "Alba Iulia, Cartier Ampoi",
-    "clientProfession": "",
-    "projectDate": "Mai-Iulie 2024",
-    "duration": "8 săptămâni",
-    "area": "65 mp",
-    "materials": "Structură nouă lemn tratat, Țiglă metalică Lindab, 6 ferestre Velux, Izolație Rockwool 20cm, Instalații complete",
-    "problemDescription": "Familia cu 3 copii avea nevoie urgentă de mai mult spațiu dar mutarea nu era opțiune. Podul era neutilizat - 65mp potențial. Bugetul era limitat, iar timpul critic (copiii aveau nevoie de camere separate până în septembrie).",
-    "solutionDescription": "Am proiectat 2 dormitoare spațioase și baie completă. Consolidare structură existentă, ridicare acoperiș pe o latură, 6 ferestre Velux pentru lumină maximă. Izolație premium Rockwool 20cm pentru confort vară-iarnă. Instalații complete integrate cu sistemul existent. Am lucrat accelerat fără a compromite calitatea.",
-    "resultsDescription": "Mansarda a fost finalizată în 8 săptămâni, chiar la timp pentru an școlar. 65mp noi adăugați = creștere 60% suprafață locuibilă. Copiii și-au primit camerele dorite. Casa evaluată acum cu 45.000 EUR mai mult (investiție: 32.000 EUR). Familia a evitat stresul și costurile unei mutări.",
-    "testimonial": "Akcon a făcut posibil imposibilul! Au transformat podul în 2 camere superbe și baie modernă în doar 2 luni. Am câștigat spațiu, confort și valoare. Copiii sunt încântați de camerele lor noi. Cea mai bună decizie pentru familia noastră!",
-    "investmentValue": "32.000 EUR (490 EUR/mp util)"
-  }
+  "caseStudy": null
 }
