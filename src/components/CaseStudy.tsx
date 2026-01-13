@@ -96,7 +96,7 @@ export default function CaseStudy({
                         <img
                           src={image}
                           alt={`Montaj țiglă metalică ${clientLocation} - în lucru`}
-                          className="w-full h-80 md:h-96 object-cover"
+                          className="w-full h-[300px] md:h-[500px] object-cover object-center"
                           loading="lazy"
                         />
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4">
@@ -120,11 +120,11 @@ export default function CaseStudy({
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {afterImages.map((image, index) => (
-                      <div key={index} className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                      <div key={index} className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 bg-gray-50">
                         <img
                           src={image}
                           alt={`Montaj țiglă metalică ${clientLocation} - proiect finalizat ${index + 1}`}
-                          className="w-full h-80 object-cover"
+                          className="w-full h-[300px] md:h-[400px] object-contain"
                           loading="lazy"
                         />
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4">
@@ -241,7 +241,7 @@ export default function CaseStudy({
                 "{testimonial}"
               </p>
               <p className="font-montserrat font-semibold text-gray-700 leading-body">
-                — {clientName}, {clientLocation}
+                — {clientName}
               </p>
             </div>
           </div>

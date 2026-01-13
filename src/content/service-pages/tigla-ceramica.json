@@ -1,11 +1,11 @@
 {
   "slug": "tigla-ceramica",
-  "title": "Țiglă Ceramică Premium",
-  "description": "Montaj profesional țiglă ceramică pentru acoperișuri care durează generații. Branduri premium Tondach, Creaton cu garanție 100+ ani. Izolație termică și fonică superioară, rezistență la îngheț-dezgheț excepțională. Investiția perfectă pentru case de lux și vile în județul Alba.",
+  "title": "Țiglă Ceramică",
+  "description": "Montaj profesional țiglă ceramică pentru acoperișuri care durează generații. Branduri de top Tondach, Creaton cu garanție 100+ ani. Izolație termică și fonică superioară, rezistență la îngheț-dezgheț excepțională. Investiția perfectă pentru case de lux și vile în județul Alba.",
   "metaTitle": "Țiglă Ceramică Alba Iulia | Tondach, Creaton | Durabilitate 100+ Ani",
-  "metaDescription": "Montaj țiglă ceramică premium Alba Iulia. Tondach, Creaton. Durabilitate 100+ ani, izolație superioară. Echipă specializată. ☎ 0XXX-XXX-XXX. Consultație gratuită!",
-  "keywords": "țiglă ceramică Alba Iulia, Tondach Alba Iulia, țiglă Creaton Alba, acoperiș ceramică premium, montaj țiglă ceramică",
-  "heroTitle": "Țiglă Ceramică Premium - Acoperișuri pentru Generații",
+  "metaDescription": "Montaj țiglă ceramică Alba Iulia. Tondach, Creaton. Durabilitate 100+ ani, izolație superioară. Echipă specializată. ☎ 0XXX-XXX-XXX. Consultație gratuită!",
+  "keywords": "țiglă ceramică Alba Iulia, Tondach Alba Iulia, țiglă Creaton Alba, acoperiș ceramică, montaj țiglă ceramică",
+  "heroTitle": "Țiglă Ceramică - Acoperișuri pentru Generații",
   "heroSubtitle": "Eleganță intemporală și durabilitate excepțională. Țigla ceramică Tondach și Creaton rezistă peste 100 ani, oferind izolație superioară și aspect aristocratic casei tale.",
   "heroImage": "/dji_fly_20250804_125944_201_1767900076098_photo.jpg",
   "benefits": [
@@ -51,21 +51,21 @@
     }
   ],
   "caseStudy": {
-    "title": "Studiu de Caz: Montaj Țiglă Ceramică - Garbova",
-    "clientName": "Drăgoș Man",
-    "clientLocation": "Garbova, Alba",
+    "title": "Studiu de Caz: Montaj Țiglă Ceramică - Mihalt",
+    "clientName": "Proiect Mihalt",
+    "clientLocation": "Mihalt, Alba",
     "clientProfession": "",
     "projectDate": "2024",
-    "duration": "2 săptămâni",
-    "area": "300 mp",
-    "materials": "Țiglă metalică premium, Izolație termică avansată, Sistem de ventilație modern",
-    "problemDescription": "Montaj complet țiglă pentru familia Drăgoș Man din Garbova. Familia dorea un acoperiș modern și durabil cu finisaje profesionale.",
-    "solutionDescription": "Am realizat montaj complet țiglă metalică pentru familia Drăgoș Man din Garbova. 300mp finalizați în doar 2 săptămâni cu rezultate excelente. Echipa a lucrat eficient asigurând calitate superioară.",
-    "resultsDescription": "Proiect de 300mp finalizat exact la timp. Finisaje profesionale și atenție la detalii. Familia este extrem de mulțumită cu rezultatul final și calitatea execuției.",
-    "testimonial": "Echipa AKCON a făcut o treabă excelentă! Proiectul a fost finalizat la timp și calitatea lucrărilor depășește așteptările. Profesionalism exemplar!",
+    "duration": "12 zile lucrătoare",
+    "area": "280 mp",
+    "materials": "Țiglă ceramică roșie de calitate superioară, Izolație termică avansată, Sistem de ventilație modern",
+    "problemDescription": "Montaj complet țiglă ceramică roșie pentru o casă în Mihalt. Clientul dorea un acoperiș cu aspect spectaculos și finisaje impecabile.",
+    "solutionDescription": "Am realizat montaj complet țiglă ceramică roșie pentru o casă în Mihalt. 280mp realizați profesional în doar 12 zile lucrătoare cu finisaje impecabile. Echipa a acordat atenție extremă fiecărui detaliu pentru a asigura un rezultat spectaculos.",
+    "resultsDescription": "Proiect de 280mp finalizat exact la timp. Finisaje impecabile, atenție maximă la detalii. Acoperișul roșu oferă casei un caracter distinct și protecție superioară.",
+    "testimonial": "Rezultatul final depășește așteptările! Acoperișul arată spectaculos - finisajele sunt impecabile și atenția la detalii este vizibilă. Echipa AKCON a demonstrat profesionalism maxim. Recomand cu încredere!",
     "investmentValue": "",
     "badge": "Proiect Finalizat",
-    "duringImages": ["/renovare_garbova_-_dragos_man.jpg"],
-    "afterImages": []
+    "duringImages": [],
+    "afterImages": ["/mihalt.jpg"]
   }
 }
