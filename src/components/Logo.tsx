@@ -109,7 +109,7 @@ export default function Logo({ variant = 'horizontal', className = '', width, he
           AKCON
         </text>
         <text x="120" y="135" fontFamily="'Montserrat', sans-serif" fontSize="13" fontWeight="600" fill={goldColor} textAnchor="middle" letterSpacing="3">
-          CONSTRUCȚII ACOPERIȘURI
+          ACOPERIȘURI
         </text>
       </svg>
     );
@@ -159,7 +159,7 @@ export default function Logo({ variant = 'horizontal', className = '', width, he
         AKCON
       </text>
       <text x="68" y="52" fontFamily="'Montserrat', sans-serif" fontSize="11" fontWeight="600" fill={goldColor} letterSpacing="3">
-        CONSTRUCȚII ACOPERIȘURI
+        ACOPERIȘURI
       </text>
     </svg>
   );
