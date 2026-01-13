@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Phone, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import companyData from '../content/company.json';
+import Logo from './Logo';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,8 +37,8 @@ export default function Header() {
     }}>
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <Link to="/" className="font-montserrat text-2xl font-bold text-navy focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 rounded">
-            AKCON
+          <Link to="/" className="focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 rounded flex items-center">
+            <Logo variant="horizontal" width={scrolled ? 160 : 180} height={scrolled ? 44 : 50} className="transition-all duration-300" />
           </Link>
         </div>
 

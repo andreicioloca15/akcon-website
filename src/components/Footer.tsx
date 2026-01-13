@@ -1,6 +1,7 @@
 import { MapPin, Phone, Mail, Facebook, Instagram } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import companyData from '../content/company.json';
+import Logo from './Logo';
 
 export default function Footer() {
   const location = useLocation();
@@ -23,7 +24,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div>
-            <div className="font-montserrat text-2xl font-bold mb-6">AKCON</div>
+            <div className="mb-6">
+              <Logo variant="horizontal" width={160} height={44} />
+            </div>
             <p className="font-open-sans text-sm opacity-80 mb-4 leading-body">
               Specialiști în montaj, renovare și reparații acoperișuri în județul Alba și împrejurimi.
             </p>

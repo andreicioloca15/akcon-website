@@ -1,0 +1,41 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="roofFavicon" x1="16" y1="4" x2="16" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2a4a6f"/>
+      <stop offset="50%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#162d4a"/>
+    </linearGradient>
+    <linearGradient id="accentFavicon" x1="16" y1="4" x2="16" y2="14" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e6c39a"/>
+      <stop offset="100%" stop-color="#d4a574"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 3D Roof Icon (Simplified for small size) -->
+  <g>
+    <!-- Left roof face -->
+    <path d="M 5 14 L 16 4 L 16 9 L 10 15 Z" fill="url(#roofFavicon)"/>
+
+    <!-- Right roof face -->
+    <path d="M 16 4 L 27 14 L 22 17 L 16 9 Z" fill="#2a4a6f"/>
+
+    <!-- Gold accent -->
+    <path d="M 16 4 L 16 9 L 27 14 L 16 4 Z" fill="url(#accentFavicon)" opacity="0.6"/>
+
+    <!-- Peak highlight -->
+    <path d="M 15 4.5 L 16 4 L 17 4.5 L 16 5.5 Z" fill="#e6c39a"/>
+
+    <!-- Front left face -->
+    <path d="M 5 14 L 10 15 L 10 22 L 5 21 Z" fill="#1e3a5f"/>
+
+    <!-- Front right face -->
+    <path d="M 27 14 L 22 17 L 22 22 L 27 21 Z" fill="#2a4a6f"/>
+
+    <!-- Base -->
+    <path d="M 10 22 L 16 25 L 22 22 L 16 20 Z" fill="#162d4a"/>
+
+    <!-- Highlights -->
+    <path d="M 5 14 L 16 4 L 16 5 L 6 14.5 Z" fill="#ffffff" opacity="0.2"/>
+    <path d="M 16 4 L 27 14 L 26.5 14.5 L 16 5 Z" fill="#ffffff" opacity="0.1"/>
+  </g>
+</svg>

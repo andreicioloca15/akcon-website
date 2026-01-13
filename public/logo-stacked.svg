@@ -1,0 +1,78 @@
+<svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="roofMainStacked" x1="70" y1="20" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2a4a6f"/>
+      <stop offset="50%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#162d4a"/>
+    </linearGradient>
+    <linearGradient id="roofAccentStacked" x1="70" y1="20" x2="70" y2="45" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e6c39a"/>
+      <stop offset="50%" stop-color="#d4a574"/>
+      <stop offset="100%" stop-color="#c29560"/>
+    </linearGradient>
+    <filter id="shadowStacked" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="3" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="textGradientStacked" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a4a6f"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Shadow base -->
+  <ellipse cx="70" cy="80" rx="35" ry="5" fill="#000000" opacity="0.15"/>
+
+  <!-- 3D Roof Icon (Larger for stacked version) -->
+  <g filter="url(#shadowStacked)">
+    <!-- Back wall -->
+    <path d="M 40 65 L 40 52 L 70 30 L 100 52 L 100 65 Z" fill="#0f1f33" opacity="0.6"/>
+
+    <!-- Left roof face -->
+    <path d="M 25 48 L 70 20 L 70 32 L 40 50 Z" fill="url(#roofMainStacked)"/>
+
+    <!-- Right roof face (lighter) -->
+    <path d="M 70 20 L 115 48 L 100 54 L 70 32 Z" fill="#2a4a6f"/>
+
+    <!-- Gold accent on roof -->
+    <path d="M 70 20 L 70 32 L 115 48 L 70 20 Z" fill="url(#roofAccentStacked)" opacity="0.4"/>
+
+    <!-- Roof peak highlight -->
+    <path d="M 67 21 L 70 20 L 73 21 L 70 23 Z" fill="#e6c39a"/>
+
+    <!-- Front left face -->
+    <path d="M 25 48 L 40 50 L 40 65 L 25 62 Z" fill="#1e3a5f"/>
+
+    <!-- Front right face -->
+    <path d="M 115 48 L 100 54 L 100 65 L 115 62 Z" fill="#2a4a6f"/>
+
+    <!-- Bottom base -->
+    <path d="M 40 65 L 70 70 L 100 65 L 70 60 Z" fill="#162d4a"/>
+
+    <!-- Highlight edges -->
+    <path d="M 25 48 L 70 20 L 70 21.5 L 27 49 Z" fill="#ffffff" opacity="0.15"/>
+    <path d="M 70 20 L 115 48 L 114 49 L 70 21.5 Z" fill="#ffffff" opacity="0.08"/>
+  </g>
+
+  <!-- AKCON Text -->
+  <g>
+    <!-- Text shadow -->
+    <text x="70" y="103" font-family="'Montserrat', Arial, sans-serif" font-size="32" font-weight="800" fill="#162d4a" opacity="0.2" text-anchor="middle">AKCON</text>
+
+    <!-- Main text with gradient -->
+    <text x="70" y="100" font-family="'Montserrat', Arial, sans-serif" font-size="32" font-weight="800" fill="url(#textGradientStacked)" text-anchor="middle" letter-spacing="1">AKCON</text>
+
+    <!-- Text highlight -->
+    <text x="70" y="99" font-family="'Montserrat', Arial, sans-serif" font-size="32" font-weight="800" fill="#ffffff" opacity="0.1" text-anchor="middle" letter-spacing="1">AKCON</text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="70" y="115" font-family="'Open Sans', Arial, sans-serif" font-size="8" font-weight="600" fill="#d4a574" letter-spacing="2.5" opacity="0.9" text-anchor="middle">PREMIUM ROOFING</text>
+</svg>
