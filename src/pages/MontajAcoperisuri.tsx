@@ -1,9 +1,8 @@
-import { Phone, CheckCircle } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import Breadcrumbs from '../components/Breadcrumbs';
 import Contact from '../components/Contact';
 import SEO from '../components/SEO';
 import TransformationStory from '../components/TransformationStory';
-import RealProjectShowcase from '../components/RealProjectShowcase';
 import companyData from '../content/company.json';
 import serviceData from '../content/service-pages/montaj-acoperisuri.json';
 
@@ -66,18 +65,6 @@ export default function MontajAcoperisuri() {
 
       {/* Transformation Story */}
       <TransformationStory />
-
-      {/* Real Project Before/After */}
-      <RealProjectShowcase
-        beforeImage="/dji_fly_20250725_174044_171_1767900943954_photo.jpg"
-        afterImage="/dji_fly_20250909_160218_261_1767899902514_photo.jpg"
-        duringImage="/dji_fly_20250725_174154_175_1767900940021_photo.jpg"
-        beforeLabel="Șarpantă Nouă"
-        duringLabel="Finisare Structură"
-        afterLabel="Acoperiș Finalizat"
-        title="Proiect Real - Construcție Completă de la Zero"
-        description="Urmăriți transformarea completă a unui proiect real AKCON - de la construcția șarpantei până la acoperișul finalizat cu țiglă metalică premium."
-      />
 
       {/* Process Timeline */}
       <section className="py-16 bg-gray-50">
