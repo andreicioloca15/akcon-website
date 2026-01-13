@@ -46,7 +46,7 @@ export default function Logo({ variant = 'horizontal', className = '', width, he
         <text x="100" y="90" fontFamily="Inter, system-ui, sans-serif" fontSize="32" fontWeight="700" fill={navy} textAnchor="middle" letterSpacing="0.5">
           AKCON
         </text>
-        <text x="100" y="110" fontFamily="Inter, system-ui, sans-serif" fontSize="11" fontWeight="500" fill={gold} textAnchor="middle" letterSpacing="2" style="text-transform: uppercase">
+        <text x="100" y="110" fontFamily="Inter, system-ui, sans-serif" fontSize="11" fontWeight="500" fill={gold} textAnchor="middle" letterSpacing="2">
           CONSTRUCȚII ACOPERIȘURI
         </text>
       </svg>
@@ -71,7 +71,7 @@ export default function Logo({ variant = 'horizontal', className = '', width, he
       <text x="58" y="33" fontFamily="Inter, system-ui, sans-serif" fontSize="28" fontWeight="700" fill={navy} letterSpacing="0.5">
         AKCON
       </text>
-      <text x="58" y="47" fontFamily="Inter, system-ui, sans-serif" fontSize="11" fontWeight="500" fill={gold} letterSpacing="2" style="text-transform: uppercase">
+      <text x="58" y="47" fontFamily="Inter, system-ui, sans-serif" fontSize="11" fontWeight="500" fill={gold} letterSpacing="2">
         CONSTRUCȚII ACOPERIȘURI
       </text>
     </svg>
