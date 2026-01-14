@@ -69,7 +69,7 @@ export default function Logo({ variant = 'horizontal', className = '' }: LogoPro
   }
 
   return (
-    <div className={`flex items-center gap-4 ${className}`}>
+    <div className={`flex flex-col ${className}`}>
       <span
         className="font-extrabold uppercase leading-none"
         style={{
@@ -82,20 +82,12 @@ export default function Logo({ variant = 'horizontal', className = '' }: LogoPro
       >
         AKCON
       </span>
-      <div
-        style={{
-          width: '1px',
-          height: '2rem',
-          background: goldColor,
-          opacity: 0.6
-        }}
-      />
       <span
-        className="font-light uppercase"
+        className="font-light uppercase mt-1"
         style={{
           color: goldColor,
           letterSpacing: '0.2em',
-          fontSize: '0.7rem',
+          fontSize: '0.6rem',
           fontFamily: 'system-ui, -apple-system, sans-serif',
           fontWeight: 300
         }}
