@@ -1,78 +1,92 @@
-<svg width="220" height="60" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="420" height="80" viewBox="0 0 420 80" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="roofMain" x1="30" y1="10" x2="30" y2="45" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#2a4a6f"/>
-      <stop offset="50%" stop-color="#1e3a5f"/>
-      <stop offset="100%" stop-color="#162d4a"/>
+    <linearGradient id="navySlope-horiz" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a5f" />
+      <stop offset="100%" stop-color="#152d48" />
     </linearGradient>
-    <linearGradient id="roofAccent" x1="30" y1="10" x2="30" y2="25" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#e6c39a"/>
-      <stop offset="50%" stop-color="#d4a574"/>
-      <stop offset="100%" stop-color="#c29560"/>
+
+    <linearGradient id="goldBeam-horiz" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c9a961" />
+      <stop offset="50%" stop-color="#d4b76f" />
+      <stop offset="100%" stop-color="#c9a961" />
     </linearGradient>
-    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
-      <feOffset dx="0" dy="2" result="offsetblur"/>
-      <feComponentTransfer>
-        <feFuncA type="linear" slope="0.3"/>
-      </feComponentTransfer>
-      <feMerge>
-        <feMergeNode/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+
+    <filter id="horizShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.25"/>
     </filter>
-    <linearGradient id="textGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#2a4a6f"/>
-      <stop offset="100%" stop-color="#1e3a5f"/>
-    </linearGradient>
   </defs>
 
-  <!-- Shadow base -->
-  <ellipse cx="30" cy="50" rx="22" ry="3" fill="#000000" opacity="0.15"/>
+  <g transform="translate(35, 15)">
+    <!-- "A" AS ROOF ICON - Horizontal layout -->
 
-  <!-- 3D Roof Icon -->
-  <g filter="url(#shadow)">
-    <!-- Back wall -->
-    <path d="M 15 40 L 15 32 L 30 20 L 45 32 L 45 40 Z" fill="#0f1f33" opacity="0.6"/>
+    <!-- Left roof slope with gradient -->
+    <path
+      d="M 0,6 L -28,55 L -22,55 L 0,15 Z"
+      fill="url(#navySlope-horiz)"
+      filter="url(#horizShadow)"
+    />
 
-    <!-- Left roof face -->
-    <path d="M 8 28 L 30 12 L 30 20 L 15 30 Z" fill="url(#roofMain)"/>
+    <!-- Right roof slope -->
+    <path
+      d="M 0,6 L 28,55 L 22,55 L 0,15 Z"
+      fill="#1e3a5f"
+      opacity="0.95"
+      filter="url(#horizShadow)"
+    />
 
-    <!-- Right roof face (lighter) -->
-    <path d="M 30 12 L 52 28 L 45 32 L 30 20 Z" fill="#2a4a6f"/>
+    <!-- Roof peak accent -->
+    <line
+      x1="-2" y1="6"
+      x2="2" y2="6"
+      stroke="#c9a961"
+      stroke-width="2.5"
+      stroke-linecap="round"
+    />
 
-    <!-- Gold accent line on roof peak -->
-    <path d="M 30 12 L 30 20 L 52 28 L 30 12 Z" fill="url(#roofAccent)" opacity="0.4"/>
+    <!-- Foundation beam (A crossbar) in gold -->
+    <rect
+      x="-18" y="38"
+      width="36" height="5"
+      fill="url(#goldBeam-horiz)"
+      rx="1"
+      filter="url(#horizShadow)"
+    />
 
-    <!-- Roof peak highlight -->
-    <path d="M 28 13 L 30 12 L 32 13 L 30 14 Z" fill="#e6c39a"/>
+    <!-- Architectural corner details -->
+    <circle cx="-18" cy="40.5" r="2" fill="#c9a961" opacity="0.8" />
+    <circle cx="18" cy="40.5" r="2" fill="#c9a961" opacity="0.8" />
 
-    <!-- Front left face -->
-    <path d="M 8 28 L 15 30 L 15 40 L 8 38 Z" fill="#1e3a5f"/>
-
-    <!-- Front right face -->
-    <path d="M 52 28 L 45 32 L 45 40 L 52 38 Z" fill="#2a4a6f"/>
-
-    <!-- Bottom base -->
-    <path d="M 15 40 L 30 44 L 45 40 L 30 36 Z" fill="#162d4a"/>
-
-    <!-- Highlight edges -->
-    <path d="M 8 28 L 30 12 L 30 13 L 9 28.5 Z" fill="#ffffff" opacity="0.15"/>
-    <path d="M 30 12 L 52 28 L 51.5 28.5 L 30 13 Z" fill="#ffffff" opacity="0.08"/>
+    <!-- Foundation base -->
+    <rect
+      x="-25" y="55"
+      width="50" height="3"
+      fill="#1e3a5f"
+      opacity="0.6"
+      rx="1"
+    />
   </g>
 
-  <!-- AKCON Text with 3D effect -->
-  <g>
-    <!-- Text shadow -->
-    <text x="72" y="38" font-family="'Montserrat', Arial, sans-serif" font-size="28" font-weight="800" fill="#162d4a" opacity="0.2">AKCON</text>
+  <!-- AKCON text - The "A" in the logo IS the roof icon -->
+  <text
+    x="78" y="42"
+    font-family="'Montserrat', sans-serif"
+    font-size="38"
+    font-weight="800"
+    fill="#1e3a5f"
+    letter-spacing="2"
+  >
+    KCON
+  </text>
 
-    <!-- Main text with gradient -->
-    <text x="70" y="36" font-family="'Montserrat', Arial, sans-serif" font-size="28" font-weight="800" fill="url(#textGradient)" letter-spacing="1">AKCON</text>
-
-    <!-- Text highlight -->
-    <text x="70" y="35" font-family="'Montserrat', Arial, sans-serif" font-size="28" font-weight="800" fill="#ffffff" opacity="0.1" letter-spacing="1">AKCON</text>
-  </g>
-
-  <!-- Subtle tagline -->
-  <text x="72" y="47" font-family="'Open Sans', Arial, sans-serif" font-size="7" font-weight="600" fill="#d4a574" letter-spacing="2" opacity="0.9">PREMIUM ROOFING</text>
+  <!-- Tagline below -->
+  <text
+    x="78" y="58"
+    font-family="'Montserrat', sans-serif"
+    font-size="11"
+    font-weight="500"
+    fill="#c9a961"
+    letter-spacing="3.5"
+  >
+    CONSTRUCȚII ACOPERIȘURI
+  </text>
 </svg>
