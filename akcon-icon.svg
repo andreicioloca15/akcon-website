@@ -1,0 +1,70 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients for depth and premium metallic effect -->
+    <linearGradient id="navyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#152d48;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4b76f;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#c9a961;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8954f;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="goldShine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#b8954f;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d4b76f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8954f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Icon/Badge centered -->
+  <g transform="translate(0, 10)">
+    <!-- Outer shield/badge frame -->
+    <path d="M 100 20 L 160 50 L 160 150 L 100 180 L 40 150 L 40 50 Z"
+          fill="url(#navyGradient)"
+          stroke="#c9a961"
+          stroke-width="2.5"/>
+
+    <!-- Inner geometric frame - creates depth -->
+    <path d="M 100 35 L 150 57 L 150 143 L 100 165 L 50 143 L 50 57 Z"
+          fill="none"
+          stroke="#1e3a5f"
+          stroke-width="1.5"
+          opacity="0.4"/>
+
+    <!-- Main roof structure - layered A shape -->
+    <!-- Bottom layer - darkest -->
+    <path d="M 70 135 L 100 75 L 130 135 L 125 135 L 100 90 L 75 135 Z"
+          fill="#152d48"/>
+
+    <!-- Middle layer - main navy -->
+    <path d="M 75 130 L 100 80 L 125 130 L 120 130 L 100 92 L 80 130 Z"
+          fill="url(#navyGradient)"/>
+
+    <!-- Top roof peak - gold accent with gradient -->
+    <path d="M 85 100 L 100 75 L 115 100 L 110 100 L 100 85 L 90 100 Z"
+          fill="url(#goldGradient)"/>
+
+    <!-- Gold top accent - premium detail -->
+    <path d="M 95 90 L 100 80 L 105 90 Z"
+          fill="url(#goldShine)"/>
+
+    <!-- Horizontal beam - architectural element -->
+    <rect x="85" y="110" width="30" height="3"
+          fill="#c9a961"
+          opacity="0.9"/>
+
+    <!-- Foundation line - base element -->
+    <line x1="75" y1="135" x2="125" y2="135"
+          stroke="url(#goldGradient)"
+          stroke-width="2.5"
+          stroke-linecap="round"/>
+
+    <!-- Corner accent details - precision -->
+    <circle cx="100" cy="45" r="3" fill="#c9a961" opacity="0.7"/>
+    <circle cx="145" cy="65" r="2" fill="#c9a961" opacity="0.5"/>
+    <circle cx="55" cy="65" r="2" fill="#c9a961" opacity="0.5"/>
+  </g>
+</svg>

@@ -1,0 +1,87 @@
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- White gradients for depth on dark background -->
+    <linearGradient id="whiteGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0f0f0;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="whiteShine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e8e8e8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8e8e8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Icon/Badge -->
+  <g transform="translate(40, 50)">
+    <!-- Outer shield/badge frame -->
+    <path d="M 100 20 L 160 50 L 160 150 L 100 180 L 40 150 L 40 50 Z"
+          fill="url(#whiteGradient)"
+          stroke="#ffffff"
+          stroke-width="2.5"
+          opacity="0.95"/>
+
+    <!-- Inner geometric frame - creates depth -->
+    <path d="M 100 35 L 150 57 L 150 143 L 100 165 L 50 143 L 50 57 Z"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="1.5"
+          opacity="0.3"/>
+
+    <!-- Main roof structure - layered A shape -->
+    <!-- Bottom layer -->
+    <path d="M 70 135 L 100 75 L 130 135 L 125 135 L 100 90 L 75 135 Z"
+          fill="#f0f0f0"
+          opacity="0.9"/>
+
+    <!-- Middle layer -->
+    <path d="M 75 130 L 100 80 L 125 130 L 120 130 L 100 92 L 80 130 Z"
+          fill="url(#whiteGradient)"
+          opacity="0.95"/>
+
+    <!-- Top roof peak - white accent -->
+    <path d="M 85 100 L 100 75 L 115 100 L 110 100 L 100 85 L 90 100 Z"
+          fill="#ffffff"/>
+
+    <!-- Top accent - premium detail -->
+    <path d="M 95 90 L 100 80 L 105 90 Z"
+          fill="url(#whiteShine)"/>
+
+    <!-- Horizontal beam - architectural element -->
+    <rect x="85" y="110" width="30" height="3"
+          fill="#ffffff"
+          opacity="0.9"/>
+
+    <!-- Foundation line - base element -->
+    <line x1="75" y1="135" x2="125" y2="135"
+          stroke="#ffffff"
+          stroke-width="2.5"
+          stroke-linecap="round"/>
+
+    <!-- Corner accent details - precision -->
+    <circle cx="100" cy="45" r="3" fill="#ffffff" opacity="0.7"/>
+    <circle cx="145" cy="65" r="2" fill="#ffffff" opacity="0.5"/>
+    <circle cx="55" cy="65" r="2" fill="#ffffff" opacity="0.5"/>
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(240, 0)">
+    <!-- AKCON - Main text -->
+    <text x="0" y="130"
+          font-family="Montserrat, 'Arial Black', sans-serif"
+          font-size="82"
+          font-weight="800"
+          letter-spacing="10"
+          fill="#ffffff">AKCON</text>
+
+    <!-- CONSTRUCȚII ACOPERIȘURI - Tagline -->
+    <text x="2" y="170"
+          font-family="Montserrat, Arial, sans-serif"
+          font-size="28"
+          font-weight="500"
+          letter-spacing="8"
+          fill="#ffffff"
+          opacity="0.9">CONSTRUCȚII ACOPERIȘURI</text>
+  </g>
+</svg>
