@@ -272,21 +272,21 @@ export default function Logo({ variant = 'horizontal', className = '', width, he
         />
       </g>
 
-      {/* AKCON text - The "A" in the logo IS the roof icon */}
+      {/* AKCON text with roof icon as the "A" */}
       <text
-        x="78" y="42"
+        x="68" y="42"
         fontFamily="'Montserrat', sans-serif"
         fontSize="38"
         fontWeight="800"
         fill={textColor}
         letterSpacing="2"
       >
-        KCON
+        AKCON
       </text>
 
       {/* Tagline below */}
       <text
-        x="78" y="58"
+        x="68" y="58"
         fontFamily="'Montserrat', sans-serif"
         fontSize="11"
         fontWeight="500"
