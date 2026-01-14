@@ -1,85 +1,47 @@
 <svg width="280" height="200" viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="navySlope-stack" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e3a5f" />
-      <stop offset="100%" stop-color="#152d48" />
-    </linearGradient>
-
-    <linearGradient id="goldBeam-stack" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#c9a961" />
-      <stop offset="50%" stop-color="#d4b76f" />
-      <stop offset="100%" stop-color="#c9a961" />
-    </linearGradient>
-
-    <filter id="stackShadow">
-      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.25"/>
-    </filter>
-  </defs>
-
-  <g transform="translate(140, 25)">
-    <!-- "A" AS ROOF - Stacked version -->
-
-    <!-- Left roof slope -->
+  <g transform="translate(140, 30)">
+    <!-- Simple triangle roof outline -->
     <path
-      d="M 0,8 L -48,90 L -38,90 L 0,25 Z"
-      fill="url(#navySlope-stack)"
-      filter="url(#stackShadow)"
+      d="M 0,5 L -40,80 L 40,80 Z"
+      fill="none"
+      stroke="#c9a961"
+      stroke-width="4"
+      stroke-linejoin="miter"
     />
 
-    <!-- Right roof slope -->
-    <path
-      d="M 0,8 L 48,90 L 38,90 L 0,25 Z"
-      fill="#1e3a5f"
-      opacity="0.95"
-      filter="url(#stackShadow)"
-    />
-
-    <!-- Roof peak detail -->
+    <!-- Horizontal crossbar inside triangle -->
     <line
-      x1="-3" y1="8"
-      x2="3" y2="8"
+      x1="-24" y1="57"
+      x2="24" y2="57"
       stroke="#c9a961"
       stroke-width="4"
       stroke-linecap="round"
     />
-
-    <!-- Foundation beam (A crossbar) -->
-    <rect
-      x="-30" y="62"
-      width="60" height="8"
-      fill="url(#goldBeam-stack)"
-      rx="2"
-      filter="url(#stackShadow)"
-    />
-
-    <!-- Corner details -->
-    <circle cx="-30" cy="66" r="3.5" fill="#c9a961" opacity="0.8" />
-    <circle cx="30" cy="66" r="3.5" fill="#c9a961" opacity="0.8" />
   </g>
 
   <!-- AKCON text -->
   <text
-    x="140" y="140"
-    font-family="'Montserrat', sans-serif"
+    x="140" y="145"
+    font-family="'Montserrat', 'Arial', sans-serif"
     font-size="48"
-    font-weight="800"
-    fill="#1e3a5f"
+    font-weight="700"
+    fill="#1a1a1a"
     text-anchor="middle"
-    letter-spacing="4"
+    letter-spacing="2"
   >
     AKCON
   </text>
 
-  <!-- Tagline -->
+  <!-- ACOPERISURI subtitle -->
   <text
     x="140" y="165"
-    font-family="'Montserrat', sans-serif"
-    font-size="14"
+    font-family="'Montserrat', 'Arial', sans-serif"
+    font-size="13"
     font-weight="500"
     fill="#c9a961"
     text-anchor="middle"
-    letter-spacing="4"
+    letter-spacing="5"
   >
-    CONSTRUCȚII ACOPERIȘURI
+    ACOPERISURI
   </text>
 </svg>
