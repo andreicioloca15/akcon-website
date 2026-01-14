@@ -16,7 +16,6 @@ import ReparatiiAcoperisuri from './pages/ReparatiiAcoperisuri';
 import PoliticaConfidentialitate from './pages/PoliticaConfidentialitate';
 import TermeniConditii from './pages/TermeniConditii';
 import NotFound from './pages/NotFound';
-import LogoDemo from './pages/LogoDemo';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -58,7 +57,6 @@ function App() {
             <Route path="/servicii/reparatii-acoperisuri" element={<ReparatiiAcoperisuri />} />
             <Route path="/politica-confidentialitate" element={<PoliticaConfidentialitate />} />
             <Route path="/termeni-conditii" element={<TermeniConditii />} />
-            <Route path="/logo-demo" element={<LogoDemo />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

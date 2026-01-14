@@ -72,8 +72,8 @@ export default function CaseStudy({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-16">
-          <div className="lg:col-span-2 space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+          <div className="lg:col-span-2 space-y-8">
             <div ref={problemRef} className="bg-[#fef3e7] border-l-4 border-gold p-6 rounded-r-lg hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
               <h3 className="font-montserrat text-h3-mobile md:text-h3-tablet font-semibold text-gray-700 mb-3 flex items-center">
                 <span className="w-8 h-8 bg-gold text-white rounded-full flex items-center justify-center mr-3 text-sm">1</span>
@@ -86,80 +86,58 @@ export default function CaseStudy({
 
             <div ref={imagesRef} className="space-y-6">
               {duringImages && duringImages.length > 0 && (
-                <div className="space-y-4">
-                  <h4 className="font-montserrat text-xl font-semibold text-navy">
-                    În Lucru: Montaj Acoperiș
+                <div className="space-y-3">
+                  <h4 className="font-montserrat text-lg font-semibold text-navy">
+                    În Lucru: Montaj Țiglă Metalică
                   </h4>
-                  <div className="relative bg-white p-6 rounded-xl shadow-md">
-                    <div className="max-w-[700px] mx-auto">
-                      <div className="relative rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.2)] transition-all duration-300">
+                  <div className="grid grid-cols-1 gap-4">
+                    {duringImages.map((image, index) => (
+                      <div key={index} className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                         <img
-                          src={duringImages[0]}
-                          alt={`Montaj acoperiș ${clientLocation} - în lucru`}
-                          className="w-full h-[400px] lg:h-[450px] object-cover"
+                          src={image}
+                          alt={`Montaj țiglă metalică ${clientLocation} - în lucru`}
+                          className="w-full h-[300px] md:h-[500px] object-cover object-center"
                           loading="lazy"
                         />
-                        <div className="absolute top-4 right-4 bg-navy px-5 py-2 rounded-lg shadow-lg">
-                          <span className="font-montserrat font-bold text-white text-sm uppercase tracking-wide">
-                            În Lucru
-                          </span>
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4">
+                          <p className="font-montserrat text-white font-semibold text-lg">
+                            În Lucru: Montaj Țiglă Metalică
+                          </p>
+                          <p className="font-open-sans text-white/90 text-sm">
+                            {clientLocation}
+                          </p>
                         </div>
                       </div>
-                    </div>
+                    ))}
                   </div>
-                  {duringImages.length > 1 && (
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-                      {duringImages.slice(1).map((image, index) => (
-                        <div key={index} className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-                          <img
-                            src={image}
-                            alt={`Montaj ${clientLocation} - detaliu ${index + 1}`}
-                            className="w-full h-48 object-cover"
-                            loading="lazy"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  )}
                 </div>
               )}
 
               {afterImages && afterImages.length > 0 && (
-                <div className="space-y-4">
-                  <h4 className="font-montserrat text-xl font-semibold text-navy">
+                <div className="space-y-3">
+                  <h4 className="font-montserrat text-lg font-semibold text-navy">
                     După: Proiect Finalizat
                   </h4>
-                  <div className="relative bg-white p-6 rounded-xl shadow-md">
-                    <div className="max-w-[700px] mx-auto">
-                      <div className="relative rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.2)] transition-all duration-300">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {afterImages.map((image, index) => (
+                      <div key={index} className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 bg-gray-50">
                         <img
-                          src={afterImages[0]}
-                          alt={`Acoperiș ${clientLocation} - proiect finalizat`}
-                          className="w-full h-[400px] lg:h-[450px] object-cover"
+                          src={image}
+                          alt={`Montaj țiglă metalică ${clientLocation} - proiect finalizat ${index + 1}`}
+                          className="w-full h-[300px] md:h-[400px] object-contain"
                           loading="lazy"
                         />
-                        <div className="absolute top-4 right-4 bg-gold px-5 py-2 rounded-lg shadow-lg">
-                          <span className="font-montserrat font-bold text-white text-sm uppercase tracking-wide">
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4">
+                          <p className="font-montserrat text-white font-semibold">
                             Proiect Finalizat
-                          </span>
+                          </p>
+                          <p className="font-open-sans text-white/90 text-sm">
+                            {clientLocation}
+                          </p>
                         </div>
                       </div>
-                    </div>
+                    ))}
                   </div>
-                  {afterImages.length > 1 && (
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-                      {afterImages.slice(1).map((image, index) => (
-                        <div key={index} className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-                          <img
-                            src={image}
-                            alt={`Acoperiș ${clientLocation} - detaliu ${index + 1}`}
-                            className="w-full h-48 object-cover"
-                            loading="lazy"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  )}
                 </div>
               )}
 
@@ -211,7 +189,7 @@ export default function CaseStudy({
           </div>
 
           <div className="space-y-6">
-            <div ref={sidebarRef} className="bg-navy text-white p-8 rounded-xl shadow-xl lg:sticky lg:top-24 hover:shadow-2xl transition-all duration-300">
+            <div ref={sidebarRef} className="bg-navy text-white p-6 rounded-lg lg:sticky lg:top-24 hover:shadow-card-hover transition-all duration-300">
               <h3 className="font-montserrat text-h3-mobile md:text-h3-tablet font-semibold mb-4">
                 Detalii Proiect
               </h3>
