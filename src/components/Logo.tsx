@@ -8,17 +8,16 @@ interface LogoProps {
 export default function Logo({ variant = 'horizontal', className = '' }: LogoProps) {
   const isWhite = variant === 'white';
   const navyColor = isWhite ? '#ffffff' : '#1e3a5f';
-  const goldColor = isWhite ? 'rgba(255, 255, 255, 0.7)' : '#c9a961';
 
   if (variant === 'icon') {
     return (
-      <div className={`flex flex-col ${className}`}>
+      <div className={`flex ${className}`}>
         <span
           className="font-extrabold uppercase leading-none"
           style={{
             color: navyColor,
             letterSpacing: '0.15em',
-            fontSize: '2rem',
+            fontSize: '2.5rem',
             fontFamily: 'system-ui, -apple-system, sans-serif',
             fontWeight: 800
           }}
@@ -29,70 +28,38 @@ export default function Logo({ variant = 'horizontal', className = '' }: LogoPro
     );
   }
 
-  if (variant === 'stacked' || variant === 'white') {
+  if (variant === 'stacked') {
     return (
-      <div className={`flex flex-col items-center ${className}`}>
+      <div className={`flex items-center ${className}`}>
         <span
           className="font-extrabold uppercase leading-none"
           style={{
             color: navyColor,
             letterSpacing: '0.15em',
-            fontSize: '3rem',
+            fontSize: '3.5rem',
             fontFamily: 'system-ui, -apple-system, sans-serif',
             fontWeight: 800
           }}
         >
           AKCON
-        </span>
-        <div
-          className="w-16 my-3"
-          style={{
-            height: '1px',
-            background: goldColor,
-            opacity: 0.5
-          }}
-        />
-        <span
-          className="font-light uppercase"
-          style={{
-            color: goldColor,
-            letterSpacing: '0.2em',
-            fontSize: '1.05rem',
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-            fontWeight: 300
-          }}
-        >
-          CONSTRUCȚII ACOPERIȘURI
         </span>
       </div>
     );
   }
 
   return (
-    <div className={`flex flex-col ${className}`}>
+    <div className={`flex ${className}`}>
       <span
         className="font-extrabold uppercase leading-none"
         style={{
           color: navyColor,
           letterSpacing: '0.15em',
-          fontSize: '1.75rem',
+          fontSize: '2rem',
           fontFamily: 'system-ui, -apple-system, sans-serif',
           fontWeight: 800
         }}
       >
         AKCON
-      </span>
-      <span
-        className="font-light uppercase mt-1"
-        style={{
-          color: goldColor,
-          letterSpacing: '0.2em',
-          fontSize: '0.6rem',
-          fontFamily: 'system-ui, -apple-system, sans-serif',
-          fontWeight: 300
-        }}
-      >
-        CONSTRUCȚII ACOPERIȘURI
       </span>
     </div>
   );
