@@ -7,149 +7,219 @@ interface LogoProps {
 }
 
 export default function Logo({ variant = 'horizontal', className = '', width, height, dark = false }: LogoProps) {
-  const primaryDark = '#0a1628';
-  const primaryMid = '#1a2f4f';
-  const accentGold = '#c9962f';
-  const accentBronze = '#8b6914';
-  const accentLight = '#f4d88a';
+  const navy = '#1e3a5f';
+  const navyDark = '#152d48';
+  const gold = '#c9a961';
+  const white = '#ffffff';
 
-  const textColor = dark ? '#ffffff' : primaryDark;
-  const goldColor = dark ? accentLight : accentGold;
-  const roofColor1 = dark ? '#f4d88a' : primaryMid;
-  const roofColor2 = dark ? '#c9962f' : accentBronze;
-  const roofColor3 = dark ? '#ffffff' : primaryDark;
+  const textColor = dark ? white : navy;
+  const roofLeftColor = dark ? white : navyDark;
+  const roofRightColor = dark ? white : navy;
+  const beamColor = dark ? white : navy;
+  const taglineColor = dark ? gold : gold;
+
+  const RoofA = ({ size = 32, x = 0, y = 0 }: { size?: number; x?: number; y?: number }) => {
+    const scale = size / 32;
+    const tileWidth = 3.5 * scale;
+    const tileHeight = 2.5 * scale;
+    const tileGap = 0.4 * scale;
+
+    const leftSlope = [];
+    const rightSlope = [];
+
+    for (let row = 0; row < 9; row++) {
+      const startY = 6 * scale + row * (tileHeight - tileGap);
+      const rowOffset = row % 2 === 0 ? 0 : -tileWidth / 2;
+
+      for (let col = 0; col < 4; col++) {
+        const tileX = x - (16 * scale) + (row * 1.9 * scale) + col * tileWidth + rowOffset;
+        const tileY = y + startY;
+
+        if (tileX < x - 2 * scale) {
+          leftSlope.push(
+            <rect
+              key={`left-${row}-${col}`}
+              x={tileX}
+              y={tileY}
+              width={tileWidth}
+              height={tileHeight}
+              fill={roofLeftColor}
+              opacity={0.9}
+              rx={0.3 * scale}
+            />
+          );
+        }
+      }
+
+      for (let col = 0; col < 4; col++) {
+        const tileX = x + (2 * scale) - (row * 1.9 * scale) + col * tileWidth + rowOffset;
+        const tileY = y + startY;
+
+        if (tileX > x + 2 * scale && tileX < x + (16 * scale)) {
+          rightSlope.push(
+            <rect
+              key={`right-${row}-${col}`}
+              x={tileX}
+              y={tileY}
+              width={tileWidth}
+              height={tileHeight}
+              fill={roofRightColor}
+              opacity={0.95}
+              rx={0.3 * scale}
+            />
+          );
+        }
+      }
+    }
+
+    return (
+      <g>
+        <path
+          d={`M ${x} ${y + 4 * scale} L ${x - 15 * scale} ${y + 28 * scale} L ${x - 15 * scale} ${y + 30 * scale} L ${x} ${y + 6 * scale} Z`}
+          fill={roofLeftColor}
+          opacity={0.3}
+        />
+
+        <path
+          d={`M ${x} ${y + 4 * scale} L ${x + 15 * scale} ${y + 28 * scale} L ${x + 15 * scale} ${y + 30 * scale} L ${x} ${y + 6 * scale} Z`}
+          fill={roofRightColor}
+          opacity={0.3}
+        />
+
+        {leftSlope}
+        {rightSlope}
+
+        <line
+          x1={x - 1.5 * scale}
+          y1={y + 4 * scale}
+          x2={x + 1.5 * scale}
+          y2={y + 4 * scale}
+          stroke={beamColor}
+          strokeWidth={1.2 * scale}
+          strokeLinecap="round"
+          opacity={0.9}
+        />
+
+        <rect
+          x={x - 10 * scale}
+          y={y + 18 * scale}
+          width={20 * scale}
+          height={2.5 * scale}
+          fill={beamColor}
+          rx={0.4 * scale}
+        />
+
+        <line
+          x1={x - 10 * scale}
+          y1={y + 19.2 * scale}
+          x2={x + 10 * scale}
+          y2={y + 19.2 * scale}
+          stroke={textColor}
+          strokeWidth={0.3 * scale}
+          opacity={0.3}
+        />
+
+        <rect
+          x={x - 16 * scale}
+          y={y + 30 * scale}
+          width={32 * scale}
+          height={1 * scale}
+          fill={textColor}
+          opacity={0.4}
+          rx={0.2 * scale}
+        />
+
+        <path
+          d={`M ${x - 15 * scale} ${y + 28 * scale} Q ${x - 15 * scale} ${y + 30 * scale} ${x - 14 * scale} ${y + 30.5 * scale}`}
+          fill="none"
+          stroke={textColor}
+          strokeWidth={0.3 * scale}
+          opacity={0.3}
+        />
+        <path
+          d={`M ${x + 15 * scale} ${y + 28 * scale} Q ${x + 15 * scale} ${y + 30 * scale} ${x + 14 * scale} ${y + 30.5 * scale}`}
+          fill="none"
+          stroke={textColor}
+          strokeWidth={0.3 * scale}
+          opacity={0.3}
+        />
+      </g>
+    );
+  };
 
   if (variant === 'icon') {
     const size = width || height || 50;
     return (
       <svg width={size} height={size} viewBox="0 0 60 60" className={className}>
-        <defs>
-          <linearGradient id={`roofGrad1-${dark ? 'dark' : 'light'}`} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor={roofColor1} />
-            <stop offset="100%" stopColor={roofColor2} />
-          </linearGradient>
-          <linearGradient id={`roofGrad2-${dark ? 'dark' : 'light'}`} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor={roofColor2} />
-            <stop offset="100%" stopColor={roofColor3} />
-          </linearGradient>
-          <filter id="shadow">
-            <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.3"/>
-          </filter>
-        </defs>
-
-        <path d="M30 8 L10 35 L14 35 L30 14 L46 35 L50 35 Z"
-              fill={`url(#roofGrad1-${dark ? 'dark' : 'light'})`}
-              opacity="0.6" />
-
-        <path d="M30 12 L12 38 L16 38 L30 18 L44 38 L48 38 Z"
-              fill={`url(#roofGrad2-${dark ? 'dark' : 'light'})`}
-              opacity="0.8" />
-
-        <path d="M30 16 L14 42 L18 42 L30 22 L42 42 L46 42 Z"
-              fill={goldColor}
-              filter="url(#shadow)" />
-
-        <path d="M30 16 L18 42 L22 42 L30 26 L38 42 L42 42 Z"
-              fill={roofColor3}
-              opacity="0.2" />
-
-        <rect x="14" y="42" width="32" height="3" fill={textColor} opacity="0.8" rx="1" />
+        <RoofA size={48} x={30} y={6} />
       </svg>
     );
   }
 
   if (variant === 'stacked') {
-    const w = width || 240;
-    const h = height || 180;
+    const w = width || 280;
+    const h = height || 200;
     return (
-      <svg width={w} height={h} viewBox="0 0 240 180" className={className}>
-        <defs>
-          <linearGradient id={`roofGrad1Stack-${dark ? 'dark' : 'light'}`} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor={roofColor1} />
-            <stop offset="100%" stopColor={roofColor2} />
-          </linearGradient>
-          <linearGradient id={`roofGrad2Stack-${dark ? 'dark' : 'light'}`} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor={roofColor2} />
-            <stop offset="100%" stopColor={roofColor3} />
-          </linearGradient>
-          <filter id="shadowStack">
-            <feDropShadow dx="0" dy="3" stdDeviation="3" floodOpacity="0.3"/>
-          </filter>
-        </defs>
+      <svg width={w} height={h} viewBox="0 0 280 200" className={className}>
+        <RoofA size={64} x={140} y={20} />
 
-        <g transform="translate(120, 20)">
-          <path d="M0 10 L-50 65 L-42 65 L0 22 L42 65 L50 65 Z"
-                fill={`url(#roofGrad1Stack-${dark ? 'dark' : 'light'})`}
-                opacity="0.6" />
-
-          <path d="M0 16 L-45 68 L-38 68 L0 28 L38 68 L45 68 Z"
-                fill={`url(#roofGrad2Stack-${dark ? 'dark' : 'light'})`}
-                opacity="0.8" />
-
-          <path d="M0 22 L-40 71 L-34 71 L0 34 L34 71 L40 71 Z"
-                fill={goldColor}
-                filter="url(#shadowStack)" />
-
-          <path d="M0 22 L-34 71 L-28 71 L0 40 L28 71 L34 71 Z"
-                fill={roofColor3}
-                opacity="0.2" />
-
-          <rect x="-40" y="71" width="80" height="4" fill={textColor} opacity="0.8" rx="2" />
-        </g>
-
-        <text x="120" y="115" fontFamily="'Montserrat', sans-serif" fontSize="42" fontWeight="800" fill={textColor} textAnchor="middle" letterSpacing="1">
-          AKCON
+        <text
+          x="140"
+          y="130"
+          fontFamily="'Montserrat', sans-serif"
+          fontSize="48"
+          fontWeight="800"
+          fill={textColor}
+          textAnchor="middle"
+          letterSpacing="2.4"
+        >
+          <tspan>KCON</tspan>
         </text>
-        <text x="120" y="135" fontFamily="'Montserrat', sans-serif" fontSize="13" fontWeight="600" fill={goldColor} textAnchor="middle" letterSpacing="3">
-          ACOPERIȘURI
+
+        <text
+          x="140"
+          y="158"
+          fontFamily="'Montserrat', sans-serif"
+          fontSize="14"
+          fontWeight="500"
+          fill={taglineColor}
+          textAnchor="middle"
+          letterSpacing="2.1"
+        >
+          CONSTRUCȚII ACOPERIȘURI
         </text>
       </svg>
     );
   }
 
-  const w = width || 360;
-  const h = height || 70;
+  const w = width || 420;
+  const h = height || 80;
   return (
-    <svg width={w} height={h} viewBox="0 0 360 70" className={className}>
-      <defs>
-        <linearGradient id={`roofGrad1Horiz-${dark ? 'dark' : 'light'}`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor={roofColor1} />
-          <stop offset="100%" stopColor={roofColor2} />
-        </linearGradient>
-        <linearGradient id={`roofGrad2Horiz-${dark ? 'dark' : 'light'}`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor={roofColor2} />
-          <stop offset="100%" stopColor={roofColor3} />
-        </linearGradient>
-        <filter id="shadowHoriz">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.3"/>
-        </filter>
-      </defs>
+    <svg width={w} height={h} viewBox="0 0 420 80" className={className}>
+      <RoofA size={42} x={32} y={14} />
 
-      <g transform="translate(30, 12)">
-        <path d="M0 4 L-22 38 L-18 38 L0 10 L18 38 L22 38 Z"
-              fill={`url(#roofGrad1Horiz-${dark ? 'dark' : 'light'})`}
-              opacity="0.6" />
-
-        <path d="M0 7 L-20 40 L-16 40 L0 13 L16 40 L20 40 Z"
-              fill={`url(#roofGrad2Horiz-${dark ? 'dark' : 'light'})`}
-              opacity="0.8" />
-
-        <path d="M0 10 L-18 42 L-14 42 L0 16 L14 42 L18 42 Z"
-              fill={goldColor}
-              filter="url(#shadowHoriz)" />
-
-        <path d="M0 10 L-14 42 L-10 42 L0 20 L10 42 L14 42 Z"
-              fill={roofColor3}
-              opacity="0.2" />
-
-        <rect x="-18" y="42" width="36" height="3" fill={textColor} opacity="0.8" rx="1" />
-      </g>
-
-      <text x="68" y="38" fontFamily="'Montserrat', sans-serif" fontSize="32" fontWeight="800" fill={textColor} letterSpacing="0.5">
-        AKCON
+      <text
+        x="64"
+        y="50"
+        fontFamily="'Montserrat', sans-serif"
+        fontSize="42"
+        fontWeight="800"
+        fill={textColor}
+        letterSpacing="2.1"
+      >
+        KCON
       </text>
-      <text x="68" y="52" fontFamily="'Montserrat', sans-serif" fontSize="11" fontWeight="600" fill={goldColor} letterSpacing="3">
-        ACOPERIȘURI
+
+      <text
+        x="64"
+        y="65"
+        fontFamily="'Montserrat', sans-serif"
+        fontSize="11"
+        fontWeight="500"
+        fill={taglineColor}
+        letterSpacing="1.65"
+      >
+        CONSTRUCȚII ACOPERIȘURI
       </text>
     </svg>
   );
