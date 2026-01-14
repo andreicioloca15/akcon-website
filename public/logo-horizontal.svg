@@ -55,15 +55,6 @@
     <!-- Architectural corner details -->
     <circle cx="-18" cy="40.5" r="2" fill="#c9a961" opacity="0.8" />
     <circle cx="18" cy="40.5" r="2" fill="#c9a961" opacity="0.8" />
-
-    <!-- Foundation base -->
-    <rect
-      x="-25" y="55"
-      width="50" height="3"
-      fill="#1e3a5f"
-      opacity="0.6"
-      rx="1"
-    />
   </g>
 
   <!-- AKCON text - The "A" in the logo IS the roof icon -->
