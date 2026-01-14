@@ -3,6 +3,7 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import Breadcrumbs from '../components/Breadcrumbs';
 import Contact from '../components/Contact';
 import SEO from '../components/SEO';
+import RealProjectCard from '../components/RealProjectCard';
 import companyData from '../content/company.json';
 import serviceData from '../content/service-pages/tigla-metalica.json';
 
@@ -244,6 +245,19 @@ export default function TiglaMetalica() {
           </div>
         </div>
       </section>
+
+      <RealProjectCard
+        projectName="Schimbare Acoperiș - Casă Modernă"
+        clientName="Alex Țanea"
+        location="Alba Iulia, Alba"
+        projectType="Schimbare Acoperiș - Țiglă Metalică"
+        badge="Client Mulțumit"
+        rating={5}
+        description="Am avut plăcerea de a colabora cu echipa AKCON pentru schimbarea acoperișului casei mele, iar experiența a fost una excelentă. De la primul contact, echipa s-a dovedit foarte profesionistă, promptă și atentă la detalii. Lucrările au fost executate impecabil, în termenul stabilit, și calitatea materialelor folosite a depășit așteptările mele."
+        testimonial="Am avut plăcerea de a colabora cu echipa AKCON pentru schimbarea acoperișului casei mele, iar experiența a fost una excelentă. De la primul contact, echipa s-a dovedit foarte profesionistă, promptă și atentă la detalii. Lucrările au fost executate impecabil, în termenul stabilit, și calitatea materialelor folosite a depășit așteptările mele. Apreciez mult seriozitatea și dedicarea cu care au abordat proiectul, oferindu-mi constant informații și asigurându-se că totul decurge conform planului. Recomand cu încredere AKCON pentru oricine caută servicii de construcții de calitate!"
+        images={['/alex_tanea copy.jpg']}
+        imageLayout="hero"
+      />
 
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
