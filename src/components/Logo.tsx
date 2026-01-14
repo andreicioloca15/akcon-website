@@ -5,38 +5,28 @@ interface LogoProps {
   height?: number;
 }
 
-export default function Logo({ variant = 'horizontal', className = '', width, height }: LogoProps) {
+export default function Logo({ variant = 'horizontal', className = '' }: LogoProps) {
   if (variant === 'icon') {
     return (
-      <img
-        src="/logo-icon.svg"
-        alt="AKCON Logo"
-        className={className}
-        width={width || 120}
-        height={height || 120}
-      />
+      <div className={`flex flex-col ${className}`}>
+        <span className="text-2xl font-bold text-gray-900">ACKON</span>
+      </div>
     );
   }
 
   if (variant === 'stacked') {
     return (
-      <img
-        src="/logo-stacked.svg"
-        alt="AKCON - Construcții Acoperișuri"
-        className={className}
-        width={width || 280}
-        height={height || 200}
-      />
+      <div className={`flex flex-col items-center ${className}`}>
+        <span className="text-3xl font-bold text-gray-900">ACKON</span>
+        <span className="text-xs text-gray-600 uppercase tracking-wider mt-1">Construcții Acoperișuri</span>
+      </div>
     );
   }
 
   return (
-    <img
-      src="/logo-horizontal.svg"
-      alt="AKCON - Construcții Acoperișuri"
-      className={className}
-      width={width || 420}
-      height={height || 80}
-    />
+    <div className={`flex flex-col ${className}`}>
+      <span className="text-2xl font-bold text-gray-900 leading-none">ACKON</span>
+      <span className="text-xs text-gray-600 uppercase tracking-wider">Construcții Acoperișuri</span>
+    </div>
   );
 }
