@@ -3,6 +3,7 @@ import { Phone, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import companyData from '../content/company.json';
 import Logo from './Logo';
+import { getPhoneHref } from '../utils/formatPhoneNumber';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -66,7 +67,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
-          <a href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`} className="hidden lg:flex items-center text-navy font-semibold font-open-sans focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 rounded hover:scale-105 transition-transform duration-300">
+          <a href={getPhoneHref(companyData.phone)} className="hidden lg:flex items-center text-navy font-semibold font-open-sans focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 rounded hover:scale-105 transition-transform duration-300">
             <Phone className="w-5 h-5 mr-2 hover:rotate-12 transition-transform duration-300" />
             <span>{companyData.phone}</span>
           </a>
@@ -76,7 +77,12 @@ export default function Header() {
           </button>
         </div>
 
-        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden focus:outline-none focus:ring-2 focus:ring-gold rounded p-2">
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden focus:outline-none focus:ring-2 focus:ring-gold rounded p-2"
+          aria-label={mobileMenuOpen ? "Închide meniul" : "Deschide meniul"}
+          aria-expanded={mobileMenuOpen}
+        >
           {mobileMenuOpen ? <X className="w-6 h-6 text-gray-700" /> : <Menu className="w-6 h-6 text-gray-700" />}
         </button>
       </div>
@@ -122,7 +128,7 @@ export default function Header() {
             </button>
 
             <a
-              href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`}
+              href={getPhoneHref(companyData.phone)}
               className="flex items-center text-navy font-semibold font-open-sans text-lg py-4 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 rounded mt-2"
             >
               <Phone className="w-5 h-5 mr-3 text-gold" />

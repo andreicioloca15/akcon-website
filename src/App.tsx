@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollProgress from './components/ScrollProgress';
+import ScrollToTopButton from './components/ScrollToTopButton';
 import HomePage from './pages/HomePage';
 import DespreNoi from './pages/DespreNoi';
 import Servicii from './pages/Servicii';
@@ -64,6 +65,7 @@ function App() {
         </main>
         <Footer />
         <WhatsAppButton />
+        <ScrollToTopButton />
       </div>
     </BrowserRouter>
   );

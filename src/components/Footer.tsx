@@ -2,6 +2,7 @@ import { MapPin, Phone, Mail, Facebook } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import companyData from '../content/company.json';
 import Logo from './Logo';
+import { getPhoneHref } from '../utils/formatPhoneNumber';
 
 export default function Footer() {
   const location = useLocation();
@@ -127,7 +128,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Phone className="w-5 h-5 text-gold mr-2 flex-shrink-0" />
-                <a href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`} className="hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold leading-body">
+                <a href={getPhoneHref(companyData.phone)} className="hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold leading-body">
                   {companyData.phone}
                 </a>
               </li>
@@ -142,7 +143,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 text-center font-open-sans text-sm opacity-80">
-          <p className="leading-body">© 2026 Akcon. Toate drepturile rezervate.</p>
+          <p className="leading-body">© {new Date().getFullYear()} Akcon. Toate drepturile rezervate.</p>
         </div>
       </div>
     </footer>

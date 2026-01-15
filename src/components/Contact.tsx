@@ -1,6 +1,7 @@
 import { useState, FormEvent } from 'react';
-import { Phone, Mail, MapPin, Clock, ShieldCheck, Star } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, ShieldCheck, Star, Loader2 } from 'lucide-react';
 import companyData from '../content/company.json';
+import { getPhoneHref } from '../utils/formatPhoneNumber';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,9 +14,62 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  const validateField = (name: string, value: string): string => {
+    switch (name) {
+      case 'name':
+        if (!value.trim()) return 'Numele este obligatoriu';
+        if (value.trim().length < 2) return 'Numele trebuie să aibă cel puțin 2 caractere';
+        return '';
+      case 'phone':
+        if (!value.trim()) return 'Numărul de telefon este obligatoriu';
+        const phoneRegex = /^[0-9\s+()-]{10,}$/;
+        if (!phoneRegex.test(value)) return 'Numărul de telefon nu este valid';
+        return '';
+      case 'email':
+        if (value && value.trim()) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(value)) return 'Adresa de email nu este validă';
+        }
+        return '';
+      case 'city':
+        if (!value.trim()) return 'Localitatea este obligatorie';
+        return '';
+      case 'service':
+        if (!value) return 'Selectați tipul de serviciu';
+        return '';
+      default:
+        return '';
+    }
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors: Record<string, string> = {};
+    Object.keys(formData).forEach(key => {
+      if (key !== 'message') {
+        const error = validateField(key, formData[key as keyof typeof formData]);
+        if (error) newErrors[key] = error;
+      }
+    });
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = async (e: FormEvent): Promise<void> => {
     e.preventDefault();
+
+    const allTouched: Record<string, boolean> = {};
+    Object.keys(formData).forEach(key => {
+      allTouched[key] = true;
+    });
+    setTouched(allTouched);
+
+    if (!validateForm()) {
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus(null);
 
@@ -41,6 +95,8 @@ export default function Contact() {
           service: '',
           message: ''
         });
+        setErrors({});
+        setTouched({});
 
         setTimeout(() => {
           setSubmitStatus(null);
@@ -57,9 +113,32 @@ export default function Contact() {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>): void => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
+    });
+
+    if (touched[name]) {
+      const error = validateField(name, value);
+      setErrors({
+        ...errors,
+        [name]: error
+      });
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>): void => {
+    const { name, value } = e.target;
+    setTouched({
+      ...touched,
+      [name]: true
+    });
+
+    const error = validateField(name, value);
+    setErrors({
+      ...errors,
+      [name]: error
     });
   };
 
@@ -96,7 +175,7 @@ export default function Contact() {
                     <Star className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="font-semibold mb-1">A apărut o eroare.</p>
-                      <p className="text-sm">Vă rugăm să încercați din nou sau sunați direct la <a href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`} className="underline hover:text-red-600">{companyData.phone}</a>.</p>
+                      <p className="text-sm">Vă rugăm să încercați din nou sau sunați direct la <a href={getPhoneHref(companyData.phone)} className="underline hover:text-red-600">{companyData.phone}</a>.</p>
                     </div>
                   </div>
                 </div>
@@ -111,11 +190,17 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="form-input w-full px-4 py-3.5 border-2 border-gray-200 rounded-lg font-open-sans text-base hover:border-gold/50"
+                  onBlur={handleBlur}
+                  className={`form-input w-full px-4 py-3.5 border-2 rounded-lg font-open-sans text-base hover:border-gold/50 transition-colors ${
+                    touched.name && errors.name ? 'border-red-500' : 'border-gray-200'
+                  }`}
                   placeholder="ex: Ion Popescu"
                   autoComplete="name"
                   required
                 />
+                {touched.name && errors.name && (
+                  <p className="mt-1 text-sm text-red-600 font-open-sans">{errors.name}</p>
+                )}
               </div>
 
               <div>
@@ -127,12 +212,18 @@ export default function Contact() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="form-input w-full px-4 py-3.5 border-2 border-gray-200 rounded-lg font-open-sans text-base hover:border-gold/50"
+                  onBlur={handleBlur}
+                  className={`form-input w-full px-4 py-3.5 border-2 rounded-lg font-open-sans text-base hover:border-gold/50 transition-colors ${
+                    touched.phone && errors.phone ? 'border-red-500' : 'border-gray-200'
+                  }`}
                   placeholder="ex: 0749 616 796"
                   autoComplete="tel"
                   inputMode="tel"
                   required
                 />
+                {touched.phone && errors.phone && (
+                  <p className="mt-1 text-sm text-red-600 font-open-sans">{errors.phone}</p>
+                )}
               </div>
 
               <div>
@@ -144,11 +235,17 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="form-input w-full px-4 py-3.5 border-2 border-gray-200 rounded-lg font-open-sans text-base hover:border-gold/50"
+                  onBlur={handleBlur}
+                  className={`form-input w-full px-4 py-3.5 border-2 rounded-lg font-open-sans text-base hover:border-gold/50 transition-colors ${
+                    touched.email && errors.email ? 'border-red-500' : 'border-gray-200'
+                  }`}
                   placeholder="ex: ion.popescu@email.com"
                   autoComplete="email"
                   inputMode="email"
                 />
+                {touched.email && errors.email && (
+                  <p className="mt-1 text-sm text-red-600 font-open-sans">{errors.email}</p>
+                )}
               </div>
 
               <div>
@@ -160,10 +257,16 @@ export default function Contact() {
                   name="city"
                   value={formData.city}
                   onChange={handleChange}
-                  className="form-input w-full px-4 py-3.5 border-2 border-gray-200 rounded-lg font-open-sans hover:border-gold/50"
+                  onBlur={handleBlur}
+                  className={`form-input w-full px-4 py-3.5 border-2 rounded-lg font-open-sans hover:border-gold/50 transition-colors ${
+                    touched.city && errors.city ? 'border-red-500' : 'border-gray-200'
+                  }`}
                   placeholder="ex: Alba Iulia"
                   required
                 />
+                {touched.city && errors.city && (
+                  <p className="mt-1 text-sm text-red-600 font-open-sans">{errors.city}</p>
+                )}
               </div>
 
               <div>
@@ -174,7 +277,10 @@ export default function Contact() {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="form-input w-full px-4 py-3.5 border-2 border-gray-200 rounded-lg font-open-sans hover:border-gold/50"
+                  onBlur={handleBlur}
+                  className={`form-input w-full px-4 py-3.5 border-2 rounded-lg font-open-sans hover:border-gold/50 transition-colors ${
+                    touched.service && errors.service ? 'border-red-500' : 'border-gray-200'
+                  }`}
                   required
                 >
                   <option value="">Selectează serviciul</option>
@@ -184,6 +290,9 @@ export default function Contact() {
                   <option value="mansardare">Mansardare</option>
                   <option value="consultatie">Doar Consultație</option>
                 </select>
+                {touched.service && errors.service && (
+                  <p className="mt-1 text-sm text-red-600 font-open-sans">{errors.service}</p>
+                )}
               </div>
 
               <div>
@@ -205,10 +314,11 @@ export default function Contact() {
                 disabled={isSubmitting}
                 className="w-full bg-gold text-white px-4 xs:px-6 md:px-8 py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gold-hover transition-all duration-300 hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                <span className="relative z-10">
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  {isSubmitting && <Loader2 className="w-5 h-5 animate-spin" />}
                   {isSubmitting ? 'Se trimite...' : 'Trimite Cererea'}
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-gold-hover to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-gold-hover to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
               </button>
 
               <p className="text-sm text-gray-600 text-center font-open-sans leading-body">
@@ -219,7 +329,7 @@ export default function Contact() {
 
           <div className="fade-in-right">
             <div className="bg-gradient-to-br from-navy to-navy-light text-white p-8 rounded-lg mb-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full blur-3xl"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full blur-3xl" aria-hidden="true"></div>
               <h3 className="font-montserrat text-h3-mobile md:text-h3-tablet font-semibold mb-6 relative z-10">
                 Informații de Contact
               </h3>
@@ -229,7 +339,7 @@ export default function Contact() {
                   <Phone className="w-6 h-6 text-gold mr-4 flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-montserrat font-semibold mb-1">Telefon</div>
-                    <a href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`} className="font-open-sans leading-body hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
+                    <a href={getPhoneHref(companyData.phone)} className="font-open-sans leading-body hover:text-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
                       {companyData.phone}
                     </a>
                   </div>

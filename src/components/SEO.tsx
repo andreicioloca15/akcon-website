@@ -20,7 +20,7 @@ export default function SEO({
   title,
   description,
   keywords = [],
-  ogImage = '/og-image.jpg',
+  ogImage = '/og-image.svg',
   ogType = 'website',
   canonical,
   faq = []
