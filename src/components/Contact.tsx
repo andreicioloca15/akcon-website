@@ -11,10 +11,49 @@ export default function Contact() {
     service: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
 
-  const handleSubmit = (e: FormEvent): void => {
+  const handleSubmit = async (e: FormEvent): Promise<void> => {
     e.preventDefault();
-    alert('Vă mulțumim pentru cerere! Vă vom contacta în curând.');
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const form = e.target as HTMLFormElement;
+      const formDataToSend = new FormData(form);
+
+      const response = await fetch('https://formspree.io/f/xwvvpwne', {
+        method: 'POST',
+        body: formDataToSend,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          city: '',
+          service: '',
+          message: ''
+        });
+
+        setTimeout(() => {
+          setSubmitStatus(null);
+        }, 5000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>): void => {
@@ -39,6 +78,30 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-100 fade-in-left">
             <form onSubmit={handleSubmit} className="space-y-6">
+              {submitStatus === 'success' && (
+                <div className="p-4 bg-green-50 border-2 border-green-400 text-green-800 rounded-lg font-open-sans animate-fade-in">
+                  <div className="flex items-start">
+                    <ShieldCheck className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold mb-1">Mulțumim! Mesajul a fost trimis cu succes.</p>
+                      <p className="text-sm">Vă vom contacta în maxim 24 ore pentru consultație gratuită.</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="p-4 bg-red-50 border-2 border-red-400 text-red-800 rounded-lg font-open-sans animate-fade-in">
+                  <div className="flex items-start">
+                    <Star className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold mb-1">A apărut o eroare.</p>
+                      <p className="text-sm">Vă rugăm să încercați din nou sau sunați direct la <a href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`} className="underline hover:text-red-600">{companyData.phone}</a>.</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div>
                 <label className="block font-open-sans text-gray-700 font-semibold mb-2">
                   Nume Complet *
@@ -139,9 +202,12 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-gold text-white px-4 xs:px-6 md:px-8 py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gold-hover transition-all duration-300 hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold relative overflow-hidden group"
+                disabled={isSubmitting}
+                className="w-full bg-gold text-white px-4 xs:px-6 md:px-8 py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gold-hover transition-all duration-300 hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                <span className="relative z-10">Trimite Cererea</span>
+                <span className="relative z-10">
+                  {isSubmitting ? 'Se trimite...' : 'Trimite Cererea'}
+                </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-gold-hover to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
 
@@ -195,10 +261,9 @@ export default function Contact() {
                   <Clock className="w-6 h-6 text-gold mr-4 flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-montserrat font-semibold mb-1">Program</div>
-                    <p className="font-open-sans leading-body">
-                      Luni - Vineri: 08:00 - 18:00<br />
-                      Sâmbătă: 09:00 - 14:00<br />
-                      Duminică: Închis
+                    <p className="font-open-sans leading-body whitespace-pre-line">
+                      {companyData.workingHours}
+                      {'\n'}Duminică: Închis
                     </p>
                   </div>
                 </div>
