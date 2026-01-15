@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Facebook, Instagram } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import companyData from '../content/company.json';
 import Logo from './Logo';
@@ -32,22 +32,13 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://www.facebook.com/akcon"
+                href="https://www.facebook.com/profile.php?id=61565072249027"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold"
               >
                 <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.instagram.com/akcon"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold"
-              >
-                <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
