@@ -202,48 +202,48 @@ export default function DespreNoi() {
       id: 'mostenirea-noastra',
       title: 'Moștenirea Noastră',
       content: (
-        <div>
-          <h2 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-glow-white">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-glow-white text-center">
             4 Generații de Excelență
           </h2>
-          <p className="font-open-sans text-xl mb-6 opacity-95 leading-body">
+          <p className="font-open-sans text-lg mb-5 opacity-95 leading-relaxed text-center">
             Povestea AKCON începe în <span className="text-gold font-semibold">1977</span>, când bunicii lui Cristian au pus bazele unei tradiții de construcții de calitate în județul Alba.
           </p>
 
-          <div className="space-y-4 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <p className="font-open-sans text-lg font-semibold text-gold mb-2">
+              <p className="font-open-sans text-base font-semibold text-gold mb-1">
                 📅 1977-1990: Fundația
               </p>
-              <p className="font-open-sans text-base opacity-90 leading-body">
+              <p className="font-open-sans text-sm opacity-90 leading-snug">
                 Reputație pentru meșteșug tradițional în Alba Iulia și împrejurimi.
               </p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <p className="font-open-sans text-lg font-semibold text-gold mb-2">
+              <p className="font-open-sans text-base font-semibold text-gold mb-1">
                 📅 1990-2015: Expansiunea
               </p>
-              <p className="font-open-sans text-base opacity-90 leading-body">
+              <p className="font-open-sans text-sm opacity-90 leading-snug">
                 Profesionalizare și relații de lungă durată cu clienții.
               </p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <p className="font-open-sans text-lg font-semibold text-gold mb-2">
+              <p className="font-open-sans text-base font-semibold text-gold mb-1">
                 📅 2015-Prezent: Inovația
               </p>
-              <p className="font-open-sans text-base opacity-90 leading-body">
+              <p className="font-open-sans text-sm opacity-90 leading-snug">
                 Cristian, CEO, combină viziune modernă cu valori familiale.
               </p>
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6">
-            <p className="font-montserrat text-2xl font-bold text-gold mb-4">
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-5 mb-4">
+            <p className="font-montserrat text-xl font-bold text-gold mb-3 text-center">
               50 de Ani de Experiență
             </p>
-            <ul className="font-open-sans text-base opacity-90 leading-body space-y-2">
+            <ul className="font-open-sans text-sm opacity-90 leading-snug space-y-1.5 grid grid-cols-1 md:grid-cols-2 gap-x-6">
               <li className="flex items-start">
                 <span className="text-gold mr-2">✅</span>
                 <span>{companyData.projectsCompleted}+ proiecte finalizate cu {companyData.satisfiedClients}% satisfacție clienți</span>
@@ -263,13 +263,13 @@ export default function DespreNoi() {
             </ul>
           </div>
 
-          <p className="font-open-sans text-lg opacity-90 leading-body">
+          <p className="font-open-sans text-base opacity-90 leading-relaxed text-center">
             <span className="text-gold font-semibold">Tradiție + Inovație = Încrederea Ta.</span> Respectăm înțelepciunea trecutului, dar îmbrățișăm progresul viitorului.
           </p>
         </div>
       ),
-      image: 'https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      imageAlt: 'Moștenirea AKCON - 4 Generații de Construcții'
+      image: '',
+      imageAlt: ''
     },
   ];
 
@@ -318,14 +318,14 @@ export default function DespreNoi() {
           </div>
         </section>
 
-        <section className="relative py-20 bg-gradient-to-br from-navy via-navy-light to-navy text-white overflow-hidden">
+        <section className={`relative ${activeTab === 3 ? 'py-10 min-h-[90vh] flex items-center' : 'py-20'} bg-gradient-to-br from-navy via-navy-light to-navy text-white overflow-hidden`}>
           <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
             <div className="absolute top-20 left-10 w-64 h-64 bg-gold/20 rounded-full blur-3xl floating"></div>
             <div className="absolute bottom-20 right-10 w-80 h-80 bg-white/10 rounded-full blur-3xl floating" style={{ animationDelay: '1s' }}></div>
           </div>
 
-          <div className="max-w-7xl mx-auto px-4 relative z-10">
-            <div className="mb-12 overflow-x-auto scrollbar-hide">
+          <div className={`max-w-7xl mx-auto px-4 relative z-10 ${activeTab === 3 ? 'w-full' : ''}`}>
+            <div className={`${activeTab === 3 ? 'mb-6' : 'mb-12'} overflow-x-auto scrollbar-hide`}>
               <div
                 className="flex space-x-2 md:space-x-4 border-b border-white/20 min-w-max md:min-w-0 md:justify-center pb-2"
                 role="tablist"
@@ -363,7 +363,32 @@ export default function DespreNoi() {
               onTouchEnd={onTouchEnd}
               className="relative"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {tabs[activeTab].image ? (
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div
+                    key={`content-${activeTab}`}
+                    className="animate-fadeIn"
+                    role="tabpanel"
+                    id={`panel-${tabs[activeTab].id}`}
+                    aria-labelledby={tabs[activeTab].id}
+                  >
+                    {tabs[activeTab].content}
+                  </div>
+
+                  <div
+                    key={`image-${activeTab}`}
+                    className="relative animate-fadeIn"
+                  >
+                    <div className="absolute inset-0 bg-gold/20 rounded-lg transform translate-x-6 translate-y-6 -z-10"></div>
+                    <img
+                      src={tabs[activeTab].image}
+                      alt={tabs[activeTab].imageAlt}
+                      className="rounded-lg shadow-2xl w-full h-auto object-cover relative z-10 hover:shadow-gold/50 transition-shadow duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              ) : (
                 <div
                   key={`content-${activeTab}`}
                   className="animate-fadeIn"
@@ -373,20 +398,7 @@ export default function DespreNoi() {
                 >
                   {tabs[activeTab].content}
                 </div>
-
-                <div
-                  key={`image-${activeTab}`}
-                  className="relative animate-fadeIn"
-                >
-                  <div className="absolute inset-0 bg-gold/20 rounded-lg transform translate-x-6 translate-y-6 -z-10"></div>
-                  <img
-                    src={tabs[activeTab].image}
-                    alt={tabs[activeTab].imageAlt}
-                    className="rounded-lg shadow-2xl w-full h-auto object-cover relative z-10 hover:shadow-gold/50 transition-shadow duration-300"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
+              )}
 
               <div className="flex justify-center mt-8 space-x-2 lg:hidden">
                 {tabs.map((_, index) => (
