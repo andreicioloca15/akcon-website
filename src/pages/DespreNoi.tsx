@@ -62,7 +62,7 @@ export default function DespreNoi() {
           </p>
         </div>
       ),
-      image: '/acoperis_albastru_-_alba_iulia.jpeg',
+      image: '/00a8129e-d3fd-43a3-a9e5-49704438504e.jpg',
       imageAlt: 'AKCON - Experți în Acoperișuri'
     },
     {
