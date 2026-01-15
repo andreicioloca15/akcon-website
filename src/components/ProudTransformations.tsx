@@ -135,6 +135,7 @@ export default function ProudTransformations() {
                   loop
                   playsInline
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  aria-label="Video proiect finalizat - Montaj acoperiș țiglă metalică Stremț, Alba"
                 >
                   <source src="/videos/Vid3.mp4" type="video/mp4" />
                 </video>
@@ -190,8 +191,9 @@ export default function ProudTransformations() {
                 <div className="relative h-64 overflow-hidden">
                   <img
                     src={project.image}
-                    alt={project.clientName}
+                    alt={`${project.projectType} - ${project.location} - Client ${project.clientName}`}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent"></div>
                   <div className="absolute top-4 right-4">

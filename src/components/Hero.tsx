@@ -46,6 +46,7 @@ export default function Hero() {
           <a
             href={`tel:+40${companyData.phone.replace(/\s/g, '').replace(/^0/, '')}`}
             className="cta-button btn bg-white text-navy px-4 xs:px-6 md:px-8 py-3 xs:py-4 rounded-lg font-montserrat text-base xs:text-lg font-semibold hover:bg-gold hover:text-white transition-all duration-300 shadow-2xl hover:shadow-white/50 hover:scale-105 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-navy"
+            aria-label="Sună acum la AKCON"
           >
             <Phone className="w-4 h-4 xs:w-5 xs:h-5 mr-2" />
             {heroData.secondaryButtonText}: {companyData.phone}

@@ -321,7 +321,7 @@ export default function DespreNoi() {
           <div className={`max-w-7xl mx-auto px-4 relative z-10 ${activeTab === 3 ? 'w-full' : ''}`}>
             <div className={`${activeTab === 3 ? 'mb-4' : 'mb-8'} overflow-x-auto scrollbar-hide`}>
               <div
-                className="flex space-x-2 md:space-x-4 border-b border-white/20 min-w-max md:min-w-0 md:justify-center pb-2"
+                className="flex space-x-2 md:space-x-4 border-b border-white/20 justify-start md:justify-center pb-2 px-2"
                 role="tablist"
                 aria-label="Despre AKCON tabs"
               >

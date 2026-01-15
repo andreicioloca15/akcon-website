@@ -94,8 +94,9 @@ export default function Testimonials() {
                 {testimonial.avatar ? (
                   <img
                     src={testimonial.avatar}
-                    alt={testimonial.name}
+                    alt={`Fotografie client ${testimonial.name}`}
                     className="w-12 h-12 rounded-full object-cover"
+                    loading="lazy"
                   />
                 ) : (
                   <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center font-montserrat font-bold text-gold">

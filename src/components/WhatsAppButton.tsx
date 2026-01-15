@@ -31,7 +31,7 @@ export default function WhatsAppButton() {
             </div>
             <div>
               <h3 className="font-['Montserrat'] font-semibold text-[#2d3748]">Akcon</h3>
-              <p className="text-xs text-[#4a5568]">De obicei răspunde instant</p>
+              <p className="text-sm text-[#4a5568]">De obicei răspunde instant</p>
             </div>
           </div>
 
@@ -64,7 +64,7 @@ export default function WhatsAppButton() {
 
         {!isOpen && <div className="absolute -left-2 top-0 w-3 h-3 bg-[#25D366] rounded-full animate-ping"></div>}
 
-        <span className="absolute right-full mr-3 bg-white text-[#2d3748] px-3 py-2 rounded-lg shadow-lg text-sm font-['Open_Sans'] font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+        <span className="absolute right-full mr-3 bg-white text-[#2d3748] px-3 py-2 rounded-lg shadow-lg text-sm font-['Open_Sans'] font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none hidden md:block">
           Contactează-ne pe WhatsApp
         </span>
       </button>

@@ -229,10 +229,10 @@ export default function ProjectCarousel() {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-2 rounded-full transition-all duration-300 focus:outline-none ${
+            className={`h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold ${
               index === currentIndex
-                ? 'bg-gold w-6 md:w-8'
-                : 'bg-white/60 hover:bg-white/90 w-2'
+                ? 'bg-gold w-8 md:w-10'
+                : 'bg-white/60 hover:bg-white/90 w-3'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           ></button>

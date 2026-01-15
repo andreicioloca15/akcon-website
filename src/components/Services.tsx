@@ -1,5 +1,4 @@
-import * as LucideIcons from 'lucide-react';
-import { LucideIcon } from 'lucide-react';
+import { LucideIcon, Home, Wrench, Settings, Grid3x3, Sparkles, Square } from 'lucide-react';
 import montajAcoperisuri from '../content/services/montaj-acoperisuri.json';
 import renovareAcoperisuri from '../content/services/renovare-acoperisuri.json';
 import reparatiiAcoperisuri from '../content/services/reparatii-acoperisuri.json';
@@ -22,7 +21,14 @@ interface MappedService {
   link?: string;
 }
 
-type LucideIconsType = Record<string, LucideIcon>;
+const iconMap: Record<string, LucideIcon> = {
+  Home,
+  Wrench,
+  Settings,
+  Grid3x3,
+  Sparkles,
+  Square
+};
 
 export default function Services() {
   const servicesData: Service[] = [
@@ -35,8 +41,7 @@ export default function Services() {
   ];
 
   const getIconComponent = (iconName: string): LucideIcon => {
-    const Icon = (LucideIcons as LucideIconsType)[iconName];
-    return Icon || LucideIcons.Home;
+    return iconMap[iconName] || Home;
   };
 
   const services: MappedService[] = servicesData
