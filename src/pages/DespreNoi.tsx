@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import companyData from '../content/company.json';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import SEO from '../components/SEO';
+import HeroVideoBackground from '../components/HeroVideoBackground';
 
 interface TabContent {
   id: string;
@@ -284,16 +285,9 @@ export default function DespreNoi() {
 
       <div className="min-h-screen bg-white">
         <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0">
-            <img
-              src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1920"
-              alt="AKCON - Echipa și Proiectele Noastre"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy/85 to-navy-light/90"></div>
-          </div>
+          <HeroVideoBackground />
 
-          <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+          <div className="relative z-30 text-center text-white px-4 max-w-4xl mx-auto">
             <nav className="flex justify-center items-center mb-6 text-sm opacity-90">
               <Link to="/" className="hover:text-gold transition-colors">Acasă</Link>
               <span className="mx-2">/</span>
@@ -311,7 +305,7 @@ export default function DespreNoi() {
             </p>
           </div>
 
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-30">
             <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
               <div className="w-1 h-3 bg-white/50 rounded-full"></div>
             </div>
