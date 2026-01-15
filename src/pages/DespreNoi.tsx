@@ -195,8 +195,8 @@ export default function DespreNoi() {
           </p>
         </div>
       ),
-      image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      imageAlt: 'Echipa AKCON - Meșteri Certificați'
+      image: '/whatsapp_image_2026-01-08_at_21.39.50.jpeg',
+      imageAlt: 'Echipa AKCON - Meșteri în Acțiune'
     },
     {
       id: 'mostenirea-noastra',
@@ -268,8 +268,8 @@ export default function DespreNoi() {
           </p>
         </div>
       ),
-      image: '/whatsapp_image_2026-01-08_at_21.39.50.jpeg',
-      imageAlt: 'Echipa AKCON - Meșteri Acoperitori în Acțiune'
+      image: '',
+      imageAlt: ''
     },
   ];
 
