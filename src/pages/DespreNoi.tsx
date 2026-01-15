@@ -202,15 +202,15 @@ export default function DespreNoi() {
       id: 'mostenirea-noastra',
       title: 'Moștenirea Noastră',
       content: (
-        <div className="max-w-5xl mx-auto">
-          <h2 className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-glow-white text-center">
+        <div>
+          <h2 className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-glow-white">
             4 Generații de Excelență
           </h2>
-          <p className="font-open-sans text-lg mb-5 opacity-95 leading-relaxed text-center">
+          <p className="font-open-sans text-lg mb-5 opacity-95 leading-relaxed">
             Povestea AKCON începe în <span className="text-gold font-semibold">1977</span>, când bunicii lui Cristian au pus bazele unei tradiții de construcții de calitate în județul Alba.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+          <div className="space-y-3 mb-4">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
               <p className="font-open-sans text-base font-semibold text-gold mb-1">
                 📅 1977-1990: Fundația
@@ -240,10 +240,10 @@ export default function DespreNoi() {
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-5 mb-4">
-            <p className="font-montserrat text-xl font-bold text-gold mb-3 text-center">
+            <p className="font-montserrat text-xl font-bold text-gold mb-3">
               50 de Ani de Experiență
             </p>
-            <ul className="font-open-sans text-sm opacity-90 leading-snug space-y-1.5 grid grid-cols-1 md:grid-cols-2 gap-x-6">
+            <ul className="font-open-sans text-sm opacity-90 leading-snug space-y-1.5">
               <li className="flex items-start">
                 <span className="text-gold mr-2">✅</span>
                 <span>{companyData.projectsCompleted}+ proiecte finalizate cu {companyData.satisfiedClients}% satisfacție clienți</span>
@@ -263,13 +263,13 @@ export default function DespreNoi() {
             </ul>
           </div>
 
-          <p className="font-open-sans text-base opacity-90 leading-relaxed text-center">
+          <p className="font-open-sans text-base opacity-90 leading-relaxed">
             <span className="text-gold font-semibold">Tradiție + Inovație = Încrederea Ta.</span> Respectăm înțelepciunea trecutului, dar îmbrățișăm progresul viitorului.
           </p>
         </div>
       ),
-      image: '',
-      imageAlt: ''
+      image: '/whatsapp_image_2026-01-08_at_21.39.50.jpeg',
+      imageAlt: 'Echipa AKCON - Meșteri Acoperitori în Acțiune'
     },
   ];
 
