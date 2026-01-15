@@ -70,19 +70,19 @@ export default function DespreNoi() {
       title: 'Despre Proprietar',
       content: (
         <div>
-          <h2 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-glow-white">
+          <h2 className="font-montserrat text-2xl md:text-3xl lg:text-4xl font-bold mb-3 text-glow-white leading-tight">
             Cristian - CEO & Proprietar AKCON
           </h2>
-          <p className="font-open-sans text-xl mb-6 opacity-95 leading-body">
+          <p className="font-open-sans text-base mb-4 opacity-95 leading-relaxed">
             La doar <span className="text-gold font-semibold">25 de ani</span>, Cristian conduce AKCON cu o pasiune moștenită și o viziune modernă. Cu 10 ani de experiență practică în domeniul acoperișurilor și construcțiilor, Cristian a transformat provocările într-o oportunitate de inovație.
           </p>
-          <p className="font-open-sans text-lg mb-6 opacity-90 leading-body">
+          <p className="font-open-sans text-sm mb-4 opacity-90 leading-relaxed">
             <span className="text-gold font-semibold">Provocările Tânărului Antreprenor:</span><br />
             Când a preluat conducerea, Cristian s-a confruntat cu volume mari de lucrări și așteptări înalte moștenite din generațiile anterioare. În loc să aplice metode "clasice", a adus ceva nou: soluții testate și dovedite pentru case moderne.
           </p>
-          <div className="font-open-sans text-lg mb-6 opacity-90 leading-body">
-            <p className="text-gold font-semibold mb-3">Avantajul AKCON:</p>
-            <ul className="space-y-2 ml-4">
+          <div className="font-open-sans text-sm mb-4 opacity-90 leading-relaxed">
+            <p className="text-gold font-semibold mb-2 text-base leading-tight">Avantajul AKCON:</p>
+            <ul className="space-y-1 ml-4">
               <li className="flex items-start">
                 <span className="text-gold mr-2">✓</span>
                 <span>Design-uri impecabile care combină estetica cu funcționalitatea</span>
@@ -101,10 +101,10 @@ export default function DespreNoi() {
               </li>
             </ul>
           </div>
-          <blockquote className="font-open-sans text-lg italic opacity-95 border-l-4 border-gold pl-6 py-2 mb-4">
+          <blockquote className="font-open-sans text-base italic opacity-95 border-l-4 border-gold pl-4 py-2 mb-3 leading-relaxed">
             "Nu construim ca în anii '80. Construim pentru viitorul caselor tale - eficiente, durabile, frumoase."
           </blockquote>
-          <p className="font-open-sans text-sm opacity-75">
+          <p className="font-open-sans text-xs opacity-75">
             — Cristian, Proprietar & CEO AKCON
           </p>
         </div>
@@ -117,19 +117,19 @@ export default function DespreNoi() {
       title: 'Echipa Noastră',
       content: (
         <div>
-          <h2 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-glow-white">
+          <h2 className="font-montserrat text-2xl md:text-3xl lg:text-4xl font-bold mb-3 text-glow-white leading-tight">
             Meșteri cu 30+ Ani Experiență
           </h2>
-          <p className="font-open-sans text-xl mb-6 opacity-95 leading-body">
+          <p className="font-open-sans text-base mb-4 opacity-95 leading-relaxed">
             Secretul succesului AKCON? O echipă unică care combină experiența veteranilor cu viziunea profesioniștilor tineri.
           </p>
 
-          <div className="space-y-6 mb-6">
+          <div className="space-y-3 mb-4">
             <div>
-              <p className="font-open-sans text-lg font-semibold text-gold mb-3">
+              <p className="font-open-sans text-base font-semibold text-gold mb-2 leading-tight">
                 Meșteri Certificați cu 30+ Ani Experiență:
               </p>
-              <ul className="font-open-sans text-base opacity-90 leading-body space-y-2 ml-4">
+              <ul className="font-open-sans text-sm opacity-90 leading-relaxed space-y-1 ml-4">
                 <li className="flex items-start">
                   <span className="text-gold mr-2">•</span>
                   <span>Cunoștințe profunde în construcții tradiționale</span>
@@ -146,10 +146,10 @@ export default function DespreNoi() {
             </div>
 
             <div>
-              <p className="font-open-sans text-lg font-semibold text-gold mb-3">
+              <p className="font-open-sans text-base font-semibold text-gold mb-2 leading-tight">
                 Viziune Modernă:
               </p>
-              <ul className="font-open-sans text-base opacity-90 leading-body space-y-2 ml-4">
+              <ul className="font-open-sans text-sm opacity-90 leading-relaxed space-y-1 ml-4">
                 <li className="flex items-start">
                   <span className="text-gold mr-2">•</span>
                   <span>Soluții contemporane pentru case moderne</span>
@@ -166,10 +166,10 @@ export default function DespreNoi() {
             </div>
 
             <div>
-              <p className="font-open-sans text-lg font-semibold text-gold mb-3">
+              <p className="font-open-sans text-base font-semibold text-gold mb-2 leading-tight">
                 Certificări și Calificări:
               </p>
-              <ul className="font-open-sans text-base opacity-90 leading-body space-y-2 ml-4">
+              <ul className="font-open-sans text-sm opacity-90 leading-relaxed space-y-1 ml-4">
                 <li className="flex items-start">
                   <span className="text-gold mr-2">✓</span>
                   <span>Meșteri autorizați în construcții</span>
@@ -190,7 +190,7 @@ export default function DespreNoi() {
             </div>
           </div>
 
-          <p className="font-open-sans text-lg opacity-90 leading-body">
+          <p className="font-open-sans text-base opacity-90 leading-relaxed">
             <span className="text-gold font-semibold">Rezultatul?</span> Lucrări executate profesional, rapid, cu garanție de durabilitate și satisfacția completă a clienților.
           </p>
         </div>
@@ -318,14 +318,14 @@ export default function DespreNoi() {
           </div>
         </section>
 
-        <section className={`relative ${activeTab === 3 ? 'py-10 min-h-[90vh] flex items-center' : 'py-20'} bg-gradient-to-br from-navy via-navy-light to-navy text-white overflow-hidden`}>
+        <section className={`relative ${activeTab === 3 ? 'py-8 min-h-[85vh] flex items-center' : 'py-12'} bg-gradient-to-br from-navy via-navy-light to-navy text-white overflow-hidden`}>
           <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
             <div className="absolute top-20 left-10 w-64 h-64 bg-gold/20 rounded-full blur-3xl floating"></div>
             <div className="absolute bottom-20 right-10 w-80 h-80 bg-white/10 rounded-full blur-3xl floating" style={{ animationDelay: '1s' }}></div>
           </div>
 
           <div className={`max-w-7xl mx-auto px-4 relative z-10 ${activeTab === 3 ? 'w-full' : ''}`}>
-            <div className={`${activeTab === 3 ? 'mb-6' : 'mb-12'} overflow-x-auto scrollbar-hide`}>
+            <div className={`${activeTab === 3 ? 'mb-4' : 'mb-8'} overflow-x-auto scrollbar-hide`}>
               <div
                 className="flex space-x-2 md:space-x-4 border-b border-white/20 min-w-max md:min-w-0 md:justify-center pb-2"
                 role="tablist"
@@ -364,7 +364,7 @@ export default function DespreNoi() {
               className="relative"
             >
               {tabs[activeTab].image ? (
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-[58%_38%] gap-6 items-center">
                   <div
                     key={`content-${activeTab}`}
                     className="animate-fadeIn"
@@ -379,11 +379,11 @@ export default function DespreNoi() {
                     key={`image-${activeTab}`}
                     className="relative animate-fadeIn"
                   >
-                    <div className="absolute inset-0 bg-gold/20 rounded-lg transform translate-x-6 translate-y-6 -z-10"></div>
+                    <div className="absolute inset-0 bg-gold/20 rounded-lg transform translate-x-4 translate-y-4 -z-10"></div>
                     <img
                       src={tabs[activeTab].image}
                       alt={tabs[activeTab].imageAlt}
-                      className="rounded-lg shadow-2xl w-full h-auto object-cover relative z-10 hover:shadow-gold/50 transition-shadow duration-300"
+                      className="rounded-lg shadow-2xl w-full h-auto object-cover relative z-10 hover:shadow-gold/50 transition-shadow duration-300 max-h-[60vh]"
                       loading="lazy"
                     />
                   </div>
