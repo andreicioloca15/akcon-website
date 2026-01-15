@@ -22,18 +22,18 @@ export default function ServiceArea() {
           <div>
             <div className="rounded-lg overflow-hidden shadow-lg min-h-[400px] lg:min-h-[500px] hover:shadow-card-hover transition-all duration-300">
               <iframe
-                src="https://maps.google.com/maps?q=Teius,Alba,Romania&t=&z=11&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Strada+Primăverii+42,+Teiuș+515900,+Alba,+Romania&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="500"
                 className="w-full h-full min-h-[400px] lg:min-h-[500px]"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                title="Locația AKCON - Județul Alba"
+                title="Locația AKCON - Strada Primăverii 42, Teiuș"
               />
             </div>
             <a
-              href="https://maps.google.com/?q=Teius,Alba,Romania"
+              href="https://maps.google.com/?q=Strada+Primăverii+42,+Teiuș+515900,+Alba,+Romania"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center mt-4 text-navy hover:text-gold transition-colors duration-300 font-open-sans text-sm font-medium"
