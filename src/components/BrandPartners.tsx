@@ -10,7 +10,7 @@ export default function BrandPartners() {
           {brandPartnersData.title}
         </h3>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 items-center justify-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-12 items-center justify-items-center">
           {brands.map((brand) => (
             <div
               key={brand.name}

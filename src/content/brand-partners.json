@@ -1,10 +1,11 @@
 {
   "title": "Parteneri Oficiali ai Celor Mai Bune Branduri din Industrie",
   "brands": [
-    { "name": "VELUX", "order": 1 },
-    { "name": "LINDAB", "order": 2 },
-    { "name": "BILKA", "order": 3 },
-    { "name": "FAKRO", "order": 4 },
-    { "name": "WETTERBEST", "order": 5 }
+    { "name": "CREATON", "order": 1 },
+    { "name": "VELUX", "order": 2 },
+    { "name": "LINDAB", "order": 3 },
+    { "name": "BILKA", "order": 4 },
+    { "name": "FAKRO", "order": 5 },
+    { "name": "WETTERBEST", "order": 6 }
   ]
 }
