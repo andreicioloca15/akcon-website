@@ -107,7 +107,7 @@ export default function ProudTransformations() {
   const otherProjects = realProjects.slice(1);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section id="portofoliu" className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4">
         <div ref={headingRef} className="text-center mb-16">
           <h2 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6">
