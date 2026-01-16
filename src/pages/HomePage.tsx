@@ -16,21 +16,22 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="AKCON - Acoperișuri Alba Iulia | Montaj, Renovare, Reparații Profesionale"
-        description="AKCON - Firma specializată în acoperișuri Alba Iulia. Montaj țiglă metalică, renovare acoperiș, reparații, mansardări. Garanție 15 ani. ☎ 0749 616 796"
+        title="Acoperișuri Premium Alba | Montaj & Renovare cu Garanție | AKCON"
+        description="Echipă locală din Teiuș cu experiență în montaj acoperișuri, renovări și construcții. Lucrări la cheie cu garanție scrisă. Solicită ofertă gratuită."
         keywords={[
-          'acoperisuri alba iulia',
-          'montaj tigla metalica alba iulia',
-          'renovare acoperis alba iulia',
-          'reparatii acoperis alba iulia',
-          'firma acoperisuri alba iulia',
-          'constructii acoperisuri alba iulia',
-          'mansardare alba iulia',
-          'tigla ceramica alba iulia',
-          'tabla faltuita alba iulia',
-          'acoperisuri profesionale alba iulia'
+          'acoperișuri alba',
+          'montaj acoperiș teiuș',
+          'firma construcții alba iulia',
+          'renovare acoperiș',
+          'construcții alba',
+          'acoperiș cu garanție',
+          'AKCON'
         ]}
+        ogImage="/screenshot.jpg"
         canonical="https://akcon.ro/"
+        author="AKCON"
+        geoRegion="RO-AB"
+        geoPlacename="Teiuș"
       />
       <SchemaOrg type="LocalBusiness" />
       <Hero />

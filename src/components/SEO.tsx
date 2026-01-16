@@ -14,6 +14,9 @@ interface SEOProps {
   ogType?: string;
   canonical?: string;
   faq?: FAQItem[];
+  author?: string;
+  geoRegion?: string;
+  geoPlacename?: string;
 }
 
 export default function SEO({
@@ -23,7 +26,10 @@ export default function SEO({
   ogImage = '/og-image.svg',
   ogType = 'website',
   canonical,
-  faq = []
+  faq = [],
+  author = 'AKCON',
+  geoRegion = 'RO-AB',
+  geoPlacename = 'Teiuș'
 }: SEOProps): null {
   const location = useLocation();
   const baseUrl = 'https://akcon.ro';
@@ -50,6 +56,10 @@ export default function SEO({
 
     // Update or create standard meta tags
     updateOrCreateMetaTag('meta[name="description"]', 'content', description);
+    updateOrCreateMetaTag('meta[name="robots"]', 'content', 'index, follow');
+    updateOrCreateMetaTag('meta[name="author"]', 'content', author);
+    updateOrCreateMetaTag('meta[name="geo.region"]', 'content', geoRegion);
+    updateOrCreateMetaTag('meta[name="geo.placename"]', 'content', geoPlacename);
 
     if (keywords.length > 0) {
       updateOrCreateMetaTag('meta[name="keywords"]', 'content', keywords.join(', '));
@@ -62,6 +72,7 @@ export default function SEO({
     updateOrCreateMetaTag('meta[property="og:type"]', 'content', ogType);
     updateOrCreateMetaTag('meta[property="og:image"]', 'content', `${baseUrl}${ogImage}`);
     updateOrCreateMetaTag('meta[property="og:locale"]', 'content', 'ro_RO');
+    updateOrCreateMetaTag('meta[property="og:site_name"]', 'content', 'AKCON');
 
     // Update or create Twitter Card tags
     updateOrCreateMetaTag('meta[name="twitter:card"]', 'content', 'summary_large_image');
