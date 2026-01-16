@@ -5,40 +5,39 @@ interface LogoProps {
   height?: number;
 }
 
-export default function Logo({ variant = 'horizontal', className = '' }: LogoProps) {
+export default function Logo({ variant = 'horizontal', className = '', width, height }: LogoProps) {
   const isWhite = variant === 'white';
   const navyColor = isWhite ? '#ffffff' : '#1e3a5f';
 
   if (variant === 'icon') {
     return (
       <div className={`flex ${className}`}>
-        <span
-          className="font-extrabold uppercase leading-none"
-          style={{
-            color: navyColor,
-            letterSpacing: '0.15em',
-            fontSize: '2.5rem',
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-            fontWeight: 800
-          }}
-        >
-          AKCON
-        </span>
+        <img
+          src="/logo-02 copy.png"
+          alt="AKCON"
+          className="h-10 w-auto object-contain"
+          style={{ height: height ? `${height}px` : '40px' }}
+        />
       </div>
     );
   }
 
   if (variant === 'stacked') {
     return (
-      <div className={`flex items-center ${className}`}>
+      <div className={`flex flex-col items-center ${className}`}>
+        <img
+          src="/logo-02 copy.png"
+          alt="AKCON Icon"
+          className="h-24 w-auto object-contain mb-4"
+        />
         <span
           className="font-extrabold uppercase leading-none"
           style={{
             color: navyColor,
             letterSpacing: '0.15em',
             fontSize: '3.5rem',
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-            fontWeight: 800
+            fontFamily: 'Montserrat, system-ui, -apple-system, sans-serif',
+            fontWeight: 700
           }}
         >
           AKCON
@@ -48,15 +47,24 @@ export default function Logo({ variant = 'horizontal', className = '' }: LogoPro
   }
 
   return (
-    <div className={`flex ${className}`}>
+    <div className={`flex items-center gap-3 ${className}`}>
+      <img
+        src="/logo-02 copy.png"
+        alt="AKCON Icon"
+        className="object-contain"
+        style={{
+          height: height ? `${height}px` : '50px',
+          width: 'auto'
+        }}
+      />
       <span
         className="font-extrabold uppercase leading-none"
         style={{
           color: navyColor,
-          letterSpacing: '0.15em',
-          fontSize: '2rem',
-          fontFamily: 'system-ui, -apple-system, sans-serif',
-          fontWeight: 800
+          letterSpacing: '0.08em',
+          fontSize: width ? `${width / 8}px` : '1.75rem',
+          fontFamily: 'Montserrat, system-ui, -apple-system, sans-serif',
+          fontWeight: 700
         }}
       >
         AKCON
