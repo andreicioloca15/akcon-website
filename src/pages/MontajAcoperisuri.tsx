@@ -2,6 +2,7 @@ import { Phone } from 'lucide-react';
 import Breadcrumbs from '../components/Breadcrumbs';
 import Contact from '../components/Contact';
 import SEO from '../components/SEO';
+import SchemaOrg from '../components/SchemaOrg';
 import TransformationStory from '../components/TransformationStory';
 import companyData from '../content/company.json';
 import serviceData from '../content/service-pages/montaj-acoperisuri.json';
@@ -26,6 +27,11 @@ export default function MontajAcoperisuri() {
         keywords={keywords}
         ogType="service"
         faq={serviceData.faq}
+      />
+      <SchemaOrg
+        type="Service"
+        serviceName="Montaj Acoperișuri Noi Alba Iulia"
+        serviceDescription="Montaj acoperișuri noi în Alba Iulia cu materiale premium și garanție 15 ani manoperă. Țiglă metalică, țiglă ceramică, tablă fălțuită."
       />
       <Breadcrumbs items={[{ label: 'Servicii', path: '/#servicii' }, { label: serviceData.title }]} />
 
