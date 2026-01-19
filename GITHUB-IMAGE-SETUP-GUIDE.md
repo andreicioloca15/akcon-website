@@ -1,0 +1,114 @@
+# GitHub Image Setup Guide
+
+## ✅ Completed Tasks
+
+1. **Created folder structure**: `src/assets/images/projects/` with `.gitkeep` file
+2. **Updated all JSON files** with new image paths pointing to `/src/assets/images/projects/`
+3. **Project builds successfully** - all changes verified
+
+---
+
+## 📸 Complete List of Images to Upload
+
+Upload these 10 images from your `public/` folder to the GitHub repository at:
+**`src/assets/images/projects/`**
+
+### Core Project Images
+1. ✅ **mihalt.jpg**
+2. ✅ **cristi.jpg**
+3. ✅ **acoperis_albastru_-_alba_iulia.jpeg**
+4. ✅ **00a8129e-d3fd-43a3-a9e5-49704438504e.jpg**
+
+### DJI Drone Photos
+5. ✅ **dji_fly_20250725_174044_171_1767900943954_photo.jpg**
+6. ✅ **dji_fly_20250725_174154_175_1767900940021_photo.jpg**
+7. ✅ **dji_fly_20250804_125944_201_1767900076098_photo.jpg**
+8. ✅ **dji_fly_20250804_130334_211_1767899958956_photo.jpeg**
+9. ✅ **dji_fly_20250909_160218_261_1767899902514_photo.jpg**
+10. ✅ **dji_fly_20250909_160308_264_1767899897525_photo.jpeg**
+
+---
+
+## 📋 Files Updated (14 total)
+
+### Service Pages (6 files)
+- ✅ `src/content/service-pages/tigla-ceramica.json`
+- ✅ `src/content/service-pages/tigla-metalica.json`
+- ✅ `src/content/service-pages/montaj-acoperisuri.json`
+- ✅ `src/content/service-pages/reparatii-acoperisuri.json`
+- ✅ `src/content/service-pages/mansardari.json`
+- ✅ `src/content/service-pages/renovare-acoperisuri.json`
+
+### Portfolio (7 files)
+- ✅ `src/content/portfolio/casa-moderna-blaj.json`
+- ✅ `src/content/portfolio/renovare-vila-cugir.json`
+- ✅ `src/content/portfolio/acoperis-nou-ocna-mures.json`
+- ✅ `src/content/portfolio/mansardare-premium-aiud.json`
+- ✅ `src/content/portfolio/vila-premium-alba-iulia.json`
+- ✅ `src/content/portfolio/renovare-completa-sebes.json`
+- ✅ `src/content/portfolio/montaj-tigla-metalica-alba-iulia.json`
+
+### About (1 file)
+- ✅ `src/content/about.json`
+
+---
+
+## 🚀 Next Steps
+
+### Step 1: Upload Images to GitHub
+1. Go to your GitHub repository
+2. Navigate to `src/assets/images/projects/`
+3. Click "Add file" → "Upload files"
+4. Upload all 10 images listed above
+5. Commit the changes
+
+### Step 2: Verify on Website
+After uploading, check these pages to ensure images display correctly:
+- `/servicii/tigla-ceramica` - Hero image + case study photo
+- `/servicii/tigla-metalica` - Hero image + mihalt.jpg
+- `/servicii/montaj-acoperisuri` - Hero image
+- `/servicii/reparatii-acoperisuri` - Hero image
+- `/servicii/mansardari` - Hero image
+- `/servicii/renovare-acoperisuri` - Hero image + during photo
+- `/despre-noi` - Team photo (cristi.jpg)
+- Homepage portfolio section - All 7 project cards
+
+---
+
+## 📝 Image Usage Breakdown
+
+| Image | Used In | Count |
+|-------|---------|-------|
+| mihalt.jpg | Tigla Metalica case study | 1 |
+| cristi.jpg | About page | 1 |
+| acoperis_albastru_-_alba_iulia.jpeg | Renovare during image | 1 |
+| 00a8129e-d3fd-43a3-a9e5-49704438504e.jpg | Vila Premium portfolio | 1 |
+| dji_fly_...174044... | Montaj Acoperisuri + Portfolio | 2 |
+| dji_fly_...174154... | Reparatii + Mansardari + Portfolio | 3 |
+| dji_fly_...125944... | Tigla Ceramica + Renovare + 2 Portfolio | 4 |
+| dji_fly_...130334... | Tigla Ceramica case study | 1 |
+| dji_fly_...160218... | Tigla Metalica + Portfolio | 2 |
+| dji_fly_...160308... | Portfolio (Casa Moderna Blaj) | 1 |
+
+---
+
+## ⚠️ Notes
+
+- **Before/During photos** in `vila-premium-alba-iulia.json` still reference `/public/` folder (these are older comparison images that should stay in public)
+- All other images now correctly point to `/src/assets/images/projects/`
+- The `.gitkeep` file ensures the folder structure is preserved in Git
+- Build tested and passing ✅
+
+---
+
+## 🔧 Troubleshooting
+
+If images don't show after upload:
+1. Verify file names match exactly (case-sensitive)
+2. Check browser console for 404 errors
+3. Clear browser cache
+4. Ensure images are in the correct folder: `src/assets/images/projects/`
+
+---
+
+**Status**: Ready for image upload! All code changes are complete and tested.

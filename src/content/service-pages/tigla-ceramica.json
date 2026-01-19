@@ -7,7 +7,7 @@
   "keywords": "tigla ceramica alba iulia, montaj tigla ceramica alba iulia, acoperis tigla ceramica alba iulia, tigla traditionala alba iulia",
   "heroTitle": "Montaj Țiglă Ceramică Alba Iulia - Acoperișuri Tradiționale",
   "heroSubtitle": "Eleganță intemporală și durabilitate excepțională. Țigla ceramică Tondach și Creaton rezistă peste 100 ani, oferind izolație superioară și aspect aristocratic casei tale.",
-  "heroImage": "/dji_fly_20250804_125944_201_1767900076098_photo.jpg",
+  "heroImage": "/src/assets/images/projects/dji_fly_20250804_125944_201_1767900076098_photo.jpg",
   "benefits": [
     "Durabilitate excepțională - peste 100 ani garanție producător",
     "Rezistență perfectă la îngheț-dezgheț (important pentru clima Alba)",
@@ -66,6 +66,6 @@
     "investmentValue": "",
     "badge": "Proiect Finalizat",
     "duringImages": [],
-    "afterImages": ["/dji_fly_20250804_130334_211_1767899958956_photo.jpeg"]
+    "afterImages": ["/src/assets/images/projects/dji_fly_20250804_130334_211_1767899958956_photo.jpeg"]
   }
 }

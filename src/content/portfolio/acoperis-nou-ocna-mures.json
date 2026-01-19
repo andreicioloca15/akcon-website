@@ -4,7 +4,7 @@
   "type": "Țiglă metalică Lindab",
   "area": "200 mp",
   "duration": "4 săptămâni",
-  "image": "/dji_fly_20250725_174044_171_1767900943954_photo.jpg",
+  "image": "/src/assets/images/projects/dji_fly_20250725_174044_171_1767900943954_photo.jpg",
   "description": "Construcție acoperiș nou pentru casă rezidențială cu sistem Lindab premium - de la șarpantă la finisaje.",
   "clientQuote": "Profesionalism desăvârșit și atenție la detalii",
   "clientName": "Familie Stremț",
@@ -12,8 +12,8 @@
   "featured": true,
   "badge": "Proiect Finalizat",
   "beforeAfter": {
-    "before": "/dji_fly_20250725_174044_171_1767900943954_photo.jpg",
-    "after": "/dji_fly_20250909_160218_261_1767899902514_photo.jpg",
-    "during": "/dji_fly_20250725_174154_175_1767900940021_photo.jpg"
+    "before": "/src/assets/images/projects/dji_fly_20250725_174044_171_1767900943954_photo.jpg",
+    "after": "/src/assets/images/projects/dji_fly_20250909_160218_261_1767899902514_photo.jpg",
+    "during": "/src/assets/images/projects/dji_fly_20250725_174154_175_1767900940021_photo.jpg"
   }
 }
