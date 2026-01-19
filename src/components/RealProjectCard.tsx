@@ -1,5 +1,6 @@
 import { MapPin, Clock, Calendar, Star, CheckCircle } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { getImagePath } from '../utils/imageMap';
 
 interface RealProjectCardProps {
   projectName: string;
@@ -39,12 +40,6 @@ export default function RealProjectCard({
     <section className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4">
         <div ref={headerRef} className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-1 w-12 bg-gold rounded-full"></div>
-            <span className="font-montserrat text-gold font-semibold uppercase tracking-wider text-sm">
-              Proiect Real
-            </span>
-          </div>
           <h2 className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-navy mb-6">
             {projectName}
           </h2>
@@ -75,7 +70,7 @@ export default function RealProjectCard({
                 <div className="space-y-6">
                   <div className="relative rounded-xl overflow-hidden shadow-2xl group">
                     <img
-                      src={images[0]}
+                      src={getImagePath(images[0])}
                       alt={`${projectType} - ${location}`}
                       className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
@@ -91,7 +86,7 @@ export default function RealProjectCard({
                       {images.slice(1).map((image, index) => (
                         <div key={index} className="relative rounded-xl overflow-hidden shadow-lg group">
                           <img
-                            src={image}
+                            src={getImagePath(image)}
                             alt={`${projectType} detail ${index + 1}`}
                             className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
@@ -106,7 +101,7 @@ export default function RealProjectCard({
                   {images.map((image, index) => (
                     <div key={index} className="relative rounded-xl overflow-hidden shadow-xl group">
                       <img
-                        src={image}
+                        src={getImagePath(image)}
                         alt={`${projectType} ${index + 1}`}
                         className="w-full h-64 md:h-80 object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
