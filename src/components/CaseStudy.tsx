@@ -1,5 +1,6 @@
 import { Calendar, MapPin, Clock, TrendingUp, Star } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { getImagePath } from '../utils/imageMap';
 
 interface CaseStudyProps {
   title: string;
@@ -94,7 +95,7 @@ export default function CaseStudy({
                     <div className="max-w-[700px] mx-auto">
                       <div className="relative rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.2)] transition-all duration-300">
                         <img
-                          src={duringImages[0]}
+                          src={getImagePath(duringImages[0])}
                           alt={`Montaj acoperiș ${clientLocation} - în lucru`}
                           className="w-full h-[400px] lg:h-[450px] object-cover"
                           loading="lazy"
@@ -112,7 +113,7 @@ export default function CaseStudy({
                       {duringImages.slice(1).map((image, index) => (
                         <div key={index} className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                           <img
-                            src={image}
+                            src={getImagePath(image)}
                             alt={`Montaj ${clientLocation} - detaliu ${index + 1}`}
                             className="w-full h-48 object-cover"
                             loading="lazy"
@@ -133,7 +134,7 @@ export default function CaseStudy({
                     <div className="max-w-[700px] mx-auto">
                       <div className="relative rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.2)] transition-all duration-300">
                         <img
-                          src={afterImages[0]}
+                          src={getImagePath(afterImages[0])}
                           alt={`Acoperiș ${clientLocation} - proiect finalizat`}
                           className="w-full h-[400px] lg:h-[450px] object-cover"
                           loading="lazy"
@@ -151,7 +152,7 @@ export default function CaseStudy({
                       {afterImages.slice(1).map((image, index) => (
                         <div key={index} className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                           <img
-                            src={image}
+                            src={getImagePath(image)}
                             alt={`Acoperiș ${clientLocation} - detaliu ${index + 1}`}
                             className="w-full h-48 object-cover"
                             loading="lazy"
