@@ -97,31 +97,6 @@ export default function TiglaMetalica() {
         imageLayout="hero"
       />
 
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-navy mb-4">
-              Procesul Nostru de Lucru
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {serviceData.processSteps.map((step, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                <div className="w-12 h-12 bg-gold text-white rounded-full flex items-center justify-center font-montserrat text-xl font-bold mb-4">
-                  {index + 1}
-                </div>
-                <h3 className="font-montserrat text-xl font-bold text-navy mb-2">
-                  {step.title}
-                </h3>
-                <p className="font-open-sans text-gray-600 text-sm">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
