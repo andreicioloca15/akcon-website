@@ -1,17 +1,17 @@
-# GitHub Image Setup Guide
+# GitHub Image Setup Guide - CORRECTED
 
-## ✅ Completed Tasks
+## ✅ ISSUE FIXED
 
-1. **Created folder structure**: `src/assets/images/projects/` with `.gitkeep` file
-2. **Updated all JSON files** with new image paths pointing to `/src/assets/images/projects/`
-3. **Project builds successfully** - all changes verified
+The original path `/src/assets/images/projects/` was incorrect for Vite. Images referenced in JSON must be in the `public/` folder.
+
+**All paths have been corrected to:** `/images/projects/` → which maps to `public/images/projects/`
 
 ---
 
 ## 📸 Complete List of Images to Upload
 
-Upload these 10 images from your `public/` folder to the GitHub repository at:
-**`src/assets/images/projects/`**
+Upload these 10 images to the GitHub repository at:
+**`public/images/projects/`**
 
 ### Core Project Images
 1. ✅ **mihalt.jpg**
@@ -29,9 +29,9 @@ Upload these 10 images from your `public/` folder to the GitHub repository at:
 
 ---
 
-## 📋 Files Updated (14 total)
+## 📋 Files Updated (15 total)
 
-### Service Pages (6 files)
+### Service Pages (7 files)
 - ✅ `src/content/service-pages/tigla-ceramica.json`
 - ✅ `src/content/service-pages/tigla-metalica.json`
 - ✅ `src/content/service-pages/montaj-acoperisuri.json`
@@ -57,7 +57,7 @@ Upload these 10 images from your `public/` folder to the GitHub repository at:
 
 ### Step 1: Upload Images to GitHub
 1. Go to your GitHub repository
-2. Navigate to `src/assets/images/projects/`
+2. Navigate to `public/images/projects/`
 3. Click "Add file" → "Upload files"
 4. Upload all 10 images listed above
 5. Commit the changes
@@ -75,29 +75,21 @@ After uploading, check these pages to ensure images display correctly:
 
 ---
 
-## 📝 Image Usage Breakdown
+## 📝 Path Structure
 
-| Image | Used In | Count |
-|-------|---------|-------|
-| mihalt.jpg | Tigla Metalica case study | 1 |
-| cristi.jpg | About page | 1 |
-| acoperis_albastru_-_alba_iulia.jpeg | Renovare during image | 1 |
-| 00a8129e-d3fd-43a3-a9e5-49704438504e.jpg | Vila Premium portfolio | 1 |
-| dji_fly_...174044... | Montaj Acoperisuri + Portfolio | 2 |
-| dji_fly_...174154... | Reparatii + Mansardari + Portfolio | 3 |
-| dji_fly_...125944... | Tigla Ceramica + Renovare + 2 Portfolio | 4 |
-| dji_fly_...130334... | Tigla Ceramica case study | 1 |
-| dji_fly_...160218... | Tigla Metalica + Portfolio | 2 |
-| dji_fly_...160308... | Portfolio (Casa Moderna Blaj) | 1 |
+All JSON files now use:
+```
+"/images/projects/filename.jpg"
+```
 
----
+Which maps to the file system path:
+```
+public/images/projects/filename.jpg
+```
 
-## ⚠️ Notes
-
-- **Before/During photos** in `vila-premium-alba-iulia.json` still reference `/public/` folder (these are older comparison images that should stay in public)
-- All other images now correctly point to `/src/assets/images/projects/`
-- The `.gitkeep` file ensures the folder structure is preserved in Git
-- Build tested and passing ✅
+In Vite, the `public/` folder is served from the root `/`, so:
+- File location: `public/images/projects/mihalt.jpg`
+- URL path: `/images/projects/mihalt.jpg`
 
 ---
 
@@ -107,8 +99,18 @@ If images don't show after upload:
 1. Verify file names match exactly (case-sensitive)
 2. Check browser console for 404 errors
 3. Clear browser cache
-4. Ensure images are in the correct folder: `src/assets/images/projects/`
+4. Ensure images are in: `public/images/projects/`
+5. Verify the `.gitkeep` file exists in `public/images/projects/`
 
 ---
 
-**Status**: Ready for image upload! All code changes are complete and tested.
+## ✅ Build Status
+
+**Project builds successfully!**
+- All image paths corrected
+- Build tested and passing
+- Ready for image upload
+
+---
+
+**Status**: CORRECTED - All image paths now point to the correct public folder location.

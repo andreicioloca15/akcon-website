@@ -7,7 +7,7 @@
   "keywords": "tigla metalica alba iulia, montaj tigla metalica alba iulia, tigla metalica preturi alba iulia, acoperis tigla metalica alba iulia, tabla faltuita alba iulia",
   "heroTitle": "Montaj Țiglă Metalică Alba Iulia - Profile și Culori",
   "heroSubtitle": "Sisteme moderne Bilka, Lindab, Wetterbest cu garanție 50 ani. Montaj rapid, greutate redusă, peste 100 culori disponibile.",
-  "heroImage": "/src/assets/images/projects/dji_fly_20250909_160218_261_1767899902514_photo.jpg",
+  "heroImage": "/images/projects/dji_fly_20250909_160218_261_1767899902514_photo.jpg",
   "benefits": [
     "Garanție producător până la 50 ani",
     "Greutate redusă - potrivită pentru structuri existente",
@@ -62,6 +62,6 @@
     "investmentValue": "",
     "badge": "Proiect Finalizat",
     "duringImages": [],
-    "afterImages": ["/src/assets/images/projects/mihalt.jpg"]
+    "afterImages": ["/images/projects/mihalt.jpg"]
   }
 }

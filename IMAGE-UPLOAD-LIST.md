@@ -2,10 +2,10 @@
 
 ## Directory Structure to Create
 ```
-src/assets/images/projects/
+public/images/projects/
 ```
 
-## Images to Upload to `src/assets/images/projects/`
+## Images to Upload to `public/images/projects/`
 
 ### Project Photos (from public folder)
 1. **mihalt.jpg**
@@ -23,24 +23,10 @@ src/assets/images/projects/
 
 ---
 
-## Optional: Simplified Filename Mapping
-You can rename these to simpler names when uploading:
+## Status
 
-| Original Filename | Suggested Simplified Name |
-|-------------------|---------------------------|
-| dji_fly_20250725_174044_171_1767900943954_photo.jpg | dji_photo_1.jpg |
-| dji_fly_20250725_174154_175_1767900940021_photo.jpg | dji_photo_2.jpg |
-| dji_fly_20250804_125944_201_1767900076098_photo.jpg | dji_photo_3.jpg |
-| dji_fly_20250804_130334_211_1767899958956_photo.jpeg | dji_photo_4.jpg |
-| dji_fly_20250909_160218_261_1767899902514_photo.jpg | dji_photo_5.jpg |
-| dji_fly_20250909_160308_264_1767899897525_photo.jpeg | dji_photo_6.jpg |
-
----
-
-## Files Currently Referenced (to be updated)
-- Service Pages: 6 files
-- Portfolio: 7 files
-- About: 1 file
-- Total JSON files to update: 14
-
-All paths will be updated from `/filename.jpg` to `/src/assets/images/projects/filename.jpg`
+✅ **All paths have been corrected!**
+- Updated from broken `/src/assets/images/projects/` to correct `/images/projects/`
+- Total files updated: 15 (7 service pages, 7 portfolio, 1 about)
+- Project builds successfully
+- Ready for image upload to GitHub at `public/images/projects/`

@@ -4,7 +4,7 @@
   "type": "Țiglă metalică gri antracit",
   "area": "220 mp",
   "duration": "4 săptămâni",
-  "image": "/src/assets/images/projects/00a8129e-d3fd-43a3-a9e5-49704438504e.jpg",
+  "image": "/images/projects/00a8129e-d3fd-43a3-a9e5-49704438504e.jpg",
   "description": "Renovare completă de la țiglă ceramică roșie veche la țiglă metalică modernă cu șarpantă nouă și izolație termică.",
   "clientQuote": "O transformare spectaculoasă! De la un acoperiș vechi la un acoperiș modern și elegant.",
   "clientName": "Familie Stremț",
@@ -13,7 +13,7 @@
   "badge": "Transformare Completă",
   "beforeAfter": {
     "before": "/public/4ac47dd7-66b7-4dd6-88d1-f4239a53e6e2_(1).jpg",
-    "after": "/src/assets/images/projects/00a8129e-d3fd-43a3-a9e5-49704438504e.jpg",
+    "after": "/images/projects/00a8129e-d3fd-43a3-a9e5-49704438504e.jpg",
     "during": "/public/ceaf613f-3ff1-4440-a8a4-8d5427638a14.jpg"
   }
 }
